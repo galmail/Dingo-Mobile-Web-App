@@ -1,12 +1,11 @@
-// Ionic Starter App
+// Dingo Mobile Web App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+var dingo = angular.module('dingo',['ionic','facebook','dingo.controllers','dingo.services','dingo.directives']);
+dingo.controllers = angular.module('dingo.controllers', []);
+dingo.services = angular.module('dingo.services', []);
+dingo.directives = angular.module('dingo.directives', []);
 
-.run(function($ionicPlatform) {
+dingo.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,53 +19,70 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
+.config(function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+    // Allow same origin resource loads.
+    'self',
+    // Allow loading from our assets domain.  Notice the difference between * and **.
+    //'https://*.s3.amazonaws.com/**'
+  ]);
+
+  // The blacklist overrides the whitelist so the open redirect here is blocked.
+  $sceDelegateProvider.resourceUrlBlacklist([
+    
+  ]);
+})
+
+.config(function(FacebookProvider) {
+   var fbAppId = '';
+   if(window.location.href.indexOf('localhost')>0){
+    fbAppId = '854877257866349';
+   }
+   else {
+    fbAppId = '672126826238840';
+   }
+   FacebookProvider.init(fbAppId);
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
-      url: "/app",
-      abstract: true,
-      templateUrl: "templates/menu.html",
-      controller: 'AppCtrl'
-    })
+  .state('app', {
+    url: "/app",
+    abstract: true,
+    templateUrl: "js/templates/_menu.html",
+    controller: 'AuthCtrl'
+  })
 
-    .state('app.search', {
-      url: "/search",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/search.html"
-        }
+  .state('app.home', {
+    url: "/home",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/home.html",
+        controller: 'HomeCtrl'
       }
-    })
+    }
+  })
 
-    .state('app.browse', {
-      url: "/browse",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/browse.html"
-        }
+  .state('app.settings', {
+    url: "/settings",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/settings.html"
       }
-    })
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
+    }
+  })
+  .state('app.about', {
+    url: "/about",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/about.html"
       }
-    })
+    }
+  });
 
-    .state('app.single', {
-      url: "/playlists/:playlistId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/playlist.html",
-          controller: 'PlaylistCtrl'
-        }
-      }
-    });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/home');
+
 });
 

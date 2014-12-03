@@ -8,25 +8,31 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: './www/css/',
+  sass_main_file: './www/css/main.scss',
+  public_folder: '/Users/gal/Workspace/dingo-backend/public/'
 };
 
 gulp.task('default', ['sass']);
 
+gulp.task('deploy', ['sass'], function() {
+  gulp.src(['./www/**'],{ 'base': '.' }).pipe(gulp.dest(paths.public_folder));
+});
+
 gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
+  gulp.src(paths.sass_main_file)
     .pipe(sass())
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(gulp.dest(paths.sass))
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(gulp.dest(paths.sass))
     .on('end', done);
 });
 
 gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['sass']);
+  gulp.watch([paths.sass+'**/*.scss'], ['sass']);
 });
 
 gulp.task('install', ['git-check'], function() {
