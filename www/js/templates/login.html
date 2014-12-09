@@ -1,12 +1,32 @@
-<div class="modal">
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+<ion-view class="d-login" title="Dingo Login" hide-nav-bar="true">
+  <!-- <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons> -->
+  <ion-content class="has-header">
+
+    <div class="logo">
+      <img src="/img/login_screen/dingo_logo@2x.png" />
     </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
+
+    <div class="fb-login">
+      <img src="/img/login_screen/btnFBLogin@2x.png" />
+    </div>
+
+    <div class="text">
+      There will be no evidence of Dingo on your Facebook unless you decide to share something with your friends
+    </div>
+
+    <div class="or-icon">
+      <img src="/img/login_screen/or_icon@2x.png" />
+    </div>
+
+    <div class="guest">
+      <img src="/img/login_screen/btnGuest@2x.png" />
+    </div>
+    
+
+
+    <!-- <form ng-submit="doLogin()">
       <div class="list">
         <label class="item item-input">
           <span class="input-label">Email</span>
@@ -24,8 +44,8 @@
 
     <div>
       <button ng-click="fbLogin()" class="button button-block button-positive">Connect with Facebook</button>
-    </div>
+    </div> -->
     
   </ion-content>
-</div>
+</ion-view>
 

@@ -54,6 +54,16 @@ dingo.run(function($ionicPlatform) {
     controller: 'AuthCtrl'
   })
 
+  .state('app.login', {
+    url: "/login",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/login.html",
+        controller: 'AuthCtrl'
+      }
+    }
+  })
+
   .state('app.home', {
     url: "/home",
     views: {

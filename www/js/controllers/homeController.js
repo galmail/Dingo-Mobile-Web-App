@@ -10,7 +10,7 @@ dingo.controllers.controller('HomeCtrl', function($scope, $ionicModal, $timeout)
 
 	for(var i = 0; i < 25; i++) {
     $scope.items.push({
-      title: 'Task ' + (i + 1),
+      title: 'Event ' + (i + 1),
       buttons: [{
         text: 'Done',
         type: 'button-success',
