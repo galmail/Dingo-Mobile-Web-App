@@ -1,0 +1,61 @@
+/* Events Style */
+
+.d-events {
+
+	#categories_container {
+		// height: 350px;
+		// width: 100%;
+		// margin: auto;
+		// border: 1px black solid;
+		overflow-y: hidden;
+		overflow-x: scroll;
+
+
+		.categories {
+			width: 500px;
+			overflow: hidden;
+			// overflow-y: hidden;
+			// overflow-x: scroll;
+			//border: 2px black solid;
+
+			.category {
+				padding-left: 10px;
+				float: left;
+				width: 160px;
+				height: 142px;
+				border: 0;
+				label.checkbox {
+					height: 100%;
+					top: inherit;
+					bottom: 13px;
+					input {
+						position: absolute;
+						bottom: 2px;
+						right: -3px;
+					}
+				}
+				img {
+					position: absolute;
+					height: 113px;
+				}
+				.category-name {
+					position: absolute;
+					color: white;
+					bottom: 15px;
+					left: 15px;
+				}
+			}
+		}
+
+
+
+
+
+
+
+
+	}
+
+	
+
+}
