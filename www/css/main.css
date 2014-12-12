@@ -7932,7 +7932,9 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   padding: 2px; }
 .d-events #events_container .event {
   padding: 0;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  color: inherit;
+  text-decoration: inherit; }
   .d-events #events_container .event > div {
     height: 70px; }
   .d-events #events_container .event .event-pic {
@@ -7956,3 +7958,5 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   .d-events #events_container .event .event-price .event-price-available-tickets {
     font-size: 8px;
     color: gray; }
+
+/* Event Details Style */

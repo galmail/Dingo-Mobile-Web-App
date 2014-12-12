@@ -101,6 +101,15 @@ dingo.run(function($ionicPlatform) {
     }
   })
 
+  .state('home.eventDetails', {
+    url: "/event-details",
+    views: {
+      'events-tab': {
+        templateUrl: "js/templates/eventDetails.html"
+      }
+    }
+  })
+
   .state('home.sellTicket', {
     url: "/sell-ticket",
     views: {
