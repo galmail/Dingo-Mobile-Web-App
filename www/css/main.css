@@ -7934,6 +7934,10 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   margin-bottom: 10px;
   color: inherit;
   text-decoration: inherit; }
+  .d-events #events_container .event.ion-chevron-right:before {
+    margin-top: 20px;
+    position: absolute;
+    right: 0; }
   .d-events #events_container .event > div {
     height: 70px; }
   .d-events #events_container .event .event-pic {
