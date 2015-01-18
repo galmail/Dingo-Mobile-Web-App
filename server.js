@@ -14,6 +14,11 @@ switch(app.get('env')) {
       maxAge : 0
     }));
     break;
+  case 'phonegap':
+    app.use(express.static(__dirname + '/platforms/browser/www', {
+      maxAge : 0
+    }));
+    break;
   case 'production':
     app.use(express.static(__dirname + '/www', {
       maxAge : 0

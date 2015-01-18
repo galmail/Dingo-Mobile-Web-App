@@ -16,4 +16,7 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+  <feature name="FacebookConnectPlugin">
+      <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
+  </feature>
 </widget>
