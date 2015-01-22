@@ -19,4 +19,7 @@
   <feature name="FacebookConnectPlugin">
       <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
   </feature>
+  <feature name="PushPlugin">
+    <param name="ios-package" value="PushPlugin" />
+  </feature>
 </widget>
