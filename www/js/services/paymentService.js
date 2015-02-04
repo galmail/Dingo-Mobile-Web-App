@@ -13,8 +13,8 @@ dingo.services.factory('Payment', function() {
       // Initiating Paypal SDK
       if(window.PayPalMobile){
         var clientIDs = {
-          "PayPalEnvironmentProduction": "YOUR_PRODUCTION_CLIENT_ID",
-          "PayPalEnvironmentSandbox": "YOUR_SANDBOX_CLIENT_ID"
+          "PayPalEnvironmentProduction": "AYMqghD3IhKeJXOLh3siE-ImJftpSQLRRWebOHlDUCN7x_i5nWDB7V3zHnC5",
+          "PayPalEnvironmentSandbox": "AYuyqBCZYRwnOGI6k7DPlkgltTCEoX8m4b8XHZFqqQb0SAJLsx__gPpfnsyy"
         };
         PayPalMobile.init(clientIDs, this.onPayPalMobileInit);
       }

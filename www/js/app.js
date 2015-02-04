@@ -20,6 +20,14 @@ dingo.run(function($ionicPlatform,Payment) {
     // start to initialize PayPalMobile library
     Payment.init();
 
+    // get app version
+    if(window.cordova && window.device){
+      cordova.getAppVersion(function(version){
+        console.log('app version is: ' + version);
+        window.device.appVersion = version;
+      });
+    }
+
   });
 })
 

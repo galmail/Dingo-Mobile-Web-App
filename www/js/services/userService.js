@@ -3,7 +3,7 @@
  *
  */
 
-dingo.services.factory('User', function($http, Util) {
+dingo.services.factory('User', function($http, Util, Push) {
   
   var data = {};
   
@@ -43,6 +43,7 @@ dingo.services.factory('User', function($http, Util) {
           'X-User-Token': res.auth_token
         };
         self.saveCredentials(res.email,res.auth_token);
+        Push.register();
   			callback(true);
   		}).error(function(){
   			console.log('login error');
