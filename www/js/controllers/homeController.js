@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User) {
+dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User, Push) {
 
 	// run on init
 	(function(){
@@ -19,7 +19,7 @@ dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User
 			  'X-User-Token': localStorage.getItem('token')
 			};
 			// register device
-			Push.register();
+			setTimeout(function(){ Push.register(); }, 3000);
 		}
 
 	})();
