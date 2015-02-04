@@ -18,6 +18,8 @@ dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User
 			  'X-User-Email': localStorage.getItem('email'),
 			  'X-User-Token': localStorage.getItem('token')
 			};
+			// register device
+			Push.register();
 		}
 
 	})();

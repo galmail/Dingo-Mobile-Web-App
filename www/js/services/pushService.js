@@ -73,20 +73,38 @@ dingo.services.factory('Push', function($http) {
 				});
 				return true;
 			}
+			else if(res.event == 'message'){
+				console.log('Push Payload',res.payload);
+				if(res.foreground){
+					// got a push notification in the foreground
+					console.log('Foreground Notification');
+				}
+				else {
+					// got a push notification in the background
+					if(res.coldstart){
+						// the user just touched a notification
+						console.log('Coldstart Notification');
+					}
+					else {
+						console.log('Background Notification');
+					}
+				}
+			}
 
-			if (res.alert)
-	    {
-	      navigator.notification.alert(res.alert);
-	    }
-	    if (res.sound)
-	    {
-	        var snd = new Media(res.sound);
-	        snd.play();
-	    }
-	    if (res.badge)
-	    {
-	        this.pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, res.badge);
-	    }
+			// if (res.alert)
+	  //   {
+	  //     navigator.notification.alert(res.alert);
+	  //   }
+	  //   if (res.sound)
+	  //   {
+	  //       var snd = new Media(res.sound);
+	  //       snd.play();
+	  //   }
+	  //   if (res.badge)
+	  //   {
+	  //       this.pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, res.badge);
+	  //   }
+
 		},
 
 		registerDevice: function(regId, callback){
