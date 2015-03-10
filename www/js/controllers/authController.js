@@ -3,12 +3,13 @@
  *
  */
 
-dingo.controllers.controller('AuthCtrl', function($scope, $ionicModal, $timeout, $http, User, Util) {
+dingo.controllers.controller('AuthCtrl', function($scope, $ionicModal, $timeout, $http, User, Util, Config) {
 
   // Login with facebook
   $scope.fbLogin = function(){
+
     if (window.cordova && window.cordova.platformId == "browser"){
-      var fbAppId = "667287336672842";
+      var fbAppId = Config.FacebookAppId;
       console.log('initiating facebook sdk, fbAppId=' + fbAppId);
       facebookConnectPlugin.browserInit(fbAppId);
     }

@@ -32,12 +32,12 @@ switch(app.get('env')) {
 ////////// PROXY SERVER CONFIGURATION //////////
 
 app.all(/api\//, function(req, res, next){
-  var url = 'http://dingoapp.herokuapp.com' + req.url;
+  var url = 'http://dingoapp-staging.herokuapp.com' + req.url;
   reqpipe(req, url, res);
 });
 
 app.all(/users\//, function(req, res, next){
-  var url = 'http://dingoapp.herokuapp.com' + req.url;
+  var url = 'http://dingoapp-staging.herokuapp.com' + req.url;
   reqpipe(req, url, res);
 });
 
