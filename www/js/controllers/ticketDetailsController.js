@@ -35,15 +35,19 @@ dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,E
 			console.log('user canceled: ',result);
 		};
 
-		if(!Payment.started){
-			console.log('payment library has not been set with this device.');
-			return false;
-		}
+		// if(!Payment.started){
+		// 	console.log('payment library has not been set with this device.');
+		// 	return false;
+		// }
 
 		Payment.makePayment({
 			amount: Ticket.calculateBuyingPrice($scope.ticket),
 			description: 'Ticket(s) for ' + $scope.event.name
-		},onSuccesfulPayment,onUserCanceled);
+		},function(payment){
+			alert("payment success: " + JSON.stringify(payment, null, 4));
+		},function(result){
+			alert('user canceled: ',result);
+		});
 
 	}
 

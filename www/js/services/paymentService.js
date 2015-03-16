@@ -7,8 +7,6 @@ dingo.services.factory('Payment', function() {
 
   return {
 
-    started: false,
-
     init: function(){
       // Initiating Paypal SDK
       if(window.PayPalMobile){
@@ -23,13 +21,16 @@ dingo.services.factory('Payment', function() {
     onPayPalMobileInit: function(){
       var self = this;
       var config = new PayPalConfiguration({
-        merchantName: "Dingo App Tickets",
-        merchantPrivacyPolicyURL: "http://dingoapp.co.uk/policy",
-        merchantUserAgreementURL: "http://dingoapp.co.uk/agreement"
+        merchantName: "Allington Ventures Ltd",
+        merchantPrivacyPolicyURL: "http://dingoapp.bitnamiapp.com/web/privacy-policy/",
+        merchantUserAgreementURL: "http://dingoapp.bitnamiapp.com/web/terms-conditions/",
+        acceptCreditCards: false
       });
+      //config.acceptCreditCards(false);
+
       // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
       PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", config, function(){
-        self.started = true;
+        console.log('Paypal Library Loaded!');
       });
     },
 

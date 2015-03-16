@@ -21,7 +21,7 @@ dingo.controllers.controller('AuthCtrl', function($scope, $ionicModal, $timeout,
       facebookConnectPlugin.login(["email"],
         function (response){
           console.log('user is connected with facebook!');
-          facebookConnectPlugin.api( "me/", ["user_birthday"],
+          facebookConnectPlugin.api( "me/", [],
             function (response){
               var userData = User.fbParseUserInfo(response);
               User.setInfo(userData);

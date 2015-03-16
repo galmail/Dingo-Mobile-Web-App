@@ -22,8 +22,9 @@ dingo.services.factory('Ticket', function($http, Util) {
     },
 
     calculateBuyingPrice: function(ticket){
-      var dingoCommission = ticket.price * 0.10;
-      return ticket.price + dingoCommission;
+      var price = parseFloat(ticket.price);
+      var dingoCommission = price * 0.10;
+      return price + dingoCommission;
     }
 
   };
