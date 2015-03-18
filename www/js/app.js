@@ -169,6 +169,16 @@ dingo.run(function($ionicPlatform,Payment) {
     }
   })
 
+  .state('home.sellTicketPreview', {
+    url: "/sell-ticket-preview",
+    views: {
+      'sell-ticket-tab': {
+        templateUrl: "js/templates/sellTicketPreview.html",
+        controller: 'SellTicketCtrl'
+      }
+    }
+  })
+
   .state('home.messages', {
     url: "/messages",
     views: {

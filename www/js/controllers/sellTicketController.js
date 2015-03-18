@@ -3,24 +3,18 @@
  *
  */
 
-dingo.controllers.controller('SellTicketCtrl', function($scope, Event) {
+dingo.controllers.controller('SellTicketCtrl', function($scope, $location, Event, Ticket) {
 
-	
-	$scope.selectedEvent = {
-		// id: '1',
-		// name: 'Super Event 1',
-		// location: 'London city',
-		// from: '01/02/2015',
-		// to: '02/02/2015'
-	};
+	$scope.ticketDetails = Ticket.ticketForSale;
+
 	$scope.events = [];
 
 	$scope.filterEvent = function(){
 		var self = this;
-		if(self.selectedEvent.name.length>0) {
-			console.log('filtering event: ' + self.selectedEvent.name);
-			self.selectedEvent.selected = false;
-			Event.searchByName(self.selectedEvent.name, function(listOfEvents){
+		if(self.ticketDetails.event.name.length>0) {
+			console.log('filtering event: ' + self.ticketDetails.event.name);
+			self.ticketDetails.event.selected = false;
+			Event.searchByName(self.ticketDetails.event.name, function(listOfEvents){
 				self.events = listOfEvents;
 			});
 		}
@@ -28,22 +22,29 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, Event) {
 
 	$scope.showEvent = function(event){
 		var thisEvent = event.name.toLowerCase();
-		var selectedEvent = this.selectedEvent.name.toLowerCase();
+		var selectedEvent = this.ticketDetails.event.name.toLowerCase();
 		return (thisEvent.indexOf(selectedEvent)>=0 && thisEvent != selectedEvent && selectedEvent.length>0);
 	};
 
 	$scope.selectEvent = function(event,events){
 		var self = this;
 		console.log('selecting event: ' + event.name);
-		this.selectedEvent.name = event.name;
-		this.selectedEvent.location = event.location;
-		this.selectedEvent.from = event.from;
-		this.selectedEvent.to = event.to;
-		this.selectedEvent.selected = true;
+		this.ticketDetails.event.name = event.name;
+		this.ticketDetails.event.location = event.location;
+		this.ticketDetails.event.from = event.from;
+		this.ticketDetails.event.to = event.to;
+		this.ticketDetails.event.selected = true;
 		// set location, from, to fields to disabled.
+	};
 
+	$scope.previewTicket = function(){
+		// TODO: Validate Form
+		Ticket.ticketForSale = this.ticketDetails;
+		$location.path("/home/sell-ticket-preview");
+	};
 
-
+	$scope.sellTicket = function(){
+		alert('Sell Ticket...');
 	};
 	
 
