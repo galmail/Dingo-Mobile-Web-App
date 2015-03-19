@@ -69,10 +69,12 @@ dingo.services.factory('Ticket', function($http, Util) {
       });
     },
 
-    calculateBuyingPrice: function(ticket){
-      var price = parseFloat(ticket.price);
-      var dingoCommission = price * 0.10;
-      return price + dingoCommission;
+    getTotalAmount: function(ticket){
+      return parseFloat(ticket.price) * ticket.number_of_tickets;
+    },
+
+    getTotalToPay: function(ticket){
+      return this.getTotalAmount(ticket) * 1.10;
     },
 
     saveTicket: function(callback){

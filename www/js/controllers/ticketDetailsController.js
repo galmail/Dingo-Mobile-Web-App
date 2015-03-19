@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,Event,Ticket,Payment) {
+dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,Event,Ticket,Payment,Order) {
 
 	$scope.event = {};
 	$scope.ticket = {};
@@ -26,30 +26,28 @@ dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,E
 
 
 	$scope.buyTicket = function(){
-		
-		var onSuccesfulPayment = function(payment){
-			console.log("payment success: " + JSON.stringify(payment, null, 4));
-		};
+		var self = this;
+		var description = 'Ticket(s) for ' + self.event.name;
 
-		var onUserCanceled = function(result){
-			console.log('user canceled: ',result);
-		};
-
-		// if(!Payment.started){
-		// 	console.log('payment library has not been set with this device.');
-		// 	return false;
-		// }
-
-		Payment.makePayment({
-			amount: Ticket.calculateBuyingPrice($scope.ticket),
-			description: 'Ticket(s) for ' + $scope.event.name
-		},function(payment){
-			alert("payment success: " + JSON.stringify(payment, null, 4));
-		},function(result){
-			alert('user canceled: ',result);
+		Order.saveOrder({
+			ticket_id: self.ticket.id,
+			num_tickets: self.ticket.number_of_tickets,
+			amount: Ticket.getTotalAmount(self.ticket)
+		},function(){
+			Payment.makePayment({
+				amount: Ticket.getTotalToPay(self.ticket),
+				description: description
+			},function(payment){
+				Order.approveOrder(payment,function(){
+					alert("Payment Success! Redirecting now to a chat screen with the seller...");
+				});
+			},function(result){
+				Order.rejectOrder(function(){
+					alert('Payment has been canceled.');
+				});
+			});
 		});
-
-	}
+	};
 
 
 
