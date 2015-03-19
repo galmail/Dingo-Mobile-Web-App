@@ -11,7 +11,7 @@ dingo.services.factory('User', function($http, Util, Push) {
   	
     getInfo: function(){ return data; },
   	
-    setInfo: function(newdata){ data = newdata; },
+    setInfo: function(newdata){ angular.extend(data, newdata); },
 
     saveCredentials: function(email,token){
       localStorage.setItem('email',email);
@@ -25,6 +25,7 @@ dingo.services.factory('User', function($http, Util, Push) {
     logout: function(){
       delete(localStorage.email);
       delete(localStorage.token);
+      this.setInfo({});
     },
   	
     login: function(callback){
@@ -36,7 +37,7 @@ dingo.services.factory('User', function($http, Util, Push) {
   			}
   		}).success(function(res){
   			console.log('login success: ' + JSON.stringify(res));
-        data.user_id = res.id;
+        self.setInfo(res);
   			// save auth_token
         $http.defaults.headers.common = {
           'X-User-Email': res.email,
@@ -97,7 +98,17 @@ dingo.services.factory('User', function($http, Util, Push) {
         userData.gender = 'F';
       }
   		return userData;
-  	}
+  	},
+
+    updateProfile: function(userData,callback){
+      this.setInfo(userData);
+      $http.post('/api/v1/users',this.getInfo())
+      .success(function(){
+        callback(true);
+      }).error(function(){
+        callback(false);
+      });
+    }
 
 
   };

@@ -1,14 +1,36 @@
 /**
- * Auth controller.
+ * Settings controller.
  *
  */
 
-dingo.controllers.controller('AuthCtrl', function($scope, $ionicModal, $timeout, $http, User, Util, Config) {
+dingo.controllers.controller('SettingsCtrl', function($scope, $location, User) {
 
-  // Login with facebook
-  $scope.fbLogin = function(){
+	$scope.user_data = {};
 
-    if (window.cordova && window.cordova.platformId == "browser"){
+	// run on init
+	(function(){
+		console.log('Running Settings Controller...');
+		$scope.user_data = User.getInfo();
+	})();
+
+	$scope.saveSettings = function(){
+		User.updateProfile($scope.user_data,function(ok){
+			if(ok){
+				alert('Settings saved successfully!');
+			}
+			else {
+				alert('Settings were not saved. Please check your connection and try again.');
+			}
+		});
+	};
+
+	$scope.logout = function(){
+		User.logout();
+		$location.path('/');
+	};
+
+	$scope.connectWithFacebook = function(){
+		if (window.cordova && window.cordova.platformId == "browser"){
       var fbAppId = Config.FacebookAppId;
       console.log('initiating facebook sdk, fbAppId=' + fbAppId);
       facebookConnectPlugin.browserInit(fbAppId);
@@ -24,7 +46,8 @@ dingo.controllers.controller('AuthCtrl', function($scope, $ionicModal, $timeout,
           facebookConnectPlugin.api( "me/", [],
             function (response){
               var userData = User.fbParseUserInfo(response);
-              User.setInfo(userData);
+              angular.extend($scope.user_data, userData);
+              User.setInfo($scope.user_data);
               User.connect(function(ok){
                 if(ok){
                   alert('User is logged in!');
@@ -42,34 +65,9 @@ dingo.controllers.controller('AuthCtrl', function($scope, $ionicModal, $timeout,
         }
       );
     }
-    
-  }
+	}
 
-  // Login as Guest
-  $scope.guestLogin = function(){
-    if (User.isLogged()){
-      alert('User is already logged!');
-      return;
-    }
 
-    var uuid = null;
 
-    if(window.device && window.device.uuid){
-      uuid = device.uuid;
-    }
-    else {
-      uuid = Util.generateUUID();
-    }
-    User.setInfo({ email: uuid+'@guest.dingoapp.co.uk', password: '123456789', name: 'Guest'});
-    User.connect(function(ok){
-      if(ok){
-        alert('user is logged in!');
-      }
-      else {
-        alert('user is not logged in!');
-      }
-    });
-  }
-
-    
-}); 
+  
+});

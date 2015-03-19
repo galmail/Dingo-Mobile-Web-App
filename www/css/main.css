@@ -8140,3 +8140,12 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       font-size: 16px;
       padding: 8px;
       width: 50px; }
+
+/* Settings Style */
+.d-settings .facebook-button {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 10px; }

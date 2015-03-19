@@ -103,7 +103,17 @@ dingo.run(function($ionicPlatform,Payment) {
     url: "/settings",
     views: {
       'menuContent' :{
-        templateUrl: "js/templates/settings.html"
+        templateUrl: "js/templates/settings.html",
+        controller: 'SettingsCtrl'
+      }
+    }
+  })
+
+  .state('app.mytickets', {
+    url: "/mytickets",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/mytickets.html"
       }
     }
   })
@@ -156,7 +166,6 @@ dingo.run(function($ionicPlatform,Payment) {
       }
     }
   })
-
 
 
   .state('home.sellTicket', {
