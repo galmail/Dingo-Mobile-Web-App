@@ -29,12 +29,12 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, Event
 	$scope.selectEvent = function(event,events){
 		var self = this;
 		console.log('selecting event: ' + event.name);
+		this.ticketDetails.event.id = event.id;
 		this.ticketDetails.event.name = event.name;
-		this.ticketDetails.event.location = event.location;
-		this.ticketDetails.event.from = event.from;
-		this.ticketDetails.event.to = event.to;
+		this.ticketDetails.event.address = event.address;
+		this.ticketDetails.event.date = new Date(event.date);
+		this.ticketDetails.event.end_date = new Date(event.end_date);
 		this.ticketDetails.event.selected = true;
-		// set location, from, to fields to disabled.
 	};
 
 	$scope.previewTicket = function(){
@@ -44,7 +44,11 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, Event
 	};
 
 	$scope.sellTicket = function(){
-		alert('Sell Ticket...');
+		Ticket.saveTicket(function(ok){
+			if(ok){
+				alert('Ticket Created Successfully!');
+			}
+		});
 	};
 	
 
