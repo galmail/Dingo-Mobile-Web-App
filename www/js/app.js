@@ -118,6 +118,15 @@ dingo.run(function($ionicPlatform,Payment) {
     }
   })
 
+  .state('app.faq', {
+    url: "/faq",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/faq.html"
+      }
+    }
+  })
+
   .state('app.about', {
     url: "/about",
     views: {
