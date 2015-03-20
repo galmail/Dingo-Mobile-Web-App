@@ -7992,7 +7992,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     position: absolute;
     right: 0; }
   .d-event-details .tickets .ticket .ticket-photo {
-    height: 70px; }
+    height: 80px;
+    width: 75px; }
   .d-event-details .tickets .ticket .ticket-price .ticket-price-from {
     font-size: 12px; }
   .d-event-details .tickets .ticket .ticket-price .ticket-price-per-ticket {

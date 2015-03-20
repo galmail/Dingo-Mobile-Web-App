@@ -14,7 +14,16 @@ This is the Mobile Web App project for [Dingo](http://dingoapp.co.uk)
 
 To test on the browser:
 
+phil:
+open new tab "cmd + t"
+
 npm start
+
+in new tab:
+
+"gulp watch"
+
+ctril + c to stop
 
 To test on the device:
 
