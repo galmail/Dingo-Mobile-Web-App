@@ -1,6 +1,19 @@
 /* Settings Style */
 
 .d-settings {
+	background-color: #ECEBE8;
+
+
+
+	.settingsicon {
+		text-align: center;
+		padding-top: 35px;
+		padding-bottom: 15px;
+		img {
+			height: 70px;
+			width: 70px;
+		}
+	}
 
 	.facebook-button {
 		display: block;
