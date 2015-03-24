@@ -48,6 +48,8 @@
 		       </div>
 		     </label>
 		  </li>
+
+<!-- 	  	phil commented, email toggle.
 		  <li class="item item-toggle">
 		     Emails from Dingo
 		     <label class="toggle toggle-balanced">
@@ -56,12 +58,13 @@
 		         <div class="handle"></div>
 		       </div>
 		     </label>
-		  </li>
-		  <button ng-show="user_data.fb_id == null" class="button facebook-button icon-left ion-social-facebook button-positive" ng-click="connectWithFacebook()">Connect With Facebook</button>
+		  </li> -->
+<!-- 		  phil commented, old FB button
+		  <button ng-show="user_data.fb_id == null" class="button facebook-button icon-left ion-social-facebook button-positive" ng-click="connectWithFacebook()">Connect With Facebook</button> -->
+
+		  <button ng-show="user_data.fb_id == null" class="button button-large button-clear facebook-button" ng-click="connectWithFacebook()"><img src="img/settings_screen/fbbutton.png"/></button>
+
 		  <button class="button button-clear button-assertive button-full" ng-click="logout()">Logout</button>
-
-
-
 
 		</div>
   </ion-content>

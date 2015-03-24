@@ -136,6 +136,33 @@ dingo.run(function($ionicPlatform,Payment) {
     }
   })
 
+    .state('app.tandcs', {
+    url: "/tandcs",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/tandcs.html"
+      }
+    }
+  })
+
+    .state('app.privacypolicy', {
+    url: "/privacypolicy",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/privacypolicy.html"
+      }
+    }
+  })
+
+    .state('app.faqdetail', {
+    url: "/faqdetail",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/faqdetail.html"
+      }
+    }
+  })
+
   ////////////////// HOME URLs ///////////////////
 
   .state('home', {
@@ -214,7 +241,6 @@ dingo.run(function($ionicPlatform,Payment) {
       }
     }
   })
-
   ;
 
   // if none of the above states are matched, use this as the fallback

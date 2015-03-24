@@ -7872,20 +7872,20 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     text-align: center;
     padding-top: 55px; }
     .d-login .logo img {
-      height: 50px; }
+      height: 240px; }
   .d-login .fb-login {
     text-align: center;
-    padding-top: 35px; }
+    padding-top: 10px; }
     .d-login .fb-login img {
-      height: 40px; }
+      height: 50px; }
   .d-login .text {
     font-family: helvetica;
     font-size: 14px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     padding-right: 20px;
     padding-left: 20px;
-    color: #9B9B9B; }
+    color: #FFFFFF; }
   .d-login .or-icon {
     text-align: center;
     margin-top: 20px; }
@@ -8175,13 +8175,70 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* About Style */
 .d-about {
   background-color: #ECEBE8; }
+  .d-about .abouticon {
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 20px; }
+    .d-about .abouticon img {
+      height: 70px;
+      width: 70px; }
+  .d-about .text {
+    font-family: helvetica;
+    padding-top: 60px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #4A4A4A; }
 
 /* FAQ Style */
 .d-faq {
   background-color: #ECEBE8; }
   .d-faq .faqicon {
     text-align: center;
-    padding-top: 35px; }
+    padding-top: 35px;
+    padding-bottom: 35px; }
     .d-faq .faqicon img {
       height: 80px;
       width: 80px; }
+
+/* tandcs Style */
+.d-tandcs {
+  background-color: #ECEBE8; }
+  .d-tandcs .tandcsicon {
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 15px; }
+    .d-tandcs .tandcsicon img {
+      height: 70px;
+      width: 70px; }
+
+/* FAQdetail Style */
+.d-faqdetail {
+  background-color: #ECEBE8; }
+  .d-faqdetail .faqdetailicon {
+    text-align: center;
+    padding-top: 35px; }
+    .d-faqdetail .faqdetailicon img {
+      height: 80px;
+      width: 80px; }
+
+/* privacypolicy Style */
+.d-privacypolicy {
+  background-color: #ECEBE8; }
+  .d-privacypolicy .privacypolicyicon {
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 15px; }
+    .d-privacypolicy .privacypolicyicon img {
+      height: 70px;
+      width: 70px; }
+
+/* my tickets Style */
+.d-mytickets {
+  background-color: #ECEBE8; }
+  .d-mytickets .myticketsicon {
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 20px; }
