@@ -20,20 +20,22 @@
 			  </ul>
 		  </div>
 
+<!-- 		  remove location
 		  <label class="item item-input">
 		    <span class="input-label">Location:</span>
 		    <input type="text" ng-model="ticketDetails.event.address" ng-disabled="ticketDetails.event.selected" />
-		  </label>
+		  </label> -->
 
 		  <label class="item item-input">
-		    <span class="input-label">From:</span>
+		    <span class="input-label">Start date:</span>
 		    <input type="datetime" ng-model="ticketDetails.event.date" ng-disabled="ticketDetails.event.selected" />
 		  </label>
 
+<!-- 		  remove end date
 		  <label class="item item-input">
 		    <span class="input-label">To:</span>
 		    <input type="datetime" ng-model="ticketDetails.event.end_date" ng-disabled="ticketDetails.event.selected" />
-		  </label>
+		  </label> -->
 
 		  <div class="item item-divider">
 		    Ticket Details
@@ -109,7 +111,7 @@
 		  </li>
 
 		  <li class="item item-toggle">
-		     Electronic
+		     Email
 		     <label class="toggle toggle-balanced">
 		       <input ng-model="ticketDetails.delivery_methods.electronic" type="checkbox" name="delivery" />
 		       <div class="track">

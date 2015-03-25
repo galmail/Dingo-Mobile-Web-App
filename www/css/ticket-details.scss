@@ -12,10 +12,11 @@
 			padding: 35px 10px;
 			img {
 				border: 1px solid white;
-				border-radius: 35px;
-				height: 75px;
+				border-radius: 48px;
+				height: 96px;
 			}
 		}
+
 		.event-info {
 			color: #fff;
 			.event-title {
@@ -45,8 +46,8 @@
 
 	.ticket-actions {
 		.photo {
-			width: 120px;
-			border-radius: 10px;
+			height: 120px;
+			border-radius: 60px;
 		}
 		.button {
 			margin-top: 0px;

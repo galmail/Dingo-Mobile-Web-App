@@ -7908,8 +7908,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       padding: 0;
       margin-right: 5px;
       float: left;
-      width: 160px;
-      height: 122px;
+      width: 49%;
+      height: 113px;
       border: 0; }
       .d-events #categories_container .categories .category:last-child {
         margin-right: 0; }
@@ -7924,8 +7924,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
           right: -3px; }
       .d-events #categories_container .categories .category img {
         position: absolute;
-        height: 113px;
-        width: 160px; }
+        height: 100%;
+        width: 100%; }
       .d-events #categories_container .categories .category .category-name {
         position: absolute;
         color: white;
@@ -7952,22 +7952,22 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       width: 70px; }
     .d-events #events_container .event .row .event-info .event-title {
       font-weight: bold;
-      font-size: 16px;
+      font-size: 18px;
       padding: 0 5px; }
     .d-events #events_container .event .row .event-info .event-address {
       padding: 0 5px;
-      font-size: 10px; }
+      font-size: 14px; }
     .d-events #events_container .event .row .event-info .event-time {
       padding: 0 5px;
-      font-size: 10px;
+      font-size: 12px;
       color: gray; }
     .d-events #events_container .event .row .event-price .event-price-from {
-      font-size: 12px; }
+      font-size: 16px; }
     .d-events #events_container .event .row .event-price .event-price-per-ticket {
-      font-size: 10px;
+      font-size: 14px;
       color: gray; }
     .d-events #events_container .event .row .event-price .event-price-available-tickets {
-      font-size: 8px;
+      font-size: 14px;
       color: gray; }
 
 /* Event Details Style */
@@ -7982,8 +7982,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       padding: 35px 10px; }
       .d-event-details #event_container .event-photo img {
         border: 1px solid white;
-        border-radius: 35px;
-        height: 75px; }
+        border-radius: 48px;
+        height: 96px; }
     .d-event-details #event_container .event-info {
       color: #fff; }
       .d-event-details #event_container .event-info .event-title {
@@ -8021,8 +8021,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       padding: 35px 10px; }
       .d-ticket-details #ticket_container .event-photo img {
         border: 1px solid white;
-        border-radius: 35px;
-        height: 75px; }
+        border-radius: 48px;
+        height: 96px; }
     .d-ticket-details #ticket_container .event-info {
       color: #fff; }
       .d-ticket-details #ticket_container .event-info .event-title {
@@ -8040,8 +8040,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     .d-ticket-details .ticket-info .item-input input {
       background-color: inherit; }
   .d-ticket-details .ticket-actions .photo {
-    width: 120px;
-    border-radius: 10px; }
+    height: 120px;
+    border-radius: 60px; }
   .d-ticket-details .ticket-actions .button {
     margin-top: 0px;
     min-height: 0px;
@@ -8154,6 +8154,30 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
         padding: 8px;
         width: 50px; }
 
+/* About Style */
+.d-about {
+  background-color: #ECEBE8; }
+  .d-about .abouticon {
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 20px; }
+    .d-about .abouticon img {
+      height: 70px;
+      width: 70px; }
+  .d-about .dlogo {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 10px; }
+  .d-about .text {
+    font-family: helvetica;
+    padding-top: 30x;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #4A4A4A; }
+
 /* Settings Style */
 .d-settings {
   background-color: #ECEBE8; }
@@ -8171,26 +8195,6 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     margin-right: auto;
     margin-top: 30px;
     margin-bottom: 10px; }
-
-/* About Style */
-.d-about {
-  background-color: #ECEBE8; }
-  .d-about .abouticon {
-    text-align: center;
-    padding-top: 35px;
-    padding-bottom: 20px; }
-    .d-about .abouticon img {
-      height: 70px;
-      width: 70px; }
-  .d-about .text {
-    font-family: helvetica;
-    padding-top: 60px;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-    color: #4A4A4A; }
 
 /* FAQ Style */
 .d-faq {
