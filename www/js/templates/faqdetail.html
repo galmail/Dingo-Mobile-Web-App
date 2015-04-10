@@ -7,7 +7,49 @@
     <div class="faqdetailicon">
       <img src="img/faq_screen/faq_icon@2x.png"/>
     </div>
+
+
+    <ion-list>
+      <div ng-repeat="group in groups">
+        <ion-item class="item-stable"
+                  ng-click="toggleGroup(group)"
+                  ng-class="{active: isGroupShown(group)}">
+            <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+          Question: {{group.name}}
+        </ion-item>
+        <ion-item class="item-accordion" ng-show="isGroupShown(group)">
+          Answer: {{group.item}}
+        </ion-item>
+      </div>
+    </ion-list>
+
+
     
+
+    <div class="card">
+      <div class="item item-divider">
+        What is Dingo all about?
+      </div>
+      <div class="item item-text-wrap">
+        <p>Dingo is a marketplace for buying and selling tickets to live events.</p>
+        <p>Whether you need to sell your ticket at the last minute or are looking to buy a ticket to a sold out show we've got you covered!</p>
+        <p>Dingo allows you to meet, chat and transact with other fans in just a few taps.</p>
+      </div>
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="card">
   		<div class="item item-divider">
     		What is Dingo all about?
@@ -17,7 +59,7 @@
     		<p>Whether you need to sell your ticket at the last minute or are looking to buy a ticket to a sold out show we've got you covered!</p>
     		<p>Dingo allows you to meet, chat and transact with other fans in just a few taps.</p>
   		</div>
-	</div>
+	 </div>
 
     <div class="card">
   		<div class="item item-divider">

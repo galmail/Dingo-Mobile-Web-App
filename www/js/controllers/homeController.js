@@ -11,7 +11,7 @@ dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User
 
 		if(!User.isLogged()){
 			console.log('redirecting to login page...');
-			$location.path("/app/login" );
+			$location.path("/app/login");
 		}
 		else {
 			$http.defaults.headers.common = {

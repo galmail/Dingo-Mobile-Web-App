@@ -113,7 +113,18 @@ dingo.run(function($ionicPlatform,Payment) {
     url: "/mytickets",
     views: {
       'menuContent' :{
-        templateUrl: "js/templates/mytickets.html"
+        templateUrl: "js/templates/mytickets.html",
+        controller: 'MyTicketsCtrl'
+      }
+    }
+  })
+
+  .state('app.myticketsList', {
+    url: "/mytickets/:ticketsType",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/myticketslist.html",
+        controller: 'MyTicketsCtrl'
       }
     }
   })
@@ -122,7 +133,18 @@ dingo.run(function($ionicPlatform,Payment) {
     url: "/faq",
     views: {
       'menuContent' :{
-        templateUrl: "js/templates/faq.html"
+        templateUrl: "js/templates/faq.html",
+        controller: 'FAQsCtrl'
+      }
+    }
+  })
+
+  .state('app.faqdetail', {
+    url: "/faq/:faqId",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/faqdetail.html",
+        controller: 'FAQsCtrl'
       }
     }
   })
@@ -136,7 +158,7 @@ dingo.run(function($ionicPlatform,Payment) {
     }
   })
 
-    .state('app.tandcs', {
+  .state('app.tandcs', {
     url: "/tandcs",
     views: {
       'menuContent' :{
@@ -145,20 +167,11 @@ dingo.run(function($ionicPlatform,Payment) {
     }
   })
 
-    .state('app.privacypolicy', {
+  .state('app.privacypolicy', {
     url: "/privacypolicy",
     views: {
       'menuContent' :{
         templateUrl: "js/templates/privacypolicy.html"
-      }
-    }
-  })
-
-    .state('app.faqdetail', {
-    url: "/faqdetail",
-    views: {
-      'menuContent' :{
-        templateUrl: "js/templates/faqdetail.html"
       }
     }
   })
