@@ -4,7 +4,24 @@
   </ion-nav-buttons> -->
   <ion-content class="has-header">
     
-	My {{ticketsType}} Tickets
+	<h3>My {{ticketsType}} Tickets</h3>
+
+
+	<div ng-repeat="ticket in tickets">
+		<div class="card">
+			<div class="list">
+			  <label class="item item-input">
+			    <span class="input-label">Ticket ID</span>
+			    <input type="text" ng-value="ticket.id" ng-disabled="true"/>
+			  </label>
+			  <label class="item item-input">
+			    <span class="input-label">Event ID</span>
+			    <input type="text" ng-value="event.id" ng-disabled="true"/>
+			  </label>
+			</div>
+		</div>
+	</div>
+
 
   </ion-content>
 </ion-view>

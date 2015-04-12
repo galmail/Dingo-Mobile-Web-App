@@ -133,16 +133,6 @@ dingo.run(function($ionicPlatform,Payment) {
     url: "/faq",
     views: {
       'menuContent' :{
-        templateUrl: "js/templates/faq.html",
-        controller: 'FAQsCtrl'
-      }
-    }
-  })
-
-  .state('app.faqdetail', {
-    url: "/faq/:faqId",
-    views: {
-      'menuContent' :{
         templateUrl: "js/templates/faqdetail.html",
         controller: 'FAQsCtrl'
       }

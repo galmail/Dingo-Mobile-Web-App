@@ -3,14 +3,19 @@
  *
  */
 
-dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$stateParams) {
+dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$stateParams,Ticket) {
 
-	$scope.mytickets = {};
+	$scope.tickets = [];
 
 	// run on init
 	(function(){
 		console.log('Running MyTickets Controller...');
-		$scope.ticketsType = $stateParams.ticketsType;
+    $scope.ticketsType = $stateParams.ticketsType;
+    if($scope.ticketsType){
+      Ticket.getMyTickets($scope.ticketsType,function(tickets){
+        $scope.tickets = tickets;
+      });
+    }
 	})();
 
   $scope.showSellingTickets = function(){
@@ -24,10 +29,5 @@ dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$statePa
   $scope.showPurchasedTickets = function(){
     $location.path("/app/mytickets/purchased");
   };
-
-	$scope.loadTickets = function(){
-		
-	};
-
   
 });

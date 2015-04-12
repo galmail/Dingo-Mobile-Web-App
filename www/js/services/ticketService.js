@@ -3,7 +3,7 @@
  *
  */
 
-dingo.services.factory('Ticket', function($http, Util) {
+dingo.services.factory('Ticket', function($http, Util, User) {
   
   var defaultTicket = {
     event: {},
@@ -90,6 +90,50 @@ dingo.services.factory('Ticket', function($http, Util) {
       }).success(function(res){
         this.ticketForSale = angular.copy(defaultTicket);
         callback(true);
+      });
+    },
+
+    getMyTickets: function(ticketsType,callback){
+      $http.get('/api/v1/tickets?mine=true').success(function(res){
+        var tickets = res.tickets;
+        if(ticketsType=='purchased'){
+          // filter tickets
+          for(ticket in tickets){
+            if(ticket.user_id == User.getInfo().id){
+              delete(ticket);
+            }
+          }
+        }
+        else if(ticketsType=='selling'){
+          // filter tickets
+          for(ticket in tickets){
+            if(ticket.user_id != User.getInfo().id){
+              delete(ticket);
+            }
+            else {
+              if(ticket.available == false || ticket.number_of_tickets == 0){
+                delete(ticket);
+              }
+            }
+          }
+        }
+        else if(ticketsType=='sold'){
+          // filter tickets
+          for(ticket in tickets){
+            if(ticket.user_id != User.getInfo().id){
+              delete(ticket);
+            }
+            else {
+              if(ticket.number_of_tickets_sold == 0){
+                delete(ticket);
+              }
+            }
+          }
+        }
+        else {
+          // show all tickets...
+        }
+        callback(tickets);
       });
     }
 
