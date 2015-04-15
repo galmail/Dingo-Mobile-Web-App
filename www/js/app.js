@@ -1,6 +1,6 @@
 // Dingo Mobile Web App
 
-var dingo = angular.module('dingo',['ionic','dingo.controllers','dingo.services','dingo.directives']);
+var dingo = angular.module('dingo',['ionic','facebook','dingo.controllers','dingo.services','dingo.directives']);
 dingo.controllers = angular.module('dingo.controllers', []);
 dingo.services = angular.module('dingo.services', []);
 dingo.directives = angular.module('dingo.directives', []);
@@ -64,18 +64,16 @@ dingo.run(function($ionicPlatform,Payment) {
   ]);
 })
 
-// .config(function(FacebookProvider) {
-//    var fbAppId = '';
-//    if(window.location.href.indexOf('localhost')>0){
-//     fbAppId = '854877257866349';
-//    }
-//    else {
-//     fbAppId = '672126826238840';
-//    }
-//    FacebookProvider.init(fbAppId);
-// })
-
-
+.config(function(FacebookProvider) {
+   var fbAppId = '';
+   if(window.location.href.indexOf('localhost')>0){
+    fbAppId = '854877257866349';
+   }
+   else {
+    fbAppId = '672126826238840';
+   }
+   FacebookProvider.init(fbAppId);
+})
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider

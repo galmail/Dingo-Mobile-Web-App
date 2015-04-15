@@ -84,18 +84,27 @@ dingo.services.factory('User', function($http, Util, Push) {
   		var userData = params;
   		userData.fb_id = params.id;
   		delete(userData.id);
-  		if(params.birthday){
+  		// birthday
+      if(params.birthday){
   			var bdate = params.birthday.split('/');
   			userData.birthday = bdate[1] + '/' + bdate[0] + '/' + bdate[2];
         userData.dateOfBirth = bdate[2] + '-' + bdate[0] + '-' + bdate[1];
   		}
-  		userData.password = userData.fb_id;
+  		// password
+      userData.password = "fb"+userData.fb_id;
+      // photo url
       userData.photo_url = "http://graph.facebook.com/"+userData.fb_id+"/picture?type=large";
+      // gender
       if(userData.gender == 'male'){
         userData.gender = 'M';
       }
       else if(userData.gender == 'female'){
         userData.gender = 'F';
+      }
+      // email
+      if(userData.email==null || userData.email==''){
+        var firstName = userData.name.split(' ')[0];
+        userData.email = firstName + userData.fb_id + '@guest.dingoapp.co.uk';
       }
   		return userData;
   	},
