@@ -229,7 +229,18 @@ dingo.run(function($ionicPlatform,Payment) {
     url: "/messages",
     views: {
       'messages-tab': {
-        templateUrl: "js/templates/messages.html"
+        templateUrl: "js/templates/messages.html", //MessagesCtrl
+        controller: 'MessagesCtrl'
+      }
+    }
+  })
+
+  .state('home.messages', {
+    url: "/messages/:conversationId",
+    views: {
+      'messages-tab': {
+        templateUrl: "js/templates/messagesChat.html",
+        controller: 'MessagesCtrl'
       }
     }
   })
