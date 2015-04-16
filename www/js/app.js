@@ -235,7 +235,7 @@ dingo.run(function($ionicPlatform,Payment) {
     }
   })
 
-  .state('home.messages', {
+  .state('home.messagesChat', {
     url: "/messages/:conversationId",
     views: {
       'messages-tab': {

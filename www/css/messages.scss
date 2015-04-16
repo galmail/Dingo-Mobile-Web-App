@@ -3,6 +3,86 @@
 .d-messages {
 	background-color: #ECEBE8;
 
+	//////////////////// Conversations Part ////////////////////
+
+	#conversations {
+
+		.conversation {
+			padding: 0;
+			margin-bottom: 10px;
+			color: inherit;
+			text-decoration: inherit;
+			overflow: hidden;
+		  display: block;
+		  clear: both;
+		  border-bottom: 1px solid black;
+  		background-color: lightgreen;
+			&.ion-chevron-right:before {
+				margin-top: 30px;
+				position: absolute;
+				right: 15px;
+  			font-size: 16px;
+				& > div {
+					height: 70px;
+				}
+			}
+			.user {
+				float: left;
+				width: 70px;
+				.user-pic {
+					height: 70px;
+				}
+				.user-name {
+					  text-align: center;
+				}
+			}
+			.event {
+				float: left;
+				.event-name {
+					font-weight: bold;
+					font-size: 18px;
+					padding: 20px 15px;
+				}
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//////////////////// Chat Part ////////////////////
+
 	#chat {
 		background-color: #eee;
 		//margin: 20px auto 0;

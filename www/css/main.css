@@ -7839,6 +7839,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   .d-home .tabs-positive > .tabs {
     background-color: #398FAB;
     color: #fff; }
+    .d-home .tabs-positive > .tabs .tab-item {
+      color: #fff; }
   .d-home .icon.dingo-icon-home {
     background-image: url('../img/home_screen/home_icon@2x.png');
     background-repeat: no-repeat;
@@ -8061,6 +8063,36 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* Messages Style */
 .d-messages {
   background-color: #ECEBE8; }
+  .d-messages #conversations .conversation {
+    padding: 0;
+    margin-bottom: 10px;
+    color: inherit;
+    text-decoration: inherit;
+    overflow: hidden;
+    display: block;
+    clear: both;
+    border-bottom: 1px solid black;
+    background-color: lightgreen; }
+    .d-messages #conversations .conversation.ion-chevron-right:before {
+      margin-top: 30px;
+      position: absolute;
+      right: 15px;
+      font-size: 16px; }
+      .d-messages #conversations .conversation.ion-chevron-right:before > div {
+        height: 70px; }
+    .d-messages #conversations .conversation .user {
+      float: left;
+      width: 70px; }
+      .d-messages #conversations .conversation .user .user-pic {
+        height: 70px; }
+      .d-messages #conversations .conversation .user .user-name {
+        text-align: center; }
+    .d-messages #conversations .conversation .event {
+      float: left; }
+      .d-messages #conversations .conversation .event .event-name {
+        font-weight: bold;
+        font-size: 18px;
+        padding: 20px 15px; }
   .d-messages #chat {
     background-color: #eee; }
     .d-messages #chat #header-chat {
