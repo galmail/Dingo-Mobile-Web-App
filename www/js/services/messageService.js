@@ -7,9 +7,8 @@ dingo.services.factory('Message', function($http) {
 
   return {
 
-    getConversations: function(callback){
-      $http.get('/api/v1/messages?peers=true').success(function(res){
-        var peers = res.peers;
+    getPeers: function(callback){
+      $http.get('/api/v1/messages/peers').success(function(peers){
         callback(peers);
       });
     },

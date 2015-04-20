@@ -3,35 +3,27 @@
  *
  */
 
-dingo.controllers.controller('MessagesCtrl', function($scope) {
+dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,Message) {
 
 	$scope.messages = [];
+	$scope.peers = [];
 
-	$scope.conversations = [
-
-		{
-			id: '1',
-			user_pic: 'http://s3-us-west-2.amazonaws.com/dingoapp-test/events/photos/cfb/873/1e-/thumb/images.jpeg?1424255502',
-			user_name: 'Steve',
-			event_name: 'Lakers vs Bulls'
-		},
-		{
-			id: '1',
-			user_pic: 'http://s3-us-west-2.amazonaws.com/dingoapp-test/events/photos/cfb/873/1e-/thumb/images.jpeg?1424255502',
-			user_name: 'Steve',
-			event_name: 'Lakers vs Bulls'
-		},
-		{
-			id: '1',
-			user_pic: 'http://s3-us-west-2.amazonaws.com/dingoapp-test/events/photos/cfb/873/1e-/thumb/images.jpeg?1424255502',
-			user_name: 'Steve',
-			event_name: 'Lakers vs Bulls'
+	// run on init
+	(function(){
+		console.log('Running Messages Controller...');
+		var conversationId = $stateParams.conversationId;
+		if(conversationId){
+			// get conversation
+		}
+		else {
+			// get peers
+			Message.getPeers(function(peers){
+				$scope.peers = peers;
+			});
 		}
 
 
-
-	];
-
+	})();
 
 	
 

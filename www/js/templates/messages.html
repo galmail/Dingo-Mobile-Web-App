@@ -4,17 +4,11 @@
   </ion-nav-buttons>
   <ion-content class="padding" scroll="false">
  
-		<div id="conversations">
+		<div id="peers">
 
-			<!-- <a ng-repeat="conversation in conversations" class="conversation"> -->
-			<a ng-repeat="conversation in conversations" class="conversation icon-right ion-chevron-right" ng-href="#/home/messages/{{conversation.id}}">
-					<div class="user">
-						<img class="user-pic" ng-src="{{conversation.user_pic}}" />
-						<div class="user-name">{{ conversation.user_name }}</div>
-					</div>
-					<div class="event">
-						<div class="event-name">{{ conversation.event_name }}</div>
-					</div>
+			<a ng-repeat="peer in peers" class="peer icon-right ion-chevron-right" ng-href="#/home/messages/{{peer.id}}">
+					<img class="user-pic" ng-src="{{peer.user_pic}}" />
+					<div class="user-name">{{ peer.user_name }}</div>
 			</a>
 
   </ion-content>

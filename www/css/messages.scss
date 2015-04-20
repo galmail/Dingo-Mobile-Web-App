@@ -5,9 +5,9 @@
 
 	//////////////////// Conversations Part ////////////////////
 
-	#conversations {
+	#peers {
 
-		.conversation {
+		.peer {
 			padding: 0;
 			margin-bottom: 10px;
 			color: inherit;
@@ -26,40 +26,19 @@
 					height: 70px;
 				}
 			}
-			.user {
+			.user-pic {
 				float: left;
 				width: 70px;
-				.user-pic {
-					height: 70px;
-				}
-				.user-name {
-					  text-align: center;
-				}
+				height: 70px;
 			}
-			.event {
+			.user-name {
 				float: left;
-				.event-name {
-					font-weight: bold;
-					font-size: 18px;
-					padding: 20px 15px;
-				}
+				font-weight: bold;
+				font-size: 18px;
+				padding: 20px 15px;
 			}
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		
 	}
 
 
