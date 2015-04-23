@@ -73,6 +73,7 @@
 			padding: 10px;
 			text-align: center;
 			text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+			margin-bottom: 10px;
 		}
 
 		.chat-box {
@@ -83,13 +84,13 @@
 		#mensajes {
 			padding: 10px;
 			height: 100px;
-			//width: 400px;
-			//overflow: hidden;
-			//overflow-y: scroll;
 			
 			.mensaje-amigo {
 				margin-bottom: 10px;
+				overflow: hidden;
+  			clear: both;
 				img {
+					float: right;
 					display: inline-block;
 					vertical-align: top;
 					border-radius: 5px;
@@ -97,6 +98,7 @@
 				}
 
 				.contenido {
+					float: right;
 					background-color: #3990BF;
 					border-radius: 5px;
 					color: white;
@@ -108,6 +110,7 @@
 				}
 
 				.flecha-derecha {
+					float: right;
 					display: inline-block;
 					margin-left: -6px;
 					margin-top: 10px;
@@ -129,6 +132,8 @@
 			
 			.mensaje-autor {
 				margin-bottom: 10px;
+				overflow: hidden;
+  			clear: both;
 				
 				img {
 					display: inline-block;

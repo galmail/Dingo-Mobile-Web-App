@@ -17,7 +17,7 @@ dingo.services.factory('Message', function($http) {
 
     loadChat: function(conversationId,callback){
       $http.get('/api/v1/messages?conversationId='+conversationId).success(function(res){
-        callback(res.messages);
+        callback(res.messages.reverse());
       });
     },
 

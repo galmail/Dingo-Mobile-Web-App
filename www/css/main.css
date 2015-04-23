@@ -8096,7 +8096,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       color: white;
       padding: 10px;
       text-align: center;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); }
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      margin-bottom: 10px; }
     .d-messages #chat .chat-box {
       height: 300px;
       margin-bottom: 10px; }
@@ -8104,13 +8105,17 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       padding: 10px;
       height: 100px; }
       .d-messages #chat #mensajes .mensaje-amigo {
-        margin-bottom: 10px; }
+        margin-bottom: 10px;
+        overflow: hidden;
+        clear: both; }
         .d-messages #chat #mensajes .mensaje-amigo img {
+          float: right;
           display: inline-block;
           vertical-align: top;
           border-radius: 5px;
           width: 50px; }
         .d-messages #chat #mensajes .mensaje-amigo .contenido {
+          float: right;
           background-color: #3990BF;
           border-radius: 5px;
           color: white;
@@ -8120,6 +8125,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
           vertical-align: top;
           max-width: 210px; }
         .d-messages #chat #mensajes .mensaje-amigo .flecha-derecha {
+          float: right;
           display: inline-block;
           margin-left: -6px;
           margin-top: 10px;
@@ -8135,7 +8141,9 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
           text-align: left;
           margin-top: 10px; }
       .d-messages #chat #mensajes .mensaje-autor {
-        margin-bottom: 10px; }
+        margin-bottom: 10px;
+        overflow: hidden;
+        clear: both; }
         .d-messages #chat #mensajes .mensaje-autor img {
           display: inline-block;
           vertical-align: top;

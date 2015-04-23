@@ -10,9 +10,8 @@
 				Chat with {{active_peer.user_name}}
 			</div>
 			
-			<ion-scroll class="chat-box" direction="y">
+			<ion-scroll delegate-handle="chatScroll" class="chat-box" direction="y">
 			<div id="mensajes">
-
 				<div ng-repeat="message in messages">
 
 					<div ng-if="message.sender_id == current_user_id" class="mensaje-autor">
@@ -22,13 +21,12 @@
 					</div>
 
 					<div ng-if="message.sender_id != current_user_id" class="mensaje-amigo">
-						<div class="contenido">{{message.content}}</div>
-						<div class="flecha-derecha"></div>
 						<img ng-src="{{message.sender_avatar}}" alt="" class="foto" />
+						<div class="flecha-derecha"></div>
+						<div class="contenido">{{message.content}}</div>
 					</div>
 
 				</div>
-
 			</div>
 			</ion-scroll>
 

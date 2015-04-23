@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,Message,User) {
+dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionicScrollDelegate,Message,User) {
 
 	$scope.messages = [];
 	$scope.peers = [];
@@ -22,6 +22,7 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,Messag
 			var conversationId = $stateParams.conversationId;
 			Message.loadChat(conversationId,function(messages){
 				$scope.messages = messages;
+				$ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom();
 			});
 		});
 	};
@@ -37,6 +38,7 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,Messag
 			// get conversation
 			Message.loadChat(conversationId,function(messages){
 				$scope.messages = messages;
+				setTimeout(function(){ $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(); }, 200);
 			});
 		}
 		else {
