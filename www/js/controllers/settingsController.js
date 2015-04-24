@@ -99,7 +99,7 @@ dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, F
 
   // run on init for every controller
   (function(){
-    if(User.isLogged()) init(); else User.registerToLoginCallback(init);
+    if(User.isLogged()) init(); else User.registerToLoginCallback(init,'SettingsCtrl');
   })();
 
   

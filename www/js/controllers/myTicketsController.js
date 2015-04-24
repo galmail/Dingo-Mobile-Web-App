@@ -31,7 +31,7 @@ dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$statePa
 
   // run on init for every controller
   (function(){
-    if(User.isLogged()) init(); else User.registerToLoginCallback(init);
+    if(User.isLogged()) init(); else User.registerToLoginCallback(init,'MyTicketsCtrl');
   })();
   
 });

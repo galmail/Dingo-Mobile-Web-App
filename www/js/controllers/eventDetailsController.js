@@ -28,7 +28,7 @@ dingo.controllers.controller('EventDetailsCtrl', function($scope,$location,$stat
 
 	// run on init for every controller
 	(function(){
-		if(User.isLogged()) init(); else User.registerToLoginCallback(init);
+		if(User.isLogged()) init(); else User.registerToLoginCallback(init,'EventDetailsCtrl');
 	})();
 
 });

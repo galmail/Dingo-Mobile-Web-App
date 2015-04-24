@@ -8,6 +8,22 @@ dingo.services.factory('Message', function($http, User) {
   return {
 
     active_peer: {},
+    newMessagesCallbacks: { names: [], callbacks: [] },
+
+    //register an observer to incoming messages
+    registerToNewMessagesCallback: function(callback,name){
+      if(this.newMessagesCallbacks.names.indexOf(name)==-1){
+        this.newMessagesCallbacks.callbacks.push(callback);
+        this.newMessagesCallbacks.names.push(name);
+      }
+    },
+
+    notifyNewMessages: function(){
+      var self = this;
+      angular.forEach(self.newMessagesCallbacks.callbacks, function(callback){
+        callback();
+      });
+    },
 
     getPeers: function(callback){
       $http.get('/api/v1/messages/peers').success(function(peers){
@@ -16,6 +32,7 @@ dingo.services.factory('Message', function($http, User) {
     },
 
     loadChat: function(conversationId,callback){
+      var self = this;
       $http.get('/api/v1/messages?conversationId='+conversationId).success(function(res){
         callback(res.messages.reverse());
         // mark all messages in the conversation as read
@@ -24,7 +41,6 @@ dingo.services.factory('Message', function($http, User) {
         }).success(function(res){
           // update badge icon
           User.setInfo(res);
-          User.notifyNewMessages();
         });
       });
     },

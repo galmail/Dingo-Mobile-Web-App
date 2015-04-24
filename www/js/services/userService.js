@@ -3,36 +3,27 @@
  *
  */
 
-dingo.services.factory('User', function($http, Util, Push) {
+dingo.services.factory('User', function($http, Util) {
   
   var data = {};
   
   return {
 
-    loginCallbacks: [],
-    newMessagesCallbacks: [],
+    loginCallbacks: { names: [], callbacks: [] },
+    
 
-    //register an observer
-    registerToLoginCallback: function(callback){
-      this.loginCallbacks.push(callback);
+    //register an observer login
+    registerToLoginCallback: function(callback,name){
+      if(this.loginCallbacks.names.indexOf(name)==-1){
+        this.loginCallbacks.callbacks.push(callback);
+        this.loginCallbacks.names.push(name);
+      }
     },
 
     //call this when you know user has logged in
     notifyLogin: function(){
       var self = this;
-      angular.forEach(self.loginCallbacks, function(callback){
-        callback();
-      });
-    },
-
-    //register an observer
-    registerToNewMessagesCallback: function(callback){
-      this.newMessagesCallbacks.push(callback);
-    },
-
-    notifyNewMessages: function(){
-      var self = this;
-      angular.forEach(self.newMessagesCallbacks, function(callback){
+      angular.forEach(self.loginCallbacks.callbacks, function(callback){
         callback();
       });
     },
@@ -74,7 +65,6 @@ dingo.services.factory('User', function($http, Util, Push) {
           'X-User-Token': res.auth_token
         };
         self.saveCredentials(res.email,res.auth_token);
-        Push.register();
   			callback(true);
         self.notifyLogin();
   		}).error(function(){

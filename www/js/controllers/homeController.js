@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User, Push) {
+dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User, Push, Message) {
 
 	$scope.num_unread_messages = '';
 
@@ -21,8 +21,9 @@ dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User
 				User.login(function(ok){
 					if(ok){
 						$scope.num_unread_messages = User.getInfo().num_unread_messages;
-						// register device
-						setTimeout(function(){ Push.register(); }, 3000);
+					}
+					else {
+						$location.path("/app/login");
 					}
 				});
 			}
@@ -34,9 +35,15 @@ dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User
 			$scope.num_unread_messages = User.getInfo().num_unread_messages;
 		}
 
-		User.registerToNewMessagesCallback(function(){
+		Message.registerToNewMessagesCallback(function(){
 			$scope.num_unread_messages = User.getInfo().num_unread_messages;
-		});
+		},'HomeCtrl');
+
+		User.registerToLoginCallback(function(){
+			console.log('registering device');
+			// register device
+			setTimeout(function(){ Push.register(); }, 3000);
+		},'HomeCtrl');
 
 	})();
   
