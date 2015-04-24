@@ -37,7 +37,7 @@ dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User
 
 		Message.registerToNewMessagesCallback(function(){
 			$scope.num_unread_messages = User.getInfo().num_unread_messages;
-		},'HomeCtrl');
+		},'HomeCtrl',$scope);
 
 		User.registerToLoginCallback(function(){
 			console.log('registering device');

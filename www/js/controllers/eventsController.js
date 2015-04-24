@@ -4,7 +4,6 @@
  */
 
 dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, User) {
-	var myname = 'EventsCtrl';
 
 	$scope.category_width = 164;
 	$scope.categories = [];
@@ -24,7 +23,7 @@ dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, Use
 
 	// run on init for every controller
 	(function(){
-		if(User.isLogged()) init(); else User.registerToLoginCallback(init,myname);
+		if(User.isLogged()) init(); else User.registerToLoginCallback(init,'EventsCtrl');
 	})();
 
 

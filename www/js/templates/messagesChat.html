@@ -12,7 +12,7 @@
 			
 			<ion-scroll delegate-handle="chatScroll" class="chat-box" direction="y">
 			<div id="mensajes">
-				<div ng-repeat="message in messages">
+				<div data-ng-repeat="message in messages">
 
 					<div ng-if="message.sender_id == current_user_id" class="mensaje-autor">
 						<img ng-src="{{message.sender_avatar}}" alt="" class="foto" />

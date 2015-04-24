@@ -76,11 +76,11 @@ dingo.services.factory('Push', function($http,Message,User) {
 			else if(res.event == 'message'){
 				console.log('Push Payload',res.payload);
 				var msg = res.payload.alert;
-				alert(msg);
+				//alert(msg);
 				if(res.foreground){
 					// got a push notification in the foreground
 					console.log('Foreground Notification');
-					Message.notifyNewMessages();
+					Message.notifyNewMessages(res.payload);
 				}
 				else {
 					// got a push notification in the background

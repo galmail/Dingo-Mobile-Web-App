@@ -11,17 +11,19 @@ dingo.services.factory('Message', function($http, User) {
     newMessagesCallbacks: { names: [], callbacks: [] },
 
     //register an observer to incoming messages
-    registerToNewMessagesCallback: function(callback,name){
+    registerToNewMessagesCallback: function(callback,name,params){
       if(this.newMessagesCallbacks.names.indexOf(name)==-1){
-        this.newMessagesCallbacks.callbacks.push(callback);
+        this.newMessagesCallbacks.callbacks.push([callback,params]);
         this.newMessagesCallbacks.names.push(name);
       }
     },
 
-    notifyNewMessages: function(){
+    notifyNewMessages: function(extraparams){
       var self = this;
       angular.forEach(self.newMessagesCallbacks.callbacks, function(callback){
-        callback();
+        var f = callback[0];
+        var params = angular.extend({}, callback[1], extraparams);
+        f(params);
       });
     },
 
