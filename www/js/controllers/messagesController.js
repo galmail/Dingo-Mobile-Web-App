@@ -27,8 +27,8 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionic
 		});
 	};
 
-	// run on init
-	(function(){
+
+	var init = function(){
 		console.log('Running Messages Controller...');
 		$scope.current_user_id = User.getInfo().id;
 		var conversationId = $stateParams.conversationId;
@@ -47,6 +47,12 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionic
 				$scope.peers = peers;
 			});
 		}
+	};
+
+
+	// run on init for every controller
+	(function(){
+		if(User.isLogged()) init(); else User.registerToLoginCallback(init);
 	})();
 
 

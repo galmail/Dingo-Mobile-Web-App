@@ -7,12 +7,6 @@ dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, F
 
 	$scope.user_data = {};
 
-	// run on init
-	(function(){
-		console.log('Running Settings Controller...');
-		$scope.user_data = User.getInfo();
-	})();
-
 	$scope.saveSettings = function(){
 		User.updateProfile($scope.user_data,function(ok){
 			if(ok){
@@ -85,6 +79,28 @@ dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, F
   };
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+  var init = function(){
+    console.log('Running Settings Controller...');
+    $scope.user_data = User.getInfo();
+  };
+
+
+  // run on init for every controller
+  (function(){
+    if(User.isLogged()) init(); else User.registerToLoginCallback(init);
+  })();
 
   
 });

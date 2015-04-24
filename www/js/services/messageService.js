@@ -3,7 +3,7 @@
  *
  */
 
-dingo.services.factory('Message', function($http) {
+dingo.services.factory('Message', function($http, User) {
 
   return {
 
@@ -18,6 +18,14 @@ dingo.services.factory('Message', function($http) {
     loadChat: function(conversationId,callback){
       $http.get('/api/v1/messages?conversationId='+conversationId).success(function(res){
         callback(res.messages.reverse());
+        // mark all messages in the conversation as read
+        $http.post('/api/v1/messages/mark_all_as_read',{
+          conversation_id: conversationId
+        }).success(function(res){
+          // update badge icon
+          User.setInfo(res);
+          User.notifyNewMessages();
+        });
       });
     },
 

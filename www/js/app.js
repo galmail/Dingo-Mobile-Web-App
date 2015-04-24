@@ -81,8 +81,8 @@ dingo.run(function($ionicPlatform,Payment) {
   .state('app', {
     url: "/app",
     abstract: true,
-    templateUrl: "js/templates/_menu.html"
-    //controller: 'HomeCtrl'
+    templateUrl: "js/templates/_menu.html",
+    controller: 'HomeCtrl'
   })
 
   ////////////////// MENU URLs ///////////////////

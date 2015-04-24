@@ -8,35 +8,65 @@ dingo.services.factory('User', function($http, Util, Push) {
   var data = {};
   
   return {
+
+    loginCallbacks: [],
+    newMessagesCallbacks: [],
+
+    //register an observer
+    registerToLoginCallback: function(callback){
+      this.loginCallbacks.push(callback);
+    },
+
+    //call this when you know user has logged in
+    notifyLogin: function(){
+      var self = this;
+      angular.forEach(self.loginCallbacks, function(callback){
+        callback();
+      });
+    },
+
+    //register an observer
+    registerToNewMessagesCallback: function(callback){
+      this.newMessagesCallbacks.push(callback);
+    },
+
+    notifyNewMessages: function(){
+      var self = this;
+      angular.forEach(self.newMessagesCallbacks, function(callback){
+        callback();
+      });
+    },
   	
     getInfo: function(){ return data; },
   	
     setInfo: function(newdata){ angular.extend(data, newdata); },
 
-    saveCredentials: function(email,token){
+    saveCredentials: function(email,auth_token){
       localStorage.setItem('email',email);
-      localStorage.setItem('token',token);
+      localStorage.setItem('auth_token',auth_token);
     },
 
     isLogged: function(){
-      return (localStorage.getItem('email')!=null && localStorage.getItem('token')!=null);
+      return this.getInfo().logged;
     },
 
     logout: function(){
       delete(localStorage.email);
-      delete(localStorage.token);
+      delete(localStorage.auth_token);
       this.setInfo({});
     },
   	
     login: function(callback){
   		var self = this;
-  		$http.get('/users/sign_in',{
+      $http.get('/users/sign_in',{
   			params: {
   				email: self.getInfo().email,
-  				password: self.getInfo().password
+  				password: self.getInfo().password,
+          auth_token: self.getInfo().auth_token
   			}
   		}).success(function(res){
   			console.log('login success: ' + JSON.stringify(res));
+        res.logged = true;
         self.setInfo(res);
   			// save auth_token
         $http.defaults.headers.common = {
@@ -46,6 +76,7 @@ dingo.services.factory('User', function($http, Util, Push) {
         self.saveCredentials(res.email,res.auth_token);
         Push.register();
   			callback(true);
+        self.notifyLogin();
   		}).error(function(){
   			console.log('login error');
   			callback(false);
