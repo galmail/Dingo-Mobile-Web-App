@@ -5,9 +5,9 @@
 
 dingo.services.factory('User', function($http, Util) {
   
-  var data = {};
-  
   return {
+
+    info: {},
 
     loginCallbacks: { names: [], callbacks: [] },
     
@@ -28,9 +28,9 @@ dingo.services.factory('User', function($http, Util) {
       });
     },
   	
-    getInfo: function(){ return data; },
+    getInfo: function(){ return this.info; },
   	
-    setInfo: function(newdata){ angular.extend(data, newdata); },
+    setInfo: function(newdata){ angular.extend(this.info, newdata); },
 
     saveCredentials: function(email,auth_token){
       localStorage.setItem('email',email);

@@ -7,24 +7,10 @@ dingo.services.factory('Message', function($http, User) {
 
   return {
 
-    active_peer: {},
-    newMessagesCallbacks: { names: [], callbacks: [] },
-
-    //register an observer to incoming messages
-    registerToNewMessagesCallback: function(callback,name,params){
-      if(this.newMessagesCallbacks.names.indexOf(name)==-1){
-        this.newMessagesCallbacks.callbacks.push([callback,params]);
-        this.newMessagesCallbacks.names.push(name);
-      }
-    },
-
-    notifyNewMessages: function(extraparams){
-      var self = this;
-      angular.forEach(self.newMessagesCallbacks.callbacks, function(callback){
-        var f = callback[0];
-        var params = angular.extend({}, callback[1], extraparams);
-        f(params);
-      });
+    active_chat: {
+      conversation_id: null,
+      peer: {},
+      messages: []
     },
 
     getPeers: function(callback){
@@ -33,26 +19,41 @@ dingo.services.factory('Message', function($http, User) {
       });
     },
 
-    loadChat: function(conversationId,callback){
+    loadChat: function(){
       var self = this;
-      $http.get('/api/v1/messages?conversationId='+conversationId).success(function(res){
-        callback(res.messages.reverse());
-        // mark all messages in the conversation as read
-        $http.post('/api/v1/messages/mark_all_as_read',{
-          conversation_id: conversationId
-        }).success(function(res){
-          // update badge icon
-          User.setInfo(res);
+      var conversationId = self.active_chat.conversation_id;
+      if(conversationId){
+        $http.get('/api/v1/messages?conversationId='+conversationId).success(function(res){
+          var messages = res.messages.reverse();
+          self.active_chat.messages = messages;
+          // mark all messages in the conversation as read
+          $http.post('/api/v1/messages/mark_all_as_read',{
+            conversation_id: conversationId
+          }).success(function(res){
+            // update badge icon
+            User.setInfo(res);
+          });
         });
-      });
+      }
     },
 
     sendMessage: function(msg,callback){
       var self = this;
       $http.post('/api/v1/messages',{
-        receiver_id: self.active_peer.user_id,
+        receiver_id: self.active_chat.peer.user_id,
         content: msg
       }).success(callback);
+    },
+
+    incomingMsg: function(msgObj){
+      var conversation_id = msgObj.conversation_id;
+      var content = msgObj.alert;
+      if(conversation_id == this.active_chat.conversation_id){
+        this.loadChat();
+      }
+      else {
+        User.info.num_unread_messages++;
+      }
     }
     
 

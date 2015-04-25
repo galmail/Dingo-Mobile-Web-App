@@ -7,6 +7,13 @@ dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User
 
 	$scope.num_unread_messages = '';
 
+	$scope.$watch(function () { return User.info.num_unread_messages; }, function (newVal, oldVal) {
+    if (typeof newVal !== 'undefined') {
+      $scope.num_unread_messages = User.info.num_unread_messages;
+    }
+	});
+
+
 	// run on init
 	(function(){
 		console.log('Running Home Controller...');
@@ -19,10 +26,7 @@ dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User
 					auth_token: localStorage.getItem('auth_token')
 				});
 				User.login(function(ok){
-					if(ok){
-						$scope.num_unread_messages = User.getInfo().num_unread_messages;
-					}
-					else {
+					if(!ok){
 						$location.path("/app/login");
 					}
 				});
@@ -31,13 +35,6 @@ dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User
 				$location.path("/app/login");
 			}
 		}
-		else {
-			$scope.num_unread_messages = User.getInfo().num_unread_messages;
-		}
-
-		Message.registerToNewMessagesCallback(function(){
-			$scope.num_unread_messages = User.getInfo().num_unread_messages;
-		},'HomeCtrl',$scope);
 
 		User.registerToLoginCallback(function(){
 			console.log('registering device');

@@ -11,39 +11,38 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionic
 	$scope.active_peer = null;
 	$scope.message_to_send = { txt: '' };
 
+	$scope.$watch(function () { return Message.active_chat.messages; }, function (newVal, oldVal) {
+    if (typeof newVal !== 'undefined') {
+      if(Message.active_chat.conversation_id) $scope.refreshChat();
+    }
+	});
+
 	$scope.setActivePeer = function(peer){
-		Message.active_peer = peer;
+		Message.active_chat.peer = peer;
 	};
 
-	$scope.refreshConversation = function(conversationId){
-		if(!conversationId){
-			conversationId = $stateParams.conversationId;
-		}
-		if(conversationId==null) return;
-		console.log('refreshing conversation: '+conversationId);
-		$scope.active_peer = Message.active_peer;
-		Message.loadChat(conversationId,function(messages){
-			$scope.messages = messages;
-			var scrollToBottom = function(){ $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(); };
-			setTimeout(scrollToBottom,300);
-		});
+	$scope.refreshChat = function(){
+		console.log('refreshing conversation: ' + Message.active_chat.conversation_id);
+		$scope.active_peer = Message.active_chat.peer;
+		$scope.messages = Message.active_chat.messages;
+		var scrollToBottom = function(){ $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(); };
+		setTimeout(scrollToBottom,300);
 	};
 
 	$scope.sendMessage = function(){
 		if($scope.message_to_send.txt=='') return;
 		Message.sendMessage($scope.message_to_send.txt,function(){
 			$scope.message_to_send.txt = '';
-			$scope.refreshConversation();
+			Message.loadChat();
 		});
 	};
-
 
 	var init = function(){
 		console.log('Running Messages Controller...');
 		$scope.current_user_id = User.getInfo().id;
-		var conversationId = $stateParams.conversationId;
-		if(conversationId){
-			$scope.refreshConversation(conversationId);
+		Message.active_chat.conversation_id = $stateParams.conversationId;
+		if(Message.active_chat.conversation_id){
+			Message.loadChat();
 		}
 		else {
 			// get peers
@@ -53,15 +52,10 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionic
 		}
 	};
 
+
 	// run on init for every controller
 	(function(){
 		if(User.isLogged()) init(); else User.registerToLoginCallback(init,'MessagesCtrl');
-		Message.registerToNewMessagesCallback(function(params){
-			console.log('got new message with params=',params);
-			params.$apply(function(){
-	      params.refreshConversation(params.conversation_id);
-	   	});		
-		},'MessagesCtrl',$scope);
 	})();
 
 
