@@ -7,24 +7,17 @@
 	<h3>My {{ticketsType}} Tickets</h3>
 
 
-	<div ng-repeat="ticket in tickets">
-		<div class="card">
-			<div class="list">
-			  <label class="item item-input">
-			    <span class="input-label">Ticket ID</span>
-			    <input type="text" ng-value="ticket.id" ng-disabled="true"/>
-			  </label>
-			  <label class="item item-input">
-			    <span class="input-label">Ticket Price</span>
-			    <input type="text" ng-value="ticket.price" ng-disabled="true"/>
-			  </label>
-			  <label class="item item-input">
-			    <span class="input-label">Event ID</span>
-			    <input type="text" ng-value="event.id" ng-disabled="true"/>
-			  </label>
+	<ul class="list tickets-list">
+  	<li class="ticket item row icon-right ion-chevron-right" ng-repeat="ticket in tickets" ng-click="go(ticket)">
+      <img class="ticket-photo" ng-src="{{ticket.user_photo}}"/>
+  		<div class="col">{{ticket.user_name}}</div>
+  		<div class="ticket-price col col-25">
+				<div class="ticket-price">£{{ticket.price}}</div>
+				<div class="ticket-price-per-ticket">per ticket</div>
+				<div class="ticket-price-available-tickets">{{ticket.number_of_tickets}}</div>
 			</div>
-		</div>
-	</div>
+  	</li>
+	</ul>
 
 
   </ion-content>

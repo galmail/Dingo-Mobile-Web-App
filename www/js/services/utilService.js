@@ -35,6 +35,13 @@ dingo.services.factory('Util', function($ionicLoading){
 		hideLoading: function(){
 			window.clearTimeout(this.timeoutID);
 			$ionicLoading.hide();
+		},
+
+		isEmptyObject: function(obj){
+			for(key in obj){
+				return false;
+			}
+			return true;
 		}
 		
 	};

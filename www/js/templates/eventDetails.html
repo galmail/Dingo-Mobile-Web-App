@@ -3,18 +3,18 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons> -->
   <ion-content class="padding">
-  	<div id="event_container" class="row" style="background-image: url('img/categories/concerts@2x.png');">
+  	<div class="row event-info">
   		<div class="event-photo">
   			<img ng-src="{{event.thumb}}" />
   		</div>
-  		<div class="event-info col">
+  		<div class="event-data col">
   			<div class="event-title">{{event.name}}</div>
   			<div class="event-address">{{event.address}}</div>
 				<div class="event-time">{{event.parsed_time}}</div>
   		</div>
   	</div>
 
-  	<ul class="list tickets">
+  	<ul class="list tickets-list">
     	<li class="ticket item row icon-right ion-chevron-right" ng-repeat="ticket in tickets" ng-click="go('/home/ticket-details/' + event.id + '/' + ticket.id)">
         <img class="ticket-photo" ng-src="{{ticket.user_photo}}"/>
     		<div class="col">{{ticket.user_name}}</div>

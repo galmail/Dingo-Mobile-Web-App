@@ -7815,6 +7815,43 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   -webkit-transition: none !important;
   transition: none !important; }
 
+.tickets-list .ticket {
+  border: none;
+  margin-bottom: 10px; }
+  .tickets-list .ticket.ion-chevron-right:before {
+    margin-top: 20px;
+    position: absolute;
+    right: 0; }
+  .tickets-list .ticket .ticket-photo {
+    height: 80px;
+    width: 75px; }
+  .tickets-list .ticket .ticket-price .ticket-price-from {
+    font-size: 12px; }
+  .tickets-list .ticket .ticket-price .ticket-price-per-ticket {
+    font-size: 10px;
+    color: gray; }
+  .tickets-list .ticket .ticket-price .ticket-price-available-tickets {
+    font-size: 8px;
+    color: gray; }
+
+.event-info {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150px;
+  margin-bottom: 10px; }
+  .event-info .event-photo {
+    padding: 35px 10px; }
+    .event-info .event-photo img {
+      border: 1px solid white;
+      border-radius: 48px;
+      height: 96px; }
+  .event-info .event-data {
+    color: #fff; }
+    .event-info .event-data .event-title {
+      font-size: 22px;
+      line-height: 28px;
+      padding: 12px 0; }
+
 /* Side Menu Style */
 .d-side-menu .dingo-top-bar {
   color: #444;
@@ -7952,14 +7989,14 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       height: 70px; }
     .d-events #events_container .event .row .event-pic {
       width: 70px; }
-    .d-events #events_container .event .row .event-info .event-title {
+    .d-events #events_container .event .row .event-data .event-title {
       font-weight: bold;
       font-size: 18px;
       padding: 0 5px; }
-    .d-events #events_container .event .row .event-info .event-address {
+    .d-events #events_container .event .row .event-data .event-address {
       padding: 0 5px;
       font-size: 14px; }
-    .d-events #events_container .event .row .event-info .event-time {
+    .d-events #events_container .event .row .event-data .event-time {
       padding: 0 5px;
       font-size: 12px;
       color: gray; }
@@ -7975,62 +8012,10 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* Event Details Style */
 .d-event-details {
   background-color: #ECEBE8; }
-  .d-event-details #event_container {
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 150px;
-    margin-bottom: 10px; }
-    .d-event-details #event_container .event-photo {
-      padding: 35px 10px; }
-      .d-event-details #event_container .event-photo img {
-        border: 1px solid white;
-        border-radius: 48px;
-        height: 96px; }
-    .d-event-details #event_container .event-info {
-      color: #fff; }
-      .d-event-details #event_container .event-info .event-title {
-        font-size: 22px;
-        line-height: 28px;
-        padding: 12px 0; }
-  .d-event-details .tickets .ticket {
-    border: none;
-    margin-bottom: 10px; }
-    .d-event-details .tickets .ticket.ion-chevron-right:before {
-      margin-top: 20px;
-      position: absolute;
-      right: 0; }
-    .d-event-details .tickets .ticket .ticket-photo {
-      height: 80px;
-      width: 75px; }
-    .d-event-details .tickets .ticket .ticket-price .ticket-price-from {
-      font-size: 12px; }
-    .d-event-details .tickets .ticket .ticket-price .ticket-price-per-ticket {
-      font-size: 10px;
-      color: gray; }
-    .d-event-details .tickets .ticket .ticket-price .ticket-price-available-tickets {
-      font-size: 8px;
-      color: gray; }
 
 /* Ticket Details Style */
 .d-ticket-details {
   background-color: #ECEBE8; }
-  .d-ticket-details #ticket_container {
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 150px;
-    margin-bottom: 10px; }
-    .d-ticket-details #ticket_container .event-photo {
-      padding: 35px 10px; }
-      .d-ticket-details #ticket_container .event-photo img {
-        border: 1px solid white;
-        border-radius: 48px;
-        height: 96px; }
-    .d-ticket-details #ticket_container .event-info {
-      color: #fff; }
-      .d-ticket-details #ticket_container .event-info .event-title {
-        font-size: 22px;
-        line-height: 28px;
-        padding: 12px 0; }
   .d-ticket-details .ticket-info .item-input {
     border-right: 0;
     border-left: 0; }
@@ -8282,3 +8267,15 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     text-align: center;
     padding-top: 35px;
     padding-bottom: 20px; }
+
+/* my tickets list Style */
+.d-mytickets-list {
+  background-color: #ECEBE8; }
+
+/* my tickets detail edit Style */
+.d-mytickets-detail-edit {
+  background-color: #ECEBE8; }
+
+/* my tickets detail show Style */
+.d-mytickets-detail-show {
+  background-color: #ECEBE8; }

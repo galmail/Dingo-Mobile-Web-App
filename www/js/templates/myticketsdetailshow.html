@@ -1,0 +1,46 @@
+<ion-view class="d-mytickets-detail-show" title="">
+  <!-- <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons> -->
+  <ion-content class="has-header">
+
+    <div class="row event-info">
+      <div class="event-photo">
+        <img ng-src="{{currentEvent.thumb}}" />
+      </div>
+      <div class="event-data col">
+        <div class="event-title">{{currentEvent.name}}</div>
+        <div class="event-address">{{currentEvent.address}}</div>
+        <div class="event-time">{{currentEvent.parsed_time}}</div>
+      </div>
+    </div>
+     
+    <div class="list ticket-info">
+      <label class="item item-input">
+        <span class="input-label">Price per Ticket:</span>
+        <input type="text" value="£{{currentTicket.price}}" disabled="true"/>
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Number of Tickets:</span>
+        <input type="text" value="{{currentTicket.number_of_tickets}}" disabled="true"/>
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Face value per ticket:</span>
+        <input type="text" value="£{{currentTicket.face_value_per_ticket}}" disabled="true"/>
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Ticket Type:</span>
+        <input type="text" value="{{currentTicket.ticket_type}}" disabled="true"/>
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Description:</span>
+        <input type="text" value="{{currentTicket.description}}" disabled="true"/>
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Delivery:</span>
+        <input type="text" value="{{currentTicket.delivery_options}}" disabled="true"/>
+      </label>
+    </div>
+
+  </ion-content>
+</ion-view>

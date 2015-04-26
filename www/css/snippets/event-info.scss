@@ -1,0 +1,25 @@
+// Snippet for event info as shown in EventDetails,MyTicketsDetailShow,TicketDetails
+
+.event-info {
+	//background-image: url('/img/categories/concerts@2x.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 150px;
+	margin-bottom: 10px;
+	.event-photo {
+		padding: 35px 10px;
+		img {
+			border: 1px solid white;
+			border-radius: 48px;
+			height: 96px;
+		}
+	}
+	.event-data {
+		color: #fff;
+		.event-title {
+			font-size: 22px;
+			line-height: 28px;
+			padding: 12px 0;
+		}
+	}
+}

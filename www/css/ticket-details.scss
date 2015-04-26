@@ -3,30 +3,6 @@
 .d-ticket-details {
 	background-color: #ECEBE8;
 
-	#ticket_container {
-		background-size: cover;
-		background-repeat: no-repeat;
-		height: 150px;
-		margin-bottom: 10px;
-		.event-photo {
-			padding: 35px 10px;
-			img {
-				border: 1px solid white;
-				border-radius: 48px;
-				height: 96px;
-			}
-		}
-
-		.event-info {
-			color: #fff;
-			.event-title {
-				font-size: 22px;
-				line-height: 28px;
-				padding: 12px 0;
-			}
-		}
-	}
-
 	.ticket-info {
 		.item-input {
 			border-right: 0;
@@ -58,7 +34,6 @@
 				border: 3px solid;
 			}
 		}
-		
 	}
 
 

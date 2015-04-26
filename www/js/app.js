@@ -127,6 +127,26 @@ dingo.run(function($ionicPlatform,Payment) {
     }
   })
 
+  .state('app.myticketsDetailShow', {
+    url: "/mytickets/:ticketsType/:eventId/:ticketId/show",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/myticketsdetailshow.html",
+        controller: 'MyTicketsCtrl'
+      }
+    }
+  })
+
+  .state('app.myticketsDetailEdit', {
+    url: "/mytickets/:ticketsType/:eventId/:ticketId/edit",
+    views: {
+      'menuContent' :{
+        templateUrl: "js/templates/myticketsdetailedit.html",
+        controller: 'MyTicketsCtrl'
+      }
+    }
+  })
+
   .state('app.faq', {
     url: "/faq",
     views: {

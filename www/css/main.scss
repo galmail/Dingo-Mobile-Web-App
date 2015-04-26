@@ -21,6 +21,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+// Include all the snippets
+@import "snippets/tickets-list";
+@import "snippets/event-info";
+
+
+// Include the rest of the styles
 @import "side-menu";
 @import "home";
 @import "login";
@@ -36,5 +42,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "faqdetail";
 @import "privacypolicy";
 @import "mytickets";
+@import "mytickets-list";
+@import "mytickets-detail-edit";
+@import "mytickets-detail-show";
+
 
 
