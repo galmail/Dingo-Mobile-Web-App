@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,Event,Ticket,Payment,Order,User,Util) {
+dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,$location,Event,Ticket,Payment,Order,User,Message,Util) {
 
 	$scope.event = {};
 	$scope.ticket = {};
@@ -33,9 +33,12 @@ dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,E
 		});
 	};
 
-
-
-
+	$scope.contactSeller = function(){
+		var ticketId = $scope.ticket.id;
+		var receiverId = $scope.ticket.user_id;
+		var conversationId = Message.getNewConversationId(ticketId,receiverId);
+		$location.path("/home/messages/" + conversationId);
+	};
 
 	var init = function(){
 		console.log('Running TicketDetailsCtrl...');

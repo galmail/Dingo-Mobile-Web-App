@@ -55,8 +55,23 @@ dingo.services.factory('Message', function($http, User) {
       else {
         User.info.num_unread_messages++;
       }
+    },
+
+    getNewConversationId: function(ticketId,receiverId){
+      var idPart1 = 0
+      var idPart2 = 0
+      var senderId = User.getInfo().id;
+      if(senderId < receiverId){
+        idPart1 = senderId;
+        idPart2 = receiverId;
+      }
+      else {
+        idPart2 = senderId;
+        idPart1 = receiverId;
+      }
+      var conversationId = ticketId + '-' + idPart1 + '-' + idPart2;
+      return conversationId;
     }
-    
 
   };
 
