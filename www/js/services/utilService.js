@@ -6,6 +6,8 @@
 dingo.services.factory('Util', function($ionicLoading){
 	return {
 
+		timeoutID: null,
+
 		generateUUID: function (){
 	    var d = new Date().getTime();
 	    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -22,12 +24,16 @@ dingo.services.factory('Util', function($ionicLoading){
 		},
 
 		showLoading: function(msg){
-			$ionicLoading.show({
-				template: msg || 'Loading...'
-			});
+			window.clearTimeout(this.timeoutID);
+			this.timeoutID = window.setTimeout(function(){
+				$ionicLoading.show({
+					template: msg || 'Loading...'
+				});
+			}, 1000);
 		},
 
 		hideLoading: function(){
+			window.clearTimeout(this.timeoutID);
 			$ionicLoading.hide();
 		}
 		

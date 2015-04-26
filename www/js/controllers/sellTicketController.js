@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('SellTicketCtrl', function($scope, $location, Event, Ticket, User) {
+dingo.controllers.controller('SellTicketCtrl', function($scope, $location, Event, Ticket, User, Util) {
 
 	$scope.ticketDetails = null;
 
@@ -54,13 +54,17 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, Event
 	var init = function(){
 		console.log('Running Sell Ticket Controller...');
 		$scope.ticketDetails = Ticket.ticketForSale;
+		Util.hideLoading();
 	};
-
 
 	// run on init for every controller
   (function(){
-    if(User.isLogged()) init(); else User.registerToLoginCallback(init,'SellTicketCtrl');
-  })();
-	
+    Util.showLoading();
+    if(User.isLogged()){
+      init();
+    } else {
+      User.registerToLoginCallback(init,'SellTicketCtrl');
+    }
+  })();	
 
 });

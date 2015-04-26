@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionicScrollDelegate,Message,User) {
+dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionicScrollDelegate,Message,User,Util) {
 
 	$scope.messages = [];
 	$scope.peers = [];
@@ -41,13 +41,15 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionic
 		console.log('Running Messages Controller...');
 		$scope.current_user_id = User.getInfo().id;
 		Message.active_chat.conversation_id = $stateParams.conversationId;
+		var loaded = function(){ Util.hideLoading(); };
 		if(Message.active_chat.conversation_id){
-			Message.loadChat();
+			Message.loadChat(loaded);
 		}
 		else {
 			// get peers
 			Message.getPeers(function(peers){
 				$scope.peers = peers;
+				loaded();
 			});
 		}
 	};
@@ -55,7 +57,12 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionic
 
 	// run on init for every controller
 	(function(){
-		if(User.isLogged()) init(); else User.registerToLoginCallback(init,'MessagesCtrl');
+		Util.showLoading();
+		if(User.isLogged()){
+			init();
+		} else {
+			User.registerToLoginCallback(init,'MessagesCtrl');
+		}
 	})();
 
 

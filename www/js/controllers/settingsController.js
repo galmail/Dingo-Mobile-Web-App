@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, Facebook) {
+dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, Facebook, Util) {
 
 	$scope.user_data = {};
 
@@ -82,24 +82,21 @@ dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, F
 
 
 
-
-
-
-
-
-
-
-
-
   var init = function(){
     console.log('Running Settings Controller...');
     $scope.user_data = User.getInfo();
+    Util.hideLoading();
   };
 
 
   // run on init for every controller
   (function(){
-    if(User.isLogged()) init(); else User.registerToLoginCallback(init,'SettingsCtrl');
+    Util.showLoading();
+    if(User.isLogged()){
+      init();
+    } else {
+      User.registerToLoginCallback(init,'SettingsCtrl');
+    }
   })();
 
   

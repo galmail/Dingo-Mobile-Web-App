@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$stateParams,Ticket,User) {
+dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$stateParams,Ticket,User,Util) {
 
 	$scope.tickets = [];
 
@@ -22,16 +22,26 @@ dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$statePa
 	var init = function(){
 		console.log('Running MyTickets Controller...');
     $scope.ticketsType = $stateParams.ticketsType;
+    var loaded = function(){ Util.hideLoading(); };
     if($scope.ticketsType){
       Ticket.getMyTickets($scope.ticketsType,function(tickets){
         $scope.tickets = tickets;
+        loaded();
       });
+    }
+    else {
+      loaded();
     }
 	};
 
   // run on init for every controller
   (function(){
-    if(User.isLogged()) init(); else User.registerToLoginCallback(init,'MyTicketsCtrl');
+    Util.showLoading();
+    if(User.isLogged()){
+      init();
+    } else {
+      User.registerToLoginCallback(init,'MyTicketsCtrl');
+    }
   })();
   
 });

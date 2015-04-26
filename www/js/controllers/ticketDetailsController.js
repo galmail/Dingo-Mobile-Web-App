@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,Event,Ticket,Payment,Order,User) {
+dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,Event,Ticket,Payment,Order,User,Util) {
 
 	$scope.event = {};
 	$scope.ticket = {};
@@ -39,21 +39,37 @@ dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,E
 
 	var init = function(){
 		console.log('Running TicketDetailsCtrl...');
+		var allLoaded = { event: false, ticket: false };
+		var loaded = function(key){
+			allLoaded[key] = true;
+			for(obj in allLoaded){
+				if(allLoaded[obj]==false) return false;
+			}
+			// done loading
+			Util.hideLoading();
+		};
 		// loading event and ticket details
 		var eventId = $stateParams.eventId;
 		var ticketId = $stateParams.ticketId;
 		Event.getById(eventId,function(event){
 			$scope.event = event;
+			loaded('event');
 		});
 		Ticket.getById(ticketId,function(ticket){
 			$scope.ticket = ticket;
+			loaded('ticket');
 		});
 	};
 
-	// run on init for every controller
-  (function(){
-    if(User.isLogged()) init(); else User.registerToLoginCallback(init,'TicketDetailsCtrl');
-  })();
 
+	// run on init for every controller
+	(function(){
+		Util.showLoading();
+		if(User.isLogged()){
+			init();
+		} else {
+			User.registerToLoginCallback(init,'TicketDetailsCtrl');
+		}
+	})();
 
 });

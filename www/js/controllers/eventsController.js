@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, User) {
+dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, User, Util) {
 
 	$scope.category_width = 164;
 	$scope.categories = [];
@@ -11,19 +11,36 @@ dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, Use
 
 	var init = function(){
 		console.log('Running Events Controller...');
+		var allLoaded = { categories: false, events: false };
+		var loaded = function(key){
+			allLoaded[key] = true;
+			for(obj in allLoaded){
+				if(allLoaded[obj]==false) return false;
+			}
+			// done loading
+			Util.hideLoading();
+		};
+
 		Category.loadAll(function(categories){
 			$scope.categories = categories;
 			$scope.categories_width = ($scope.category_width * categories.length) - 5;
+			loaded('categories');
 		});
 		Event.loadAll(function(events){
 			$scope.events = events;
+			loaded('events');
 		});
 	};
 
 
 	// run on init for every controller
 	(function(){
-		if(User.isLogged()) init(); else User.registerToLoginCallback(init,'EventsCtrl');
+		Util.showLoading();
+		if(User.isLogged()){
+			init();
+		} else {
+			User.registerToLoginCallback(init,'EventsCtrl');
+		}
 	})();
 
 

@@ -19,7 +19,7 @@ dingo.services.factory('Message', function($http, User) {
       });
     },
 
-    loadChat: function(){
+    loadChat: function(callback){
       var self = this;
       var conversationId = self.active_chat.conversation_id;
       if(conversationId){
@@ -33,6 +33,7 @@ dingo.services.factory('Message', function($http, User) {
             // update badge icon
             User.setInfo(res);
           });
+          if(typeof(callback)=='function') callback();
         });
       }
     },
