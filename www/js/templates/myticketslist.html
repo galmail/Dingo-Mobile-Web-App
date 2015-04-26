@@ -8,7 +8,7 @@
 
 
 	<ul class="list tickets-list">
-  	<li class="ticket item row icon-right ion-chevron-right" ng-repeat="ticket in tickets" ng-click="go(ticket)">
+  	<li class="ticket item row icon-right ion-chevron-right" ng-repeat="ticket in tickets" ng-click="gotoTicketDetails(ticket,'show')">
       <img class="ticket-photo" ng-src="{{ticket.user_photo}}"/>
   		<div class="col">{{ticket.user_name}}</div>
   		<div class="ticket-price col col-25">

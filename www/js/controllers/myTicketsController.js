@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$stateParams,Ticket,Event,User,Util) {
+dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$stateParams,$ionicActionSheet,$ionicPopup,Ticket,Event,User,Util) {
 
 	$scope.tickets = [];
   $scope.currentTicket = null;
@@ -21,10 +21,47 @@ dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$statePa
     $location.path("/app/mytickets/purchased");
   };
 
-  $scope.go = function(ticket){
+  $scope.gotoTicketDetails = function(ticket,action){
     var ticketId = ticket.id;
     var eventId = ticket.event_id;
-    window.location.href += '/' + eventId + '/' + ticketId + '/show';
+    window.location.href += '/' + eventId + '/' + ticketId + '/' + action;
+  };
+
+  $scope.showOptions = function(){
+    // Show the action sheet
+    var hideSheet = $ionicActionSheet.show({
+      buttons: [
+        { text: '<b>Modify</b>' }
+      ],
+      destructiveText: 'Delete',
+      titleText: 'Ticket Options',
+      cancelText: 'Cancel',
+      cancel: function() {
+        // add cancel code..
+        hideSheet();
+      },
+      buttonClicked: function(index){
+        if(index>0) return false;
+        var editTicketUrl = window.location.href.replace('show','edit');
+        window.location.href = editTicketUrl;
+        return true;
+      },
+      destructiveButtonClicked: function(){
+        var confirmPopup = $ionicPopup.confirm({
+          title: 'Imporant Message',
+          template: 'Are you sure you want to delete this ticket?'
+        });
+        confirmPopup.then(function(yes) {
+          if(yes){
+            Ticket.deleteTicket($scope.currentTicket,function(){
+              alert('Ticket Deleted!');
+              $location.path('/app/mytickets');
+            });
+          }
+        });
+        return true;
+      }
+    });
   };
 
 	var init = function(){

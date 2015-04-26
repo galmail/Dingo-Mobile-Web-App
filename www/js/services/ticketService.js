@@ -96,36 +96,37 @@ dingo.services.factory('Ticket', function($http, Util, User) {
     getMyTickets: function(ticketsType,callback){
       $http.get('/api/v1/tickets?mine=true').success(function(res){
         var tickets = res.tickets;
+
         if(ticketsType=='purchased'){
           // filter tickets
-          for(ticket in tickets){
-            if(ticket.user_id == User.getInfo().id){
-              delete(ticket);
+          for (var i=0;i<tickets.length;i++){
+            if(tickets[i].user_id == User.getInfo().id){
+              tickets.splice(i, 1);
             }
           }
         }
         else if(ticketsType=='selling'){
           // filter tickets
-          for(ticket in tickets){
-            if(ticket.user_id != User.getInfo().id){
-              delete(ticket);
+          for (var i=0;i<tickets.length;i++){
+            if(tickets[i].user_id != User.getInfo().id){
+              tickets.splice(i, 1);
             }
             else {
-              if(ticket.available == false || ticket.number_of_tickets == 0){
-                delete(ticket);
+              if(tickets[i].available == false || tickets[i].number_of_tickets == 0){
+                tickets.splice(i, 1);
               }
             }
           }
         }
         else if(ticketsType=='sold'){
           // filter tickets
-          for(ticket in tickets){
-            if(ticket.user_id != User.getInfo().id){
-              delete(ticket);
+          for (var i=0;i<tickets.length;i++){
+            if(tickets[i].user_id != User.getInfo().id){
+              tickets.splice(i, 1);
             }
             else {
-              if(ticket.number_of_tickets_sold == 0){
-                delete(ticket);
+              if(tickets[i].number_of_tickets_sold == 0){
+                tickets.splice(i, 1);
               }
             }
           }
@@ -134,6 +135,14 @@ dingo.services.factory('Ticket', function($http, Util, User) {
           // show all tickets...
         }
         callback(tickets);
+      });
+    },
+
+    deleteTicket: function(ticket,callback){
+      $http.put('/api/v1/tickets/'+ticket.id,{
+        available: false
+      }).success(function(){
+        callback();
       });
     }
 
