@@ -67,6 +67,7 @@ dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$statePa
 	var init = function(){
 		console.log('Running MyTickets Controller...');
     var ticketsType = $stateParams.ticketsType;
+    $scope.showContextMenu = (ticketsType=='selling');
     var eventId = $stateParams.eventId;
     var ticketId = $stateParams.ticketId;
     var allLoaded = {};
