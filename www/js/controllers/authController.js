@@ -49,6 +49,7 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
             User.connect(function(ok){
               if(ok){
                 alert('User is logged in!');
+                $location.path('/');
               }
               else {
                 alert('User is not logged in!');
@@ -85,12 +86,21 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
     User.connect(function(ok){
       if(ok){
         alert('user is logged in!');
+        $location.path('/');
       }
       else {
         alert('user is not logged in!');
       }
     });
   }
+
+  // run on init
+  (function(){
+    Util.hideLoading();
+    if(User.isLogged()){
+      window.history.back();
+    }
+  })();
 
     
 }); 
