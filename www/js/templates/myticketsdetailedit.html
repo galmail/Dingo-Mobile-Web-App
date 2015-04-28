@@ -1,29 +1,21 @@
 <ion-view class="d-mytickets-detail-edit" title="">
-  <!-- <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons> -->
+  <ion-nav-buttons side="right">
+    <button class="button button-clear button-light" ng-click="modifyTicket()">Save</button>
+  </ion-nav-buttons>
   <ion-content class="has-header">
 
     <div class="list">
 
-		  <div class="item item-divider">
-		    Event Details
-		  </div>
-
-		  <div class="event-name">
-			  <label class="item item-input">
-			    <span class="input-label">Event Name:</span>
-			    <input type="search" ng-model="ticketDetails.event.name" ng-change="filterEvent()" />
-			  </label>
-			  <ul class="list events-list">
-			  	<li ng-show="showEvent(event)" ng-click="selectEvent(event)" ng-repeat="event in events" class="item">{{ event.name }}</li>
-			  </ul>
-		  </div>
-
-		  <label class="item item-input">
-		    <span class="input-label">Start date:</span>
-		    <input type="datetime" ng-model="ticketDetails.event.date" ng-disabled="ticketDetails.event.selected" />
-		  </label>
+		  <div class="row event-info">
+	      <div class="event-photo">
+	        <img ng-src="{{currentEvent.thumb}}" />
+	      </div>
+	      <div class="event-data col">
+	        <div class="event-title">{{currentEvent.name}}</div>
+	        <div class="event-address">{{currentEvent.address}}</div>
+	        <div class="event-time">{{currentEvent.parsed_time}}</div>
+	      </div>
+	    </div>
 
 		  <div class="item item-divider">
 		    Ticket Details
@@ -31,24 +23,24 @@
 
 		  <label class="item item-input">
 		    <span class="input-label">Price per ticket:</span>
-		    <input type="number" ng-model="ticketDetails.price_per_ticket" />
+		    <input type="number" ng-model="currentTicket.price" />
 		  </label>
 
 		  <label class="item item-input">
 		    <span class="input-label">Face Value per ticket:</span>
-		    <input type="number" ng-model="ticketDetails.face_value_per_ticket" />
+		    <input type="number" ng-model="currentTicket.face_value_per_ticket" />
 		  </label>
 
 		  <label class="item item-input">
 		    <span class="input-label">Number of tickets:</span>
-		    <input type="number" ng-model="ticketDetails.num_tickets" min="1" max="10" />
+		    <input type="number" ng-model="currentTicket.number_of_tickets" min="1" max="10" />
 		  </label>
 
 		  <label class="item item-input item-select">
 		    <div class="input-label">
 		      Type of ticket:
 		    </div>
-		    <select ng-model="ticketDetails.type_of_ticket">
+		    <select ng-model="currentTicket.ticket_type">
 		      <option>e-Ticket</option>
 		      <option>Paper</option>
 		    </select>
@@ -56,33 +48,9 @@
 
 		  <label class="item item-input item-stacked-label">
 		    <span class="input-label">Comments:</span>
-		    <textarea ng-model="ticketDetails.comments" rows="2" placeholder="Add any additional comments about the tickets or collection">
+		    <textarea ng-model="currentTicket.description" rows="2" placeholder="Add any additional comments about the tickets or collection">
 		    </textarea>
 		  </label>
-
-		  <div class="item item-divider">
-		    How do you want to be paid?
-		  </div>
-
-		  <li class="item item-toggle">
-		     Cash in Person
-		     <label class="toggle toggle-positive">
-		       <input ng-model="ticketDetails.payment_methods.cash" type="checkbox" name="payment" />
-		       <div class="track">
-		         <div class="handle"></div>
-		       </div>
-		     </label>
-		  </li>
-
-		  <li class="item item-toggle">
-		     Paypal
-		     <label class="toggle toggle-positive">
-		       <input ng-model="ticketDetails.payment_methods.paypal" type="checkbox" name="payment" />
-		       <div class="track">
-		         <div class="handle"></div>
-		       </div>
-		     </label>
-		  </li>
 
 		  <div class="item item-divider">
 		    Delivery method(s):
@@ -91,7 +59,7 @@
 		  <li class="item item-toggle">
 		     In Person
 		     <label class="toggle toggle-balanced">
-		       <input ng-model="ticketDetails.delivery_methods.in_person" type="checkbox" name="delivery" />
+		       <input ng-model="currentTicket.delivery_methods.in_person" type="checkbox" name="delivery" />
 		       <div class="track">
 		         <div class="handle"></div>
 		       </div>
@@ -101,7 +69,7 @@
 		  <li class="item item-toggle">
 		     Email
 		     <label class="toggle toggle-balanced">
-		       <input ng-model="ticketDetails.delivery_methods.electronic" type="checkbox" name="delivery" />
+		       <input ng-model="currentTicket.delivery_methods.electronic" type="checkbox" name="delivery" />
 		       <div class="track">
 		         <div class="handle"></div>
 		       </div>
@@ -111,7 +79,7 @@
 		  <li class="item item-toggle">
 		     Post
 		     <label class="toggle toggle-balanced">
-		       <input ng-model="ticketDetails.delivery_methods.post" type="checkbox" name="delivery" />
+		       <input ng-model="currentTicket.delivery_methods.post" type="checkbox" name="delivery" />
 		       <div class="track">
 		         <div class="handle"></div>
 		       </div>

@@ -19,41 +19,43 @@ dingo.services.factory('Ticket', function($http, Util, User) {
       post: true,
       electronic: true
     },
-    // price_per_ticket: 10.0,
-    // face_value_per_ticket: 10.0,
-    getPaymentMethods: function(){
-      var res = '';
-      if(this.payment_methods.paypal){
-        if(res.length>0) res+=', ';
-        res += 'Paypal';
-      }
-      if(this.payment_methods.cash){
-        if(res.length>0) res+=', ';
-        res += 'Cash in Person';
-      }
-      return res;
-    },
-    getDeliveryMethods: function(){
-      var res = '';
-      if(this.delivery_methods.in_person){
-        if(res.length>0) res+=', ';
-        res += 'In Person';
-      }
-      if(this.delivery_methods.post){
-        if(res.length>0) res+=', ';
-        res += 'Post';
-      }
-      if(this.delivery_methods.electronic){
-        if(res.length>0) res+=', ';
-        res += 'Electronic';
-      }
-      return res;
-    }
+    getPaymentMethods: function(){ return Ticket.getPaymentMethods(this.payment_methods); },
+    getDeliveryMethods: function(){ return Ticket.getDeliveryMethods(this.delivery_methods); }
   };
 
   return {
 
     ticketForSale: angular.copy(defaultTicket),
+
+    getDeliveryMethods: function(delivery_methods){
+      var res = '';
+      if(delivery_methods.in_person){
+        if(res.length>0) res+=', ';
+        res += 'In Person';
+      }
+      if(delivery_methods.post){
+        if(res.length>0) res+=', ';
+        res += 'Post';
+      }
+      if(delivery_methods.electronic){
+        if(res.length>0) res+=', ';
+        res += 'Electronic';
+      }
+      return res;
+    },
+
+    getPaymentMethods: function(payment_methods){
+      var res = '';
+      if(payment_methods.paypal){
+        if(res.length>0) res+=', ';
+        res += 'Paypal';
+      }
+      if(payment_methods.cash){
+        if(res.length>0) res+=', ';
+        res += 'Cash in Person';
+      }
+      return res;
+    },
 
     getByEventId: function(eventId,callback){
       $http.get('/api/v1/tickets?event_id='+eventId).success(function(res){
@@ -144,6 +146,43 @@ dingo.services.factory('Ticket', function($http, Util, User) {
       }).success(function(){
         callback();
       });
+    },
+
+    editTicket: function(ticket,callback){
+      var self = this;
+      $http.put('/api/v1/tickets/'+ticket.id,{
+        price: ticket.price,
+        number_of_tickets: ticket.number_of_tickets,
+        face_value_per_ticket: ticket.face_value_per_ticket,
+        ticket_type: ticket.ticket_type,
+        description: ticket.description,
+        delivery_options: self.getDeliveryMethods(ticket.delivery_methods),
+      }).success(function(){
+        callback();
+      });
+    },
+
+    parseTicket: function(ticketObj){
+      var ticket = ticketObj;
+      ticket.price = parseFloat(ticketObj.price);
+      ticket.face_value_per_ticket = parseFloat(ticketObj.face_value_per_ticket);
+      ticket.number_of_tickets = parseInt(ticketObj.number_of_tickets);
+      var deliveryArray = ticketObj.delivery_options.split(',');
+      ticket.delivery_methods = {};
+      for(var i=0;i<deliveryArray.length;i++){
+        var deliveryOption = deliveryArray[i].trim();
+        if(deliveryOption=='In Person'){
+          deliveryOption = 'in_person';
+        }
+        else if(deliveryOption=='Electronic'){
+          deliveryOption = 'electronic';
+        }
+        else if(deliveryOption=='Post'){
+          deliveryOption = 'post';
+        }
+        ticket.delivery_methods[deliveryOption] = true;
+      }
+      return ticket;
     }
 
   };

@@ -4,12 +4,16 @@
   </ion-nav-buttons>
   <ion-content class="padding" scroll="false">
  
+ 		<div ng-show="peers.length==0">
+ 			You don't have any messages
+ 		</div>
+ 		
 		<div id="peers">
-
 			<a ng-repeat="peer in peers" class="peer icon-right ion-chevron-right" ng-href="#/home/messages/{{peer.id}}" ng-click="setActivePeer(peer);">
 					<img class="user-pic" ng-src="{{peer.user_pic}}" />
 					<div class="user-name">{{ peer.user_name }}</div>
 			</a>
+		</div>
 
   </ion-content>
 </ion-view>

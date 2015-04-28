@@ -64,6 +64,12 @@ dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$statePa
     });
   };
 
+  $scope.modifyTicket = function(){
+    Ticket.editTicket($scope.currentTicket,function(){
+      alert('Ticket modified successfully!');
+    });
+  };
+
 	var init = function(){
 		console.log('Running MyTickets Controller...');
     var ticketsType = $stateParams.ticketsType;
@@ -89,7 +95,7 @@ dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$statePa
     if(ticketId){
       allLoaded.ticket = false;
       Ticket.getById(ticketId,function(ticket){
-        $scope.currentTicket = ticket;
+        $scope.currentTicket = Ticket.parseTicket(ticket);
         loaded('ticket');
       });
     }

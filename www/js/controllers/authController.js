@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal, $timeout, $http, User, Util, Config) {
+dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal, $timeout, $location, $http, User, Util, Config) {
 
   // Login with facebook
   $scope.fbLogin = function(){
@@ -49,7 +49,7 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
             User.connect(function(ok){
               if(ok){
                 alert('User is logged in!');
-                $location.path('/');
+                window.history.back();
               }
               else {
                 alert('User is not logged in!');
@@ -86,7 +86,7 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
     User.connect(function(ok){
       if(ok){
         alert('user is logged in!');
-        $location.path('/');
+        window.history.back();
       }
       else {
         alert('user is not logged in!');
