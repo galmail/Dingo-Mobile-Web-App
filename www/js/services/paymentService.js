@@ -3,7 +3,7 @@
  *
  */
 
-dingo.services.factory('Payment', function() {
+dingo.services.factory('Payment', function($http) {
 
   return {
 
@@ -41,6 +41,20 @@ dingo.services.factory('Payment', function() {
       var payment = new PayPalPayment(payment.amount, "GBP", payment.description, "Sale", paymentDetails);
       // create payment
       PayPalMobile.renderSinglePaymentUI(payment, onSuccesfulPayment, onUserCanceled);
+    },
+
+    loginWithPaypal: function(callback){
+      PayPalMobile.renderProfileSharingUI(["email"], function(data){
+        $http.post('/api/v1/paypal/connect',{
+          code: data.response.code
+        }).success(function(){
+          callback(true);
+        }).error(function(){
+          callback(false);
+        });
+      }, function(){
+        callback(false);
+      });
     }
 
 

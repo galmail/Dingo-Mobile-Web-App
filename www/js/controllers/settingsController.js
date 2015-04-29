@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, Facebook, Util) {
+dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, Facebook, Util, Payment) {
 
 	$scope.user_data = {};
 
@@ -22,6 +22,18 @@ dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, F
 		User.logout();
 		$location.path('/');
 	};
+
+  $scope.connectPaypal= function(){
+    console.log('connecting paypal...');
+    Payment.loginWithPaypal(function(connected){
+      if(connected){
+        alert('Paypal account connected successfully!');
+      }
+      else {
+        alert('Paypal account was not connected!');
+      }
+    });
+  };
 
   // Connect with facebook
   $scope.connectWithFacebook = function(){
