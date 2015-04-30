@@ -6,6 +6,7 @@
 dingo.services.factory('Util', function($ionicLoading){
 	return {
 
+		isStillLoading: false,
 		timeoutID: null,
 
 		generateUUID: function (){
@@ -24,17 +25,26 @@ dingo.services.factory('Util', function($ionicLoading){
 		},
 
 		showLoading: function(msg){
+			var self = this;
 			window.clearTimeout(this.timeoutID);
 			this.timeoutID = window.setTimeout(function(){
+				self.isStillLoading = true;
 				$ionicLoading.show({
 					template: msg || 'Loading...'
 				});
 			}, 1000);
+			window.setTimeout(function(){
+				if(self.isStillLoading){
+					self.hideLoading();
+					alert('There was a problem while loading. Please try again!');
+				}
+			},15000);
 		},
 
 		hideLoading: function(){
 			window.clearTimeout(this.timeoutID);
 			$ionicLoading.hide();
+			this.isStillLoading = false;
 		},
 
 		isEmptyObject: function(obj){

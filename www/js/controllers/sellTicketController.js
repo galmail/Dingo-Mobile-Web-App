@@ -14,7 +14,7 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, Event
 		if(self.ticketDetails.event.name.length>0) {
 			console.log('filtering event: ' + self.ticketDetails.event.name);
 			self.ticketDetails.event.selected = false;
-			Event.searchByName(self.ticketDetails.event.name, function(listOfEvents){
+			Event.searchByName({ name: self.ticketDetails.event.name, any: true }, function(listOfEvents){
 				self.events = listOfEvents;
 			});
 		}

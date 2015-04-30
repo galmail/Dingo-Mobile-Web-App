@@ -28,8 +28,10 @@ dingo.services.factory('Event', function($http, Util) {
       });
     },
 
-    searchByName: function(eventName,callback){
-      $http.get('/api/v1/events?any=true&name='+eventName).success(function(res){
+    searchByName: function(params,callback){
+      $http.get('/api/v1/events',{
+        params: params 
+      }).success(function(res){
         callback(res.events);
       });
   	}

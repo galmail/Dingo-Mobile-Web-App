@@ -7,7 +7,7 @@
   	<div class="bar bar-header bar-search item-input-inset">
 	  	<label class="item-input-wrapper">
 		    <i class="icon ion-ios7-search placeholder-icon"></i>
-		    <input type="search" placeholder="Search Event...">
+		    <input type="search" placeholder="Search Event..." ng-model="filter.eventsKeyword" ng-change="search()">
 		  </label>
 	  </div>
     
@@ -18,7 +18,7 @@
 
 	  		<ul class="list categories" style="width:{{ categories_width }}px;">
 		    	
-		    	<li ng-repeat="category in categories" class="item item-checkbox category">
+		    	<li ng-repeat="category in categories" class="item item-checkbox category" ng-click="searchEventsByCategories(category)">
 			      <img ng-src="{{category.thumb}}"/>
 			      <label class="checkbox">
 			      	<input type="checkbox">

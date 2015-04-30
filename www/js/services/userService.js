@@ -42,9 +42,9 @@ dingo.services.factory('User', function($http, Util) {
     },
 
     logout: function(){
-      delete(localStorage.email);
-      delete(localStorage.auth_token);
-      this.setInfo({});
+      localStorage.setItem('email',null);
+      localStorage.setItem('auth_token',null);
+      this.info = {};
     },
   	
     login: function(callback){

@@ -20,7 +20,6 @@ dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User
 
 		if(!User.isLogged()){
 			if(localStorage.getItem('email')!=null && localStorage.getItem('auth_token')!=null){
-				// login in the background
 				User.setInfo({
 					email: localStorage.getItem('email'),
 					auth_token: localStorage.getItem('auth_token')

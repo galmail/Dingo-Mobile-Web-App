@@ -30,7 +30,6 @@ dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, F
         User.setInfo(userData);
         $scope.user_data = User.getInfo();
         alert('Paypal account connected successfully!');
-
       }
       else {
         alert('Paypal account was not connected!');
@@ -73,6 +72,7 @@ dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, F
           function (response){
             var userData = User.fbParseUserInfo(response);
             User.setInfo(userData);
+            $scope.user_data = User.getInfo();
             User.connect(function(ok){
               if(ok){
                 alert('User is logged in!');
@@ -89,7 +89,6 @@ dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, F
         alert('User is not connected with facebook!');
       }
     );
-    
     
   };
 

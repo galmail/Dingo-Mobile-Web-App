@@ -8,6 +8,34 @@ dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, Use
 	$scope.category_width = 164;
 	$scope.categories = [];
 	$scope.events = [];
+	$scope.filter = {
+		eventsKeyword: "",
+		selectedCategories: []
+	};
+
+	$scope.search = function(){
+		var eventKeyword = $scope.filter.eventsKeyword;
+		var categoryIds = $scope.filter.selectedCategories;
+		console.log('searching for ' + eventKeyword + ' in ' + categoryIds.length + ' categories.');
+		Event.searchByName({
+			"any": false,
+			"name": eventKeyword,
+			"category_ids[]": categoryIds
+		},function(events){
+			$scope.events = events;
+		});
+	};
+
+	$scope.searchEventsByCategories = function(category){
+		var i = $scope.filter.selectedCategories.indexOf(category.id);
+		if(i == -1){
+			$scope.filter.selectedCategories.push(category.id);
+		}
+		else {
+			$scope.filter.selectedCategories.splice(i,1);
+		}
+		this.search();
+	};
 
 	var init = function(){
 		console.log('Running Events Controller...');

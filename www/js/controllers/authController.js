@@ -11,12 +11,6 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
     var FBApi = null;
     var FBLogin = null;
 
-    // if (window.cordova && window.cordova.platformId == "browser"){
-    //   var fbAppId = Config.FacebookAppId;
-    //   console.log('initiating facebook sdk, fbAppId=' + fbAppId);
-    //   facebookConnectPlugin.browserInit(fbAppId);
-    // }
-
     if(window.facebookConnectPlugin){
       FBLogin = function(callback,error){
         var array_permissions = ['public_profile,email'];
@@ -37,7 +31,6 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
         return Facebook.api(requestPath, method, params, callback);
       };
     }
-
     
     FBLogin(
       function (response){
@@ -63,9 +56,7 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
         alert('User is not connected with facebook!');
       }
     );
-    
-    
-  }
+  };
 
   // Login as Guest
   $scope.guestLogin = function(){
@@ -73,16 +64,14 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
       alert('User is already logged!');
       return;
     }
-
     var uuid = null;
-
     if(window.device && window.device.uuid){
       uuid = device.uuid;
     }
     else {
       uuid = Util.generateUUID();
     }
-    User.setInfo({ email: uuid+'@guest.dingoapp.co.uk', password: '123456789', name: 'Guest'});
+    User.setInfo({ email: uuid+'@guest.dingoapp.co.uk', password: '123456789', name: 'Guest' });
     User.connect(function(ok){
       if(ok){
         alert('user is logged in!');
@@ -92,7 +81,7 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
         alert('user is not logged in!');
       }
     });
-  }
+  };
 
   // run on init
   (function(){
