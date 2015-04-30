@@ -37,7 +37,7 @@ dingo.run(function($ionicPlatform,Payment) {
        return {
            'request': function(config){
               if (window.cordova){
-                if((config.url.indexOf('/api')>=0) || (config.url.indexOf('/users/')>=0)){
+                if(((config.url.indexOf('/api')>=0) || (config.url.indexOf('/users/')>=0)) && (config.url.indexOf('paypal.com')<0)){
                   config.url = 'http://dingoapp-staging.herokuapp.com' + config.url;
                   //alert('calling: ' + config.url);
                 }
