@@ -51,7 +51,7 @@
 
 		  <button ng-show="user_data.fb_id == null" class="button button-large button-clear facebook-button" ng-click="connectWithFacebook()"><img src="img/settings_screen/fbbutton.png"/></button>
 
-		  <button class="button button-positive button-block paypal-button" ng-click="connectPaypal()">Connect Paypal</button>		  
+		  <button ng-show="user_data.paypal_account == null" class="button button-positive button-block paypal-button" ng-click="connectPaypal()">Connect Paypal</button>		  
 
 		  <button class="button button-clear button-assertive button-full" ng-click="logout()">Logout</button>
 

@@ -25,9 +25,12 @@ dingo.controllers.controller('SettingsCtrl', function($scope, $location, User, F
 
   $scope.connectPaypal= function(){
     console.log('connecting paypal...');
-    Payment.loginWithPaypal(function(connected){
-      if(connected){
+    Payment.loginWithPaypal(function(userData){
+      if(userData){
+        User.setInfo(userData);
+        $scope.user_data = User.getInfo();
         alert('Paypal account connected successfully!');
+
       }
       else {
         alert('Paypal account was not connected!');

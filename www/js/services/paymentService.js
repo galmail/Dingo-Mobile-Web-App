@@ -66,8 +66,8 @@ dingo.services.factory('Payment', function($http) {
         var code = data.response.code;
         $http.post('/api/v1/paypal/connect',{
           code: data.response.code
-        }).success(function(){
-          callback(true);
+        }).success(function(userData){
+          callback(userData);
         }).error(function(){
           callback(false);
         });
