@@ -5,7 +5,7 @@ dingo.controllers = angular.module('dingo.controllers', []);
 dingo.services = angular.module('dingo.services', []);
 dingo.directives = angular.module('dingo.directives', []);
 
-dingo.run(function($ionicPlatform,Payment) {
+dingo.run(function($ionicPlatform,Payment,Message,User) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,6 +19,8 @@ dingo.run(function($ionicPlatform,Payment) {
 
     // start to initialize PayPalMobile library
     Payment.init();
+
+    window.simulateIncomingMessage = Message.incomingMsg;
 
     // get app version
     if(window.cordova && window.device){

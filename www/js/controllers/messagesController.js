@@ -22,11 +22,13 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionic
 	};
 
 	$scope.refreshChat = function(){
-		console.log('refreshing conversation: ' + Message.active_chat.conversation_id);
-		$scope.active_peer = Message.active_chat.peer;
-		$scope.messages = Message.active_chat.messages;
-		var scrollToBottom = function(){ $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(); };
-		setTimeout(scrollToBottom,300);
+		if($scope.messages.length != Message.active_chat.messages.length){
+			console.log('refreshing conversation: ' + Message.active_chat.conversation_id);
+			$scope.active_peer = Message.active_chat.peer;
+			$scope.messages = Message.active_chat.messages;
+			var scrollToBottom = function(){ $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(); };
+			setTimeout(scrollToBottom,300);
+		}
 	};
 
 	$scope.sendMessage = function(){
@@ -38,7 +40,7 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionic
 	};
 
 	var init = function(){
-		console.log('Running Messages Controller...');
+		console.log('init() - Running Messages Controller...');
 		$scope.current_user_id = User.getInfo().id;
 		Message.active_chat.conversation_id = $stateParams.conversationId;
 		var loaded = function(){ Util.hideLoading(); };
@@ -57,6 +59,7 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionic
 
 	// run on init for every controller
 	(function(){
+		console.log('Running Messages Controller...');
 		Util.showLoading();
 		if(User.isLogged()){
 			init();

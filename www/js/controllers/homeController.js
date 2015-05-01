@@ -5,8 +5,6 @@
 
 dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User, Push, Message) {
 
-	$scope.num_unread_messages = '';
-
 	$scope.$watch(function () { return User.info.num_unread_messages; }, function (newVal, oldVal) {
     if (typeof newVal !== 'undefined') {
       $scope.num_unread_messages = User.info.num_unread_messages;

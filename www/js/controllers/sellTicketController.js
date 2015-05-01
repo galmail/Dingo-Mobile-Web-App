@@ -52,13 +52,14 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, Event
 	};
 
 	var init = function(){
-		console.log('Running Sell Ticket Controller...');
+		console.log('init() - Sell Ticket Controller...');
 		$scope.ticketDetails = Ticket.ticketForSale;
 		Util.hideLoading();
 	};
 
 	// run on init for every controller
   (function(){
+  	console.log('Running Sell Ticket Controller...');
     Util.showLoading();
     if(User.isLogged()){
       init();

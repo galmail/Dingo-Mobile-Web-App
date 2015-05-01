@@ -3,7 +3,7 @@
  *
  */
 
-dingo.services.factory('Message', function($http, User) {
+dingo.services.factory('Message', function($http, $state, User) {
 
   return {
 
@@ -23,7 +23,7 @@ dingo.services.factory('Message', function($http, User) {
       var self = this;
       var conversationId = self.active_chat.conversation_id;
       if(conversationId){
-        $http.get('/api/v1/messages?conversationId='+conversationId).success(function(res){
+        $http.get('/api/v1/messages?conversation_id='+conversationId).success(function(res){
           var messages = res.messages.reverse();
           self.active_chat.messages = messages;
           // mark all messages in the conversation as read
@@ -49,12 +49,15 @@ dingo.services.factory('Message', function($http, User) {
     incomingMsg: function(msgObj){
       var conversation_id = msgObj.conversation_id;
       var content = msgObj.alert;
-      if(conversation_id == this.active_chat.conversation_id){
+      if(this.active_chat!=null && conversation_id == this.active_chat.conversation_id){
         this.loadChat();
       }
       else {
         User.info.num_unread_messages++;
+        // refresh peers
+        
       }
+      $state.go($state.current, {}, {reload: false});
     },
 
     getNewConversationId: function(ticketId,receiverId){

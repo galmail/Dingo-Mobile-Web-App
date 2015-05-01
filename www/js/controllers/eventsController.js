@@ -38,7 +38,7 @@ dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, Use
 	};
 
 	var init = function(){
-		console.log('Running Events Controller...');
+		console.log('init() - Running Events Controller...');
 		var allLoaded = { categories: false, events: false };
 		var loaded = function(key){
 			allLoaded[key] = true;
@@ -63,6 +63,7 @@ dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, Use
 
 	// run on init for every controller
 	(function(){
+		console.log('Running Events Controller...');
 		Util.showLoading();
 		if(User.isLogged()){
 			init();

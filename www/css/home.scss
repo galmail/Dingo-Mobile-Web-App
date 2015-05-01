@@ -10,7 +10,10 @@
 		color: #fff;
 		.tab-item {
 			color: #fff;
-			
+			.badge.badge-assertive {
+				opacity: 1.0;
+				background-color: red;
+			}
 		}
 	}
 	

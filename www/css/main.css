@@ -7878,6 +7878,9 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     color: #fff; }
     .d-home .tabs-positive > .tabs .tab-item {
       color: #fff; }
+      .d-home .tabs-positive > .tabs .tab-item .badge.badge-assertive {
+        opacity: 1;
+        background-color: red; }
   .d-home .icon.dingo-icon-home {
     background-image: url('../img/home_screen/home_icon@2x.png');
     background-repeat: no-repeat;
