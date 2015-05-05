@@ -42,6 +42,7 @@ cordova -d plugin add https://github.com/Wizcorp/phonegap-facebook-plugin.git --
 Launch on Device
 =================
 
+npm install
 gulp
 cordova build android
 cordova run android
