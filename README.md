@@ -12,22 +12,36 @@ This is the Mobile Web App project for [Dingo](http://dingoapp.co.uk)
 * Deployment instructions
 
 
-To test on the browser:
-
-phil:
-open new tab "cmd + t"
+Test on the Browser
+====================
 
 npm start
+Open a new tab (Ctrl+T) and run: "gulp watch"
 
-in new tab:
+Installation Steps
+================
 
-"gulp watch"
-
-ctril + c to stop
-
-To test on the device:
-
-ionic build
-ionic run android
+npm install -g bower
+npm install -g cordova@4.0.0
+npm install -g gulp
+bower install ngCordova
+cordova platform add android
 
 
+List of Plugins
+================
+
+cordova plugin add org.apache.cordova.device
+cordova plugin add org.apache.cordova.console
+cordova plugin add org.apache.cordova.statusbar
+cordova plugin add https://github.com/driftyco/ionic-plugins-keyboard.git
+cordova plugin add https://github.com/whiteoctober/cordova-plugin-app-version.git
+cordova plugin add https://github.com/phonegap-build/PushPlugin.git
+cordova -d plugin add https://github.com/Wizcorp/phonegap-facebook-plugin.git --variable APP_ID="667287336672842" --variable APP_NAME="Dingo"
+
+Launch on Device
+=================
+
+gulp
+cordova build android
+cordova run android

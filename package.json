@@ -18,6 +18,14 @@
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
-    "https://github.com/whiteoctober/cordova-plugin-app-version.git"
+    "https://github.com/whiteoctober/cordova-plugin-app-version.git",
+    "org.apache.cordova.device",
+    "org.apache.cordova.console",
+    "https://github.com/phonegap-build/PushPlugin.git",
+    "https://github.com/phonegap/phonegap-facebook-plugin.git",
+    "https://github.com/Wizcorp/phonegap-facebook-plugin.git",
+    "https://github.com/driftyco/ionic-plugins-keyboard.git",
+    "org.apache.cordova.statusbar",
+    "/Users/gal/Desktop/dingo/phonegap-facebook-plugin"
   ]
 }

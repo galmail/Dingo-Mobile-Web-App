@@ -1,55 +1,54 @@
 // Dingo Mobile Web App
 
-var dingo = angular.module('dingo',['ionic','facebook','dingo.controllers','dingo.services','dingo.directives']);
+var dingo = angular.module('dingo',['ionic','facebook','ngCordova','dingo.controllers','dingo.services','dingo.directives']);
 dingo.controllers = angular.module('dingo.controllers', []);
 dingo.services = angular.module('dingo.services', []);
 dingo.directives = angular.module('dingo.directives', []);
 
-dingo.run(function($ionicPlatform,Payment,Message,User) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
+///////////// Config Vars /////////////
+dingo.constant('CONFIG', {
+  FacebookAppId: '667287336672842',
+  FacebookAppIdTest: '854877257866349',
+  GCM_SENDER_ID: '734407104892'
+});
+
+dingo.run(function($ionicPlatform,$cordovaAppVersion,$cordovaKeyboard,$cordovaStatusbar,Payment,Message) {
+  
+  $ionicPlatform.ready(function(){
+
+    $cordovaKeyboard.hideAccessoryBar(true);
+    
+    // styles: Default : 0, LightContent: 1, BlackTranslucent: 2, BlackOpaque: 3
+    $cordovaStatusbar.style(0);
+
+    $cordovaAppVersion.getAppVersion().then(function(version){
+      console.log('app version is: ' + version);
+      window.device.appVersion = version;
+    });
 
     // start to initialize PayPalMobile library
     Payment.init();
 
     window.simulateIncomingMessage = Message.incomingMsg;
 
-    // get app version
-    if(window.cordova && window.device){
-      cordova.getAppVersion(function(version){
-        console.log('app version is: ' + version);
-        window.device.appVersion = version;
-      });
-    }
-
   });
 })
 
 .config(function ($httpProvider) {
-
   $httpProvider.interceptors.push(function ($q) {
-       return {
-           'request': function(config){
-              if (window.cordova){
-                if(((config.url.indexOf('/api')>=0) || (config.url.indexOf('/users/')>=0)) && (config.url.indexOf('paypal.com')<0)){
-                  config.url = 'http://dingoapp-staging.herokuapp.com' + config.url;
-                  //alert('calling: ' + config.url);
-                }
-              }
-              return config || $q.when(config);
-           }
+     return {
+       'request': function(config){
+          if (window.cordova){
+            if(((config.url.indexOf('/api')>=0) || (config.url.indexOf('/users/')>=0)) && (config.url.indexOf('paypal.com')<0)){
+              config.url = 'http://dingoapp-staging.herokuapp.com' + config.url;
+              //alert('calling: ' + config.url);
+            }
+          }
+          return config || $q.when(config);
        }
+     }
    });
 })
-
 
 
 .config(function($sceDelegateProvider) {
@@ -66,16 +65,14 @@ dingo.run(function($ionicPlatform,Payment,Message,User) {
   ]);
 })
 
-.config(function(FacebookProvider) {
-   var fbAppId = '';
+.config(['CONFIG','FacebookProvider',function(CONFIG, FacebookProvider) {
    if(window.location.href.indexOf('localhost')>0){
-    fbAppId = '854877257866349';
+    FacebookProvider.init(CONFIG.FacebookAppIdTest);
    }
    else {
-    fbAppId = '672126826238840';
+    FacebookProvider.init(CONFIG.FacebookAppId);
    }
-   FacebookProvider.init(fbAppId);
-})
+}])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider

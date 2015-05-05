@@ -3,7 +3,7 @@
  *
  */
 
-dingo.services.factory('Push', function($http,Message,User) {
+dingo.services.factory('Push', ['CONFIG','$http','User','Message',function(CONFIG,$http,User,Message) {
 	
 	return {
 
@@ -30,8 +30,8 @@ dingo.services.factory('Push', function($http,Message,User) {
 			    self.successHandler,
 			    self.errorHandler,
 			    {
-			        "senderID":"536332914346", //dingoapp-001
-			        "ecb":"onNotification"
+			        senderID: CONFIG.GCM_SENDER_ID,
+			        ecb: "onNotification"
 			    });
 			} else if ( device.platform == 'blackberry10'){
 			    self.pushNotification.register(
@@ -75,7 +75,7 @@ dingo.services.factory('Push', function($http,Message,User) {
 			}
 			else if(res.event == 'message'){
 				console.log('Push Payload',res.payload);
-				var msg = res.payload.alert;
+				var msg = res.payload.message;
 				//alert(msg);
 				if(res.foreground){
 					// got a push notification in the foreground
@@ -129,4 +129,4 @@ dingo.services.factory('Push', function($http,Message,User) {
 
 		
 	};
-});
+}]);

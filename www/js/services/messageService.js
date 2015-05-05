@@ -48,7 +48,7 @@ dingo.services.factory('Message', function($http, $state, User) {
 
     incomingMsg: function(msgObj){
       var conversation_id = msgObj.conversation_id;
-      var content = msgObj.alert;
+      var content = msgObj.message;
       if(this.active_chat!=null && conversation_id == this.active_chat.conversation_id){
         this.loadChat();
       }
