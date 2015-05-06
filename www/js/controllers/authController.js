@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal, $timeout, $location, $http, User, Util, Config) {
+dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal, $timeout, $location, $http, User, Util) {
 
   // Login with facebook
   $scope.fbLogin = function(){
