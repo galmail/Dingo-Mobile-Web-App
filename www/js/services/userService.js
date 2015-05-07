@@ -3,7 +3,7 @@
  *
  */
 
-dingo.services.factory('User', function($http, Util) {
+dingo.services.factory('User', function($http, Facebook, Util) {
   
   return {
 
@@ -18,6 +18,10 @@ dingo.services.factory('User', function($http, Util) {
         this.loginCallbacks.callbacks.push(callback);
         this.loginCallbacks.names.push(name);
       }
+    },
+
+    isGuest: function(){
+      return (this.info.fb_id == null || this.info.fb_id == '');
     },
 
     //call this when you know user has logged in
@@ -138,6 +142,59 @@ dingo.services.factory('User', function($http, Util) {
       }).error(function(){
         callback(false);
       });
+    },
+
+    fbLogin: function(callback){
+      var self = this;
+      var FBApi = null;
+      var FBLogin = null;
+
+      if(window.facebookConnectPlugin){
+        FBLogin = function(callback,error){
+          var array_permissions = ['public_profile,email'];
+          return facebookConnectPlugin.login(array_permissions,callback,error);
+        };
+        FBApi = function(requestPath,callback,error){
+          var array_permissions = [];
+          return facebookConnectPlugin.api(requestPath, array_permissions, callback, error);
+        };
+      }
+      else {
+        FBLogin = function(callback){
+          return Facebook.login(callback,{scope: 'public_profile,email'});
+        };
+        FBApi = function(requestPath,callback,error){
+          var method = 'get';
+          var params = null;
+          return Facebook.api(requestPath, method, params, callback);
+        };
+      }
+      
+      FBLogin(
+        function (response){
+          //console.log('user is connected with facebook!');
+          FBApi("me/",
+            function (response){
+              var userData = self.fbParseUserInfo(response);
+              self.setInfo(userData);
+              self.connect(function(ok){
+                if(ok){
+                  callback(true);
+                  //window.history.back();
+                }
+                else {
+                  console.log('Error occured: User is logged with facebook but apparently using a different fb_id or password');
+                  callback(false);
+                }
+              });
+            }
+          );
+        },
+        function (response){
+          //alert('User is not connected with facebook!');
+          callback(false);
+        }
+      );
     }
 
 

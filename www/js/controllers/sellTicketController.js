@@ -38,9 +38,15 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, Event
 	};
 
 	$scope.previewTicket = function(){
-		// TODO: Validate Form
-		Ticket.ticketForSale = this.ticketDetails;
-		$location.path("/home/sell-ticket-preview");
+		var run = function(){
+			Ticket.ticketForSale = this.ticketDetails;
+			$location.path("/home/sell-ticket-preview");
+		};
+		if(User.isGuest()){
+			this.showLoginWithFB(run);
+		} else {
+			run();
+		}
 	};
 
 	$scope.sellTicket = function(){

@@ -7,55 +7,14 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
 
   // Login with facebook
   $scope.fbLogin = function(){
-
-    var FBApi = null;
-    var FBLogin = null;
-
-    if(window.facebookConnectPlugin){
-      FBLogin = function(callback,error){
-        var array_permissions = ['public_profile,email'];
-        return facebookConnectPlugin.login(array_permissions,callback,error);
-      };
-      FBApi = function(requestPath,callback,error){
-        var array_permissions = [];
-        return facebookConnectPlugin.api(requestPath, array_permissions, callback, error);
-      };
-    }
-    else {
-      FBLogin = function(callback){
-        return Facebook.login(callback,{scope: 'public_profile,email'});
-      };
-      FBApi = function(requestPath,callback,error){
-        var method = 'get';
-        var params = null;
-        return Facebook.api(requestPath, method, params, callback);
-      };
-    }
-    
-    FBLogin(
-      function (response){
-        console.log('user is connected with facebook!');
-        FBApi("me/",
-          function (response){
-            var userData = User.fbParseUserInfo(response);
-            User.setInfo(userData);
-            User.connect(function(ok){
-              if(ok){
-                alert('User is logged in!');
-                window.history.back();
-              }
-              else {
-                alert('User is not logged in!');
-              }
-            });
-          }
-        );
-      },
-      function (response){
-        //alert(JSON.stringify(response))
-        alert('User is not connected with facebook!');
+    User.fbLogin(function(logged){
+      if(logged){
+        window.history.back();
       }
-    );
+      else {
+        alert('User is not logged in.');
+      }
+    });
   };
 
   // Login as Guest
