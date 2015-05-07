@@ -37,6 +37,13 @@ dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,$
 		var ticketId = $scope.ticket.id;
 		var receiverId = $scope.ticket.user_id;
 		var conversationId = Message.getNewConversationId(ticketId,receiverId);
+		Message.active_chat.peer = {
+			id: conversationId,
+			user_id: receiverId,
+			user_pic: $scope.ticket.user_photo,
+			user_name: $scope.ticket.user_name,
+			event_name: $scope.event.name
+		};
 		$location.path("/home/messages/" + conversationId);
 	};
 
