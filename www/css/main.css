@@ -7590,19 +7590,19 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
  * --------------------------------------------------
  */
 .padding {
-  padding: 0px; }
+  padding: 10px; }
 
 .padding-top, .padding-vertical {
-  padding-top: 0px; }
+  padding-top: 10px; }
 
 .padding-right, .padding-horizontal {
-  padding-right: 0px; }
+  padding-right: 10px; }
 
 .padding-bottom, .padding-vertical {
-  padding-bottom: 0px; }
+  padding-bottom: 10px; }
 
 .padding-left, .padding-horizontal {
-  padding-left: 0px; }
+  padding-left: 10px; }
 
 /**
  * Rounded
@@ -7978,7 +7978,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     color: #fff;
     background-color: #398FAB;
     margin-bottom: 5px;
-    padding: 2px; }
+    padding-left: 11px;
+    padding-bottom: 2px; }
   .d-events #events_container .event .row {
     padding: 0;
     margin-bottom: 10px;

@@ -7587,19 +7587,19 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
  * --------------------------------------------------
  */
 .padding {
-  padding: 10px; }
+  padding: 0px; }
 
 .padding-top, .padding-vertical {
-  padding-top: 10px; }
+  padding-top: 0px; }
 
 .padding-right, .padding-horizontal {
-  padding-right: 10px; }
+  padding-right: 0px; }
 
 .padding-bottom, .padding-vertical {
-  padding-bottom: 10px; }
+  padding-bottom: 0px; }
 
 .padding-left, .padding-horizontal {
-  padding-left: 10px; }
+  padding-left: 0px; }
 
 /**
  * Rounded
