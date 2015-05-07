@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('EventDetailsCtrl', function($scope,$location,$stateParams,Event,Ticket,User,Util) {
+dingo.controllers.controller('EventDetailsCtrl', function($scope,$location,$stateParams,Event,Category,Ticket,User,Util) {
 
 	$scope.event = {};
 	$scope.tickets = [];
@@ -28,6 +28,7 @@ dingo.controllers.controller('EventDetailsCtrl', function($scope,$location,$stat
 		var eventId = $stateParams.eventId;
 		Event.getById(eventId,function(event){
 			$scope.event = event;
+			$scope.event.category_image = Category.getImage(event.category_id);
 			loaded('event');
 		});
 		Ticket.getByEventId(eventId,function(tickets){

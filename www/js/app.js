@@ -8,7 +8,7 @@ dingo.directives = angular.module('dingo.directives', []);
 ///////////// Config Vars /////////////
 dingo.constant('CONFIG', {
   FacebookAppId: '667287336672842',
-  FacebookAppIdTest: '820677384667169',//'854877257866349',
+  FacebookAppIdTest: '820677384667169',
   GCM_SENDER_ID: '734407104892'
 });
 

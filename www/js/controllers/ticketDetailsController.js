@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,$location,Event,Ticket,Payment,Order,User,Message,Util) {
+dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,$location,Event,Category,Ticket,Payment,Order,User,Message,Util) {
 
 	$scope.event = {};
 	$scope.ticket = {};
@@ -56,6 +56,7 @@ dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,$
 		var ticketId = $stateParams.ticketId;
 		Event.getById(eventId,function(event){
 			$scope.event = event;
+			$scope.event.category_image = Category.getImage(event.category_id);
 			loaded('event');
 		});
 		Ticket.getById(ticketId,function(ticket){
