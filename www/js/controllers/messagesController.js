@@ -45,6 +45,7 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionic
 		Message.active_chat.conversation_id = $stateParams.conversationId;
 		var loaded = function(){ Util.hideLoading(); };
 		if(Message.active_chat.conversation_id){
+			$scope.active_peer = Message.active_chat.peer;
 			Message.loadChat(loaded);
 		}
 		else {
