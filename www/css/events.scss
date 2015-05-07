@@ -5,10 +5,17 @@
 
 	.bar-search {
 		padding: 0;
+		background-color: #ECEBE8;
+	}
+
+	.item-input-wrapper{
+		background-color: white;
 	}
 
 
 	#categories_container {
+
+		padding: 5px;
 
 		.categories {
 			overflow: hidden;
@@ -30,10 +37,21 @@
 					input {
 						position: absolute;
 						bottom: 0;
-						margin-bottom: 12px;
+						margin-bottom: 8px;
 						right: -3px;
 					}
 				}
+
+			  	.checkbox input:before, .checkbox-icon:before {
+			  		background-color: rgba(255,255,255,0.0);
+			  		border: 1px solid #FFF;
+    			}
+
+				.checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+    				background: #398FAB;
+    				opacity: 1;
+    			}
+
 				img {
 					position: absolute;
 					height: 100%;
@@ -52,7 +70,6 @@
 		}
 	}
 
-
 	#events_container {
 		.events-date {
 			color: #fff;
@@ -60,6 +77,7 @@
 			margin-bottom: 5px;
 			padding-left: 11px;
 			padding-bottom: 2px;
+			padding-top: 3px;
 		}
 
 		.event {
@@ -71,6 +89,7 @@
 				&.ion-chevron-right:before {
 					margin-top: 30px;
 					position: absolute;
+					padding-right: 10px;
 					right: 0;
 					color: gray;
 				}
@@ -84,13 +103,14 @@
 				}
 				.event-data {
 					.event-title {
-						font-weight: bold;
+						font-weight: 400;
 						font-size: 18px;
 						padding: 0 5px;
 					}
 					.event-address {
 						padding: 0 5px;
 						font-size: 14px;
+						font-weight: 300;
 					}
 					.event-time {
 						padding: 0 5px;
@@ -99,7 +119,6 @@
 					}
 				}
 				.event-price {
-					//width: 60px;
 
 					.event-price-from {
 						font-size: 16px;

@@ -7953,44 +7953,56 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 .d-events {
   background-color: #ECEBE8; }
   .d-events .bar-search {
-    padding: 0; }
-  .d-events #categories_container .categories {
-    overflow: hidden; }
-    .d-events #categories_container .categories .category {
-      padding: 0;
-      margin-right: 5px;
-      float: left;
-      width: 49%;
-      height: 100px;
-      border: 0; }
-      .d-events #categories_container .categories .category:last-child {
-        margin-right: 0; }
-      .d-events #categories_container .categories .category label.checkbox {
-        height: 100%;
-        top: inherit;
-        bottom: 0; }
-        .d-events #categories_container .categories .category label.checkbox input {
+    padding: 0;
+    background-color: #ECEBE8; }
+  .d-events .item-input-wrapper {
+    background-color: white; }
+  .d-events #categories_container {
+    padding: 5px; }
+    .d-events #categories_container .categories {
+      overflow: hidden; }
+      .d-events #categories_container .categories .category {
+        padding: 0;
+        margin-right: 5px;
+        float: left;
+        width: 49%;
+        height: 100px;
+        border: 0; }
+        .d-events #categories_container .categories .category:last-child {
+          margin-right: 0; }
+        .d-events #categories_container .categories .category label.checkbox {
+          height: 100%;
+          top: inherit;
+          bottom: 0; }
+          .d-events #categories_container .categories .category label.checkbox input {
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 8px;
+            right: -3px; }
+        .d-events #categories_container .categories .category .checkbox input:before, .d-events #categories_container .categories .category .checkbox-icon:before {
+          background-color: rgba(255, 255, 255, 0);
+          border: 1px solid #FFF; }
+        .d-events #categories_container .categories .category .checkbox input:checked:before, .d-events #categories_container .categories .category .checkbox input:checked + .checkbox-icon:before {
+          background: #398FAB;
+          opacity: 1; }
+        .d-events #categories_container .categories .category img {
           position: absolute;
+          height: 100%;
+          width: 100%; }
+        .d-events #categories_container .categories .category .category-name {
+          position: absolute;
+          color: white;
           bottom: 0;
-          margin-bottom: 12px;
-          right: -3px; }
-      .d-events #categories_container .categories .category img {
-        position: absolute;
-        height: 100%;
-        width: 100%; }
-      .d-events #categories_container .categories .category .category-name {
-        position: absolute;
-        color: white;
-        bottom: 0;
-        margin-bottom: 10px;
-        margin-left: 6px;
-        left: 5px; }
+          margin-bottom: 10px;
+          margin-left: 6px;
+          left: 5px; }
   .d-events #events_container .events-date {
     color: #fff;
     background-color: #398FAB;
     margin-bottom: 5px;
     padding-left: 11px;
-    padding-bottom: 2px; }
+    padding-bottom: 2px;
+    padding-top: 3px; }
   .d-events #events_container .event .row {
     padding: 0;
     margin-bottom: 5px;
@@ -7999,6 +8011,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     .d-events #events_container .event .row.ion-chevron-right:before {
       margin-top: 30px;
       position: absolute;
+      padding-right: 10px;
       right: 0;
       color: gray; }
     .d-events #events_container .event .row > div {
@@ -8007,12 +8020,13 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       width: 70px;
       padding-left: 5px; }
     .d-events #events_container .event .row .event-data .event-title {
-      font-weight: bold;
+      font-weight: 400;
       font-size: 18px;
       padding: 0 5px; }
     .d-events #events_container .event .row .event-data .event-address {
       padding: 0 5px;
-      font-size: 14px; }
+      font-size: 14px;
+      font-weight: 300; }
     .d-events #events_container .event .row .event-data .event-time {
       padding: 0 5px;
       font-size: 12px;
