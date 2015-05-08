@@ -3,5 +3,9 @@
   "private": "true",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.0.0-beta.13"
+  },
+  "dependencies": {
+    "moment": "~2.10.2",
+    "ngCordova": "~0.1.15-alpha"
   }
 }

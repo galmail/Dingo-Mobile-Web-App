@@ -18,7 +18,8 @@ Installation Steps
 npm install -g bower
 npm install -g cordova@4.0.0
 npm install -g gulp
-bower install ngCordova
+npm install
+bower install
 cordova platform add android
 
 List of Plugins
@@ -35,7 +36,6 @@ cordova -d plugin add https://github.com/Wizcorp/phonegap-facebook-plugin.git --
 Test on the Browser
 ====================
 
-npm install
 npm start
 Open a new tab (Ctrl+T) and run: "gulp watch"
 
