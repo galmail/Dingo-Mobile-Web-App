@@ -27,6 +27,7 @@ dingo.services.factory('Event', function($http, Util) {
         }
         event.parsed_time = moment(d).format('h:mm a');
         event.min_price = Math.round(event.min_price);
+        event.parsed_datetime = moment(d).format('h:mm a, Do MMM');
       });
       return events;
     },
