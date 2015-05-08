@@ -7966,7 +7966,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
         margin-right: 5px;
         float: left;
         width: 166px;
-        height: 100px;
+        height: 105px;
         border: 0; }
         .d-events #categories_container .categories .category:last-child {
           margin-right: 0; }
@@ -8001,8 +8001,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     background-color: #398FAB;
     margin-bottom: 5px;
     padding-left: 11px;
-    padding-bottom: 2px;
-    padding-top: 3px; }
+    padding-bottom: 1px;
+    padding-top: 2px; }
   .d-events #events_container .event .row {
     padding: 0;
     margin-bottom: 5px;
@@ -8149,7 +8149,10 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       min-height: 0px;
       height: 40px;
       line-height: 30px;
-      width: 90%; }
+      width: 90%;
+      border-color: #398FAB;
+      color: #398FAB;
+      font-size: 18px; }
       .d-ticket-details .ticket-actions .button.buy-button {
         font-weight: bold;
         border: 3px solid; }
