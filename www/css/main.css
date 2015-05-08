@@ -8045,7 +8045,9 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   background-color: #ECEBE8; }
   .d-event-details .event-info {
     height: 180px;
-    background-position: 0px -90px; }
+    background-position: 0px -90px;
+    margin-bottom: 0px;
+    padding: 0px; }
     .d-event-details .event-info .event-photo {
       padding-top: 30px;
       padding-left: 15px; }
@@ -8070,36 +8072,87 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   .d-event-details .event-photo img {
     height: 120px;
     border-radius: 60px; }
+  .d-event-details .sellerbar {
+    background-color: #FFFFFF;
+    height: 40px; }
+  .d-event-details .personicon {
+    float: left;
+    padding-left: 10px;
+    padding-top: 9px; }
+  .d-event-details .sellertext {
+    font-size: 18px;
+    font-weight: 200;
+    padding-left: 37px;
+    padding-top: 10px; }
+  .d-event-details .item {
+    margin: 0px; }
+  .d-event-details .ticket.item.row.icon-right.ion-chevron-right {
+    height: 85px; }
+  .d-event-details .tickets-list.ticket {
+    margin-bottom: 1px; }
+  .d-event-details .tickets-list .ticket .ticket-photo {
+    height: 65px;
+    width: 65px; }
+  .d-event-details .tickets-list .ticket.ion-chevron-right:before {
+    margin-top: 22px;
+    padding-right: 6px; }
   .d-event-details .ticket.item.row.icon-right.ion-chevron-right {
     background-color: #ECEBE8;
     border-style: solid;
     border-width: 1px; }
+    .d-event-details .ticket.item.row.icon-right.ion-chevron-right .col {
+      font-size: 18px;
+      padding-top: 3px;
+      padding-left: 8px; }
+    .d-event-details .ticket.item.row.icon-right.ion-chevron-right .ticket-price-per-ticket {
+      padding-top: 0px;
+      font-size: 15px; }
+    .d-event-details .ticket.item.row.icon-right.ion-chevron-right .ticket-price-available-tickets {
+      font-size: 15px; }
+  .d-event-details .ticket.item.row {
+    padding: 10px; }
   .d-event-details .padding.scroll-content.ionic-scroll.has-header.has-tabs {
     margin: 0px; }
 
 /* Ticket Details Style */
 .d-ticket-details {
   background-color: #ECEBE8; }
+  .d-ticket-details .ticketheader {
+    height: 110px;
+    text-align: center; }
+    .d-ticket-details .ticketheader .ticketicon {
+      padding-top: 24px; }
   .d-ticket-details .ticket-info .item-input {
     border-right: 0;
-    border-left: 0; }
+    border-left: 0;
+    padding-left: 0px; }
     .d-ticket-details .ticket-info .item-input:first-child {
       border-top: 0; }
     .d-ticket-details .ticket-info .item-input .input-label {
       font-size: 14px;
-      width: 150px; }
+      padding-left: 20px;
+      max-width: none;
+      width: 51%; }
+    .d-ticket-details .ticket-info .item-input .blah {
+      width: 50%; }
     .d-ticket-details .ticket-info .item-input input {
       background-color: inherit; }
-  .d-ticket-details .ticket-actions .photo {
-    height: 120px;
-    border-radius: 60px; }
-  .d-ticket-details .ticket-actions .button {
-    margin-top: 0px;
-    min-height: 0px;
-    line-height: 30px; }
-    .d-ticket-details .ticket-actions .button.buy-button {
-      font-weight: bold;
-      border: 3px solid; }
+    .d-ticket-details .ticket-info .item-input input[type="text"] {
+      color: grey; }
+  .d-ticket-details .ticket-actions {
+    text-align: center; }
+    .d-ticket-details .ticket-actions .photo {
+      height: 130px;
+      border-radius: 65px; }
+    .d-ticket-details .ticket-actions .button {
+      margin-top: 15px;
+      min-height: 0px;
+      height: 40px;
+      line-height: 30px;
+      width: 90%; }
+      .d-ticket-details .ticket-actions .button.buy-button {
+        font-weight: bold;
+        border: 3px solid; }
 
 /* Sell Ticket Style */
 .d-sell-ticket {

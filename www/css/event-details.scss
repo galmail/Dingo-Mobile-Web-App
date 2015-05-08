@@ -6,6 +6,8 @@
 .event-info {
   height: 180px;
   background-position: 0px -90px;
+  margin-bottom: 0px;
+  padding: 0px;
 
 	.event-photo {
     	padding-top: 30px;
@@ -46,11 +48,70 @@
     border-radius: 60px;
 }
 
+.sellerbar{
+	background-color: #FFFFFF;
+	height: 40px;
+}
 
-.ticket.item.row.icon-right.ion-chevron-right{
+.personicon{
+	float: left;
+	padding-left: 10px;
+	padding-top: 9px;
+}
+
+.sellertext{
+	font-size: 18px;
+	font-weight: 200;
+	padding-left: 37px;
+	padding-top: 10px;
+}
+
+
+.item {
+	margin: 0px;
+}
+
+.ticket.item.row.icon-right.ion-chevron-right {
+	height: 85px;
+}
+
+.tickets-list.ticket {
+	margin-bottom: 1px;
+}
+
+.tickets-list .ticket .ticket-photo {
+  height: 65px;
+  width: 65px;
+}
+
+.tickets-list .ticket.ion-chevron-right:before {
+  margin-top: 22px;
+  padding-right: 6px;
+}
+
+.ticket.item.row.icon-right.ion-chevron-right {
 	background-color: #ECEBE8;
 	border-style: solid;
     border-width: 1px;
+
+    .col{
+    	font-size: 18px;
+    	padding-top: 3px;
+    	padding-left: 8px;
+    }
+
+    .ticket-price-per-ticket{
+    	padding-top: 0px;
+    	font-size: 15px;
+    }
+
+    .ticket-price-available-tickets{
+    	font-size: 15px;
+    }
+}
+
+.ticket.item.row {
+	padding: 10px;
 }
 
 .padding.scroll-content.ionic-scroll.has-header.has-tabs{

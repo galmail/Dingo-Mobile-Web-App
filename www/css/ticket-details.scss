@@ -3,39 +3,62 @@
 .d-ticket-details {
 	background-color: #ECEBE8;
 
+	.ticketheader{
+		height: 110px;
+		text-align: center;
+
+		.ticketicon{
+			padding-top: 24px;
+		}
+	}
+
 	.ticket-info {
 		.item-input {
 			border-right: 0;
 			border-left: 0;
+			padding-left: 0px;
 			&:first-child {
 				border-top: 0;
 			}
 			.input-label {
 				font-size: 14px;
-				width: 150px;
+				padding-left: 20px;
+				max-width: none;
+				width: 51%
 			}
+			.blah{
+				width: 50%
+			}
+
 			input {
 				background-color: inherit;
+			}
+			input[type="text"]{
+				color: grey;
 			}
 		}
 	}
 
 	.ticket-actions {
+		text-align: center;
+
 		.photo {
-			height: 120px;
-			border-radius: 60px;
+			height: 130px;
+			border-radius: 65px;
 		}
 		.button {
-			margin-top: 0px;
+			margin-top: 15px;
 			min-height: 0px;
+			height: 40px;
 			line-height: 30px;
+			width: 90%;
+
 			&.buy-button {
 				font-weight: bold;
 				border: 3px solid;
 			}
 		}
 	}
-
 
 
 

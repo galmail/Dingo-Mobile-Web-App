@@ -16,6 +16,11 @@
   		</div>
   	</div>
 
+    <div class="sellerbar">
+      <img class="personicon" src="img/eventDetails_screen/person.png"/>
+      <div class="sellertext">Sellers</div>
+    </div>
+
   	<ul class="list tickets-list">
     	<li class="ticket item row icon-right ion-chevron-right" ng-repeat="ticket in tickets" ng-click="go('/home/ticket-details/' + event.id + '/' + ticket.id)">
         <img class="ticket-photo" ng-src="{{ticket.user_photo}}"/>
