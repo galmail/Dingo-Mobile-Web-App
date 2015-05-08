@@ -36,7 +36,7 @@
   	<div id="events_container">
 
 			<div ng-repeat="event in events" class="event">
-			<div class="events-date">{{event.parsed_date}}</div>
+			<div ng-if="emptyEventsForThisDate(event.date)" class="events-date">{{event.parsed_date}}</div>
 				<a class="row icon-right ion-chevron-right" ng-href="#/home/event-details/{{event.id}}">
 					<div class="event-pic">
 						<img style="height:70px;" ng-src="{{event.thumb}}" />

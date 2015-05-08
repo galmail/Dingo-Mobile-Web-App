@@ -12,6 +12,16 @@ dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, Use
 		eventsKeyword: "",
 		selectedCategories: []
 	};
+	$scope.lastDate = null;
+
+	$scope.emptyEventsForThisDate = function(eventDate){
+		var d = new Date(eventDate).setHours(0,0,0,0);
+		if($scope.lastDate == null || $scope.lastDate != d){
+			$scope.lastDate = d;
+			return true;
+		}
+		return false;
+	};
 
 	$scope.search = function(){
 		var eventKeyword = $scope.filter.eventsKeyword;
