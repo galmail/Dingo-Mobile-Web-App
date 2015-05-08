@@ -51,6 +51,7 @@
 .sellerbar{
 	background-color: #FFFFFF;
 	height: 40px;
+	border-bottom: 1px solid grey;
 }
 
 .personicon{
@@ -91,8 +92,8 @@
 
 .ticket.item.row.icon-right.ion-chevron-right {
 	background-color: #ECEBE8;
-	border-style: solid;
-    border-width: 1px;
+	border-style: none;
+    border-bottom: 1px solid grey;
 
     .col{
     	font-size: 18px;

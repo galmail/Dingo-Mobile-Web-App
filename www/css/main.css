@@ -8002,7 +8002,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     margin-bottom: 5px;
     padding-left: 11px;
     padding-bottom: 1px;
-    padding-top: 2px; }
+    padding-top: 1px; }
   .d-events #events_container .event .row {
     padding: 0;
     margin-bottom: 5px;
@@ -8074,7 +8074,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     border-radius: 60px; }
   .d-event-details .sellerbar {
     background-color: #FFFFFF;
-    height: 40px; }
+    height: 40px;
+    border-bottom: 1px solid grey; }
   .d-event-details .personicon {
     float: left;
     padding-left: 10px;
@@ -8098,8 +8099,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     padding-right: 6px; }
   .d-event-details .ticket.item.row.icon-right.ion-chevron-right {
     background-color: #ECEBE8;
-    border-style: solid;
-    border-width: 1px; }
+    border-style: none;
+    border-bottom: 1px solid grey; }
     .d-event-details .ticket.item.row.icon-right.ion-chevron-right .col {
       font-size: 18px;
       padding-top: 3px;
