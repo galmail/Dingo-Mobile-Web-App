@@ -3,11 +3,31 @@
  *
  */
 
-dingo.controllers.controller('SellTicketCtrl', function($scope, $location, Event, Ticket, User, Util) {
+dingo.controllers.controller('SellTicketCtrl', function($scope, $location, $ionicPopup, Event, Ticket, User, Util) {
 
 	$scope.ticketDetails = null;
-
 	$scope.events = [];
+
+	$scope.showLoginWithFB = function(callback){
+		// show a dialog
+		var confirmPopup = $ionicPopup.confirm({
+      title: 'User Login',
+      template: 'You are currently logged as guest, please login with your facebook account to continue.'
+    });
+    confirmPopup.then(function(yes) {
+      if(yes){
+        User.fbLogin(function(logged){
+		      if(logged){
+		        callback();
+		      }
+		      else {
+		        alert('User is not logged in.');
+		      }
+		    });
+      }
+    });
+		return false;
+	};
 
 	$scope.filterEvent = function(){
 		var self = this;
@@ -38,9 +58,15 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, Event
 	};
 
 	$scope.previewTicket = function(){
-		// TODO: Validate Form
-		Ticket.ticketForSale = this.ticketDetails;
-		$location.path("/home/sell-ticket-preview");
+		var run = function(){
+			Ticket.ticketForSale = this.ticketDetails;
+			$location.path("/home/sell-ticket-preview");
+		};
+		if(User.isGuest()){
+			this.showLoginWithFB(run);
+		} else {
+			run();
+		}
 	};
 
 	$scope.sellTicket = function(){
