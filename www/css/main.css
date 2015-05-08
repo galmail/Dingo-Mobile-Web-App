@@ -7965,7 +7965,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
         padding: 0;
         margin-right: 5px;
         float: left;
-        width: 49%;
+        width: 166px;
         height: 100px;
         border: 0; }
         .d-events #categories_container .categories .category:last-child {
@@ -8043,6 +8043,33 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* Event Details Style */
 .d-event-details {
   background-color: #ECEBE8; }
+  .d-event-details .event-info {
+    height: 180px;
+    background-position: 0px -90px; }
+    .d-event-details .event-info .event-photo {
+      padding-top: 30px;
+      padding-left: 15px; }
+    .d-event-details .event-info .event-data .event-title {
+      padding-top: 30px;
+      font-size: 26px; }
+    .d-event-details .event-info .locationicon {
+      width: 20px;
+      float: left; }
+    .d-event-details .event-info .event-address {
+      padding-left: 26px;
+      padding-bottom: 4px;
+      font-size: 18px; }
+    .d-event-details .event-info .timeicon {
+      padding-top: 10px;
+      width: 20px;
+      float: left; }
+    .d-event-details .event-info .event-time {
+      padding-top: 10px;
+      padding-left: 26px;
+      font-size: 18px; }
+  .d-event-details .event-photo img {
+    height: 120px;
+    border-radius: 60px; }
   .d-event-details .ticket.item.row.icon-right.ion-chevron-right {
     background-color: #ECEBE8;
     border-style: solid;

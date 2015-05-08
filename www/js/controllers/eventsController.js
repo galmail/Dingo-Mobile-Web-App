@@ -5,7 +5,7 @@
 
 dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, User, Util) {
 
-	$scope.category_width = 164;
+	$scope.category_width = 166;
 	$scope.categories = [];
 	$scope.events = [];
 	$scope.filter = {
@@ -51,7 +51,7 @@ dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, Use
 
 		Category.loadAll(function(categories){
 			$scope.categories = categories;
-			$scope.categories_width = ($scope.category_width * categories.length) - 5;
+			$scope.categories_width = (($scope.category_width + 5) * categories.length) - 5;
 			loaded('categories');
 		});
 		Event.loadAll(function(events){
