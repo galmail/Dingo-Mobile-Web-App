@@ -7999,46 +7999,55 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   .d-events #events_container .events-date {
     color: #fff;
     background-color: #398FAB;
-    margin-bottom: 5px;
     padding-left: 11px;
     padding-bottom: 1px;
     padding-top: 1px; }
-  .d-events #events_container .event .row {
-    padding: 0;
-    margin-bottom: 5px;
-    color: inherit;
-    text-decoration: inherit; }
-    .d-events #events_container .event .row.ion-chevron-right:before {
-      margin-top: 30px;
-      position: absolute;
-      padding-right: 10px;
-      right: 0;
-      color: gray; }
-    .d-events #events_container .event .row > div {
-      height: 70px; }
-    .d-events #events_container .event .row .event-pic {
-      width: 70px;
-      padding-left: 5px; }
-    .d-events #events_container .event .row .event-data .event-title {
-      font-weight: 400;
-      font-size: 18px;
-      padding: 0 5px; }
-    .d-events #events_container .event .row .event-data .event-address {
-      padding: 0 5px;
-      font-size: 14px;
-      font-weight: 300; }
-    .d-events #events_container .event .row .event-data .event-time {
-      padding: 0 5px;
-      font-size: 12px;
-      color: gray; }
-    .d-events #events_container .event .row .event-price .event-price-from {
-      font-size: 16px; }
-    .d-events #events_container .event .row .event-price .event-price-per-ticket {
-      font-size: 14px;
-      color: gray; }
-    .d-events #events_container .event .row .event-price .event-price-available-tickets {
-      font-size: 14px;
-      color: gray; }
+  .d-events #events_container .event {
+    border-bottom: 1px solid grey; }
+    .d-events #events_container .event .row {
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+      color: inherit;
+      text-decoration: inherit; }
+      .d-events #events_container .event .row.ion-chevron-right:before {
+        margin-top: 30px;
+        position: absolute;
+        padding-right: 10px;
+        right: 0;
+        color: gray; }
+      .d-events #events_container .event .row > div {
+        height: 70px; }
+      .d-events #events_container .event .row .event-pic {
+        width: 70px;
+        padding-left: 5px;
+        padding-top: 5px; }
+      .d-events #events_container .event .row .event-data .event-title {
+        font-weight: 400;
+        font-size: 18px;
+        padding: 0 5px; }
+      .d-events #events_container .event .row .event-data .event-address {
+        padding: 0 5px;
+        font-size: 14px;
+        font-weight: 300; }
+      .d-events #events_container .event .row .event-data .event-time {
+        padding: 0 5px;
+        font-size: 12px;
+        color: gray; }
+      .d-events #events_container .event .row .event-price {
+        padding: 0px;
+        padding-top: 2px; }
+        .d-events #events_container .event .row .event-price .event-price-from {
+          font-size: 16px;
+          margin-bottom: 0px;
+          padding-bottom: 2px;
+          padding: 5px; }
+        .d-events #events_container .event .row .event-price .event-price-per-ticket {
+          font-size: 14px;
+          color: gray;
+          padding-bottom: 0px; }
+        .d-events #events_container .event .row .event-price .event-price-available-tickets {
+          font-size: 14px;
+          color: gray; }
 
 /* Event Details Style */
 .d-event-details {
@@ -8161,10 +8170,28 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* Sell Ticket Style */
 .d-sell-ticket {
   background-color: #ECEBE8; }
-  .d-sell-ticket .event-name .events-list .item {
-    font-weight: bold;
-    background-color: lightgray;
-    border-bottom: 2px solid white; }
+  .d-sell-ticket .topsection {
+    height: 80px;
+    text-align: center; }
+    .d-sell-ticket .topsection .topsectiontext {
+      font-size: 18px;
+      font-weight: 300;
+      padding-top: 30px;
+      color: grey; }
+  .d-sell-ticket .input-label {
+    width: 50%;
+    max-width: none; }
+  .d-sell-ticket .sellinput {
+    color: #444;
+    font-size: 16px;
+    background-color: white; }
+  .d-sell-ticket .tickettypeinput {
+    position: relative;
+    padding-left: 0px;
+    color: #444;
+    font-size: 16px; }
+  .d-sell-ticket .item.item-input.item-stacked-label {
+    background-color: white; }
 
 /* Messages Style */
 .d-messages {

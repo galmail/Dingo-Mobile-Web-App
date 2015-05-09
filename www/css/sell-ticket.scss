@@ -1,20 +1,41 @@
 /* Sell Ticket Style */
 
 .d-sell-ticket {
+
 	background-color: #ECEBE8;
 
-	.event-name {
+  	.topsection{
+  		height: 80px;
+  		text-align: center;
 
-		.events-list {
-			.item {
-				font-weight: bold;
-				background-color: lightgray;
-				border-bottom: 2px solid white;
-			}
-		}
+  		.topsectiontext{
+  			font-size: 18px;
+  			font-weight: 300;
+  			padding-top: 30px;
+  			color: grey;
+  		}
+  	}
 
+	.input-label {
+		width: 50%;
+		max-width: none;
+	}
 
+	.sellinput {
+		color: #444;
+		font-size: 16px;
+		background-color: white;
+	}
 
+	.tickettypeinput{
+		position: relative;
+		padding-left: 0px;
+		color: #444;
+  		font-size: 16px;
+	}
+
+	.item.item-input.item-stacked-label{
+		background-color: white;
 	}
 	
 
