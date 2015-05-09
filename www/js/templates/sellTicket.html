@@ -37,7 +37,7 @@
 
 		  <label class="item item-input">
 		    <span class="input-label">Number of tickets:</span>
-		    <input class="sellinput" type="number" ng-model="ticketDetails.num_tickets" min="1" max="10"/>
+		    <input class="sellinput" type="number" ng-model="ticketDetails.num_tickets" min="1" max="10" placeholder="Number of tickets"/>
 		  </label>
 
 		  <label class="item item-input item-select">
@@ -52,9 +52,15 @@
 
 		  <label class="item item-input item-stacked-label">
 		    <span class="input-label">Comments:</span>
-		    <textarea ng-model="ticketDetails.comments" rows="2" placeholder="Add any additional comments about the tickets or collection">
+		    <textarea ng-model="ticketDetails.comments" maxlength="200" rows="2" placeholder="Add any additional comments about the tickets or collection.">
 		    </textarea>
 		  </label>
+
+		  <div class="moneysection">
+		  	<div class="moneysectionheader">Receiving your money</div>
+  			<div class="moneysectiontext"><p>You will receive 100% of the funds 48 hours after the event. Please see our FAQ's for more info.</p><br><p>If your ticket sells make sure you log into PayPal within Settings.</p></div>
+  	 	  </div>
+
 
 		  <!-- <div class="item item-divider">
 		    How do you want to be paid?
@@ -116,7 +122,7 @@
 
 	  </div>
 
-  	<button class="button button-full button-positive" ng-click="previewTicket()">Preview Ticket</button>
+  	<button class="button button-full button-positive" ng-click="previewTicket()">Preview</button>
 
   </ion-content>
 </ion-view>

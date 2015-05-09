@@ -8139,7 +8139,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     .d-ticket-details .ticket-info .item-input:first-child {
       border-top: 0; }
     .d-ticket-details .ticket-info .item-input .input-label {
-      font-size: 14px;
+      font-weight: 300;
+      font-size: 16px;
       padding-left: 20px;
       max-width: none;
       width: 51%; }
@@ -8148,7 +8149,9 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     .d-ticket-details .ticket-info .item-input input {
       background-color: inherit; }
     .d-ticket-details .ticket-info .item-input input[type="text"] {
-      color: grey; }
+      color: grey;
+      font-weight: 300;
+      font-size: 16px; }
   .d-ticket-details .ticket-actions {
     text-align: center; }
     .d-ticket-details .ticket-actions .photo {
@@ -8169,6 +8172,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 
 /* Sell Ticket Style */
 .d-sell-ticket {
+  font-weight: 300;
   background-color: #ECEBE8; }
   .d-sell-ticket .topsection {
     height: 80px;
@@ -8180,18 +8184,66 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       color: grey; }
   .d-sell-ticket .input-label {
     width: 50%;
-    max-width: none; }
+    max-width: none;
+    font-weight: 300; }
   .d-sell-ticket .sellinput {
     color: #444;
     font-size: 16px;
-    background-color: white; }
+    background-color: white;
+    font-weight: 300; }
   .d-sell-ticket .tickettypeinput {
     position: relative;
     padding-left: 0px;
     color: #444;
-    font-size: 16px; }
+    font-size: 16px;
+    font-weight: 300; }
   .d-sell-ticket .item.item-input.item-stacked-label {
+    background-color: white;
+    height: 110px; }
+    .d-sell-ticket .item.item-input.item-stacked-label textarea {
+      height: 90px; }
+    .d-sell-ticket .item.item-input.item-stacked-label .ng-pristine.ng-valid {
+      font-size: 16px;
+      height: 110px; }
+  .d-sell-ticket .event-name .item-input {
+    margin-top: 1px; }
+  .d-sell-ticket .event-name .item.ng-binding {
+    background-color: #C2C2C2;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #398FAB; }
+  .d-sell-ticket .moneysection {
+    height: 190px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    padding-top: 20px;
+    color: grey; }
+    .d-sell-ticket .moneysection .moneysectionheader {
+      color: black;
+      font-size: 17px;
+      padding-bottom: 10px; }
+    .d-sell-ticket .moneysection .moneysectiontext {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto; }
+  .d-sell-ticket .item.item-divider {
+    font-weight: 300;
+    color: #444444;
+    font-size: 17px;
     background-color: white; }
+  .d-sell-ticket .item.item-toggle {
+    padding-left: 25px; }
+  .d-sell-ticket .button.button-full.button-positive {
+    color: white;
+    font-size: 18px;
+    background-color: #398FAB;
+    max-width: 380px;
+    width: 80%;
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto; }
 
 /* Messages Style */
 .d-messages {

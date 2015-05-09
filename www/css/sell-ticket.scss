@@ -1,7 +1,7 @@
 /* Sell Ticket Style */
 
 .d-sell-ticket {
-
+	font-weight: 300;
 	background-color: #ECEBE8;
 
   	.topsection{
@@ -19,12 +19,14 @@
 	.input-label {
 		width: 50%;
 		max-width: none;
+		font-weight: 300;
 	}
 
 	.sellinput {
 		color: #444;
 		font-size: 16px;
 		background-color: white;
+		font-weight: 300;
 	}
 
 	.tickettypeinput{
@@ -32,11 +34,81 @@
 		padding-left: 0px;
 		color: #444;
   		font-size: 16px;
+  		font-weight: 300;
 	}
 
 	.item.item-input.item-stacked-label{
 		background-color: white;
+		height: 110px;
+		textarea {
+  			height: 90px;
+  		}
+
+		.ng-pristine.ng-valid{
+			font-size: 16px;
+			height: 110px;
+		}
 	}
+
 	
+	.event-name{
+		.item-input{
+			margin-top: 1px;
+		}
+		.item.ng-binding{
+			background-color: #C2C2C2;
+			border-style: solid;
+    		border-width: 3px;
+    		border-color: #398FAB;
+		}
+	}
+
+
+  	.moneysection{
+  		height: 190px;
+  		padding: 10px;
+  		text-align: center;
+  		font-size: 16px;
+  		font-weight: 300;
+  		padding-top: 20px;
+  		color: grey;
+
+	  	.moneysectionheader{
+	  		color: black;
+	  		font-size: 17px;
+	  		padding-bottom: 10px;
+	  	}
+  		
+  		.moneysectiontext{
+  			max-width: 400px;
+  			margin-left: auto;
+	  		margin-right: auto;
+  		}
+  	}
+
+  	.item.item-divider{
+  		font-weight: 300;
+  		color: #444444;
+	  	font-size: 17px;
+	  	background-color: white;
+  	}
+
+  	.item.item-toggle{
+  		padding-left: 25px;
+  	}
+
+  	.button.button-full.button-positive{
+  		color: white;
+  		font-size: 18px;
+  		background-color: #398FAB;
+  		max-width: 380px;
+  		width: 80%;
+  		border-style: none;
+  		margin-left: auto;
+	  	margin-right: auto;
+  	}
+
+
+
 
 }
