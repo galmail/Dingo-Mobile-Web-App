@@ -8,34 +8,40 @@
 	#peers {
 
 		.peer {
-			padding: 0;
-			margin-bottom: 10px;
+			height: 90px;
+			padding: 15px;
+			margin-bottom: 0px;
 			color: inherit;
 			text-decoration: inherit;
 			overflow: hidden;
-		  display: block;
-		  clear: both;
-		  border-bottom: 1px solid black;
-  		background-color: lightgreen;
+		  	display: block;
+		  	clear: both;
+		  	border-bottom: 1px solid #ECEBE8;
+  			background-color: white;
 			&.ion-chevron-right:before {
-				margin-top: 30px;
+				color: grey;
+				font-weight: 100;
+				margin-top: 20px;
 				position: absolute;
 				right: 15px;
-  			font-size: 16px;
+  				font-size: 12px;
 				& > div {
-					height: 70px;
+					height: 100px;
 				}
 			}
 			.user-pic {
 				float: left;
-				width: 70px;
-				height: 70px;
+				width: 60px;
+				height: 60px;
+				border-radius: 30px;
 			}
 			.user-name {
 				float: left;
-				font-weight: bold;
-				font-size: 18px;
-				padding: 20px 15px;
+				color: #444;
+				font-weight: 300;
+				font-size: 16px;
+				padding-left: 20px;
+				padding-top: 10px;
 			}
 		}
 		
@@ -64,6 +70,7 @@
 
 	#chat {
 		background-color: #eee;
+		height: 100%;
 		//margin: 20px auto 0;
 		//width: 400px;
 
@@ -77,7 +84,7 @@
 		}
 
 		.chat-box {
-			height: 300px;
+			height: calc(100% - 110px);
 			margin-bottom: 10px;
 		}
 
@@ -88,20 +95,20 @@
 			.mensaje-amigo {
 				margin-bottom: 10px;
 				overflow: hidden;
-  			clear: both;
+  				clear: both;
 				img {
-					float: right;
+					//float: right;
 					display: inline-block;
 					vertical-align: top;
-					border-radius: 5px;
+					border-radius: 25px;
 					width: 50px;
 				}
 
 				.contenido {
-					float: right;
-					background-color: #3990BF;
+					//float: right;
+					background-color: white;
 					border-radius: 5px;
-					color: white;
+					color: black;
 					display: inline-block;
 					font-size: 13px;
 					padding: 10px;
@@ -110,15 +117,15 @@
 				}
 
 				.flecha-derecha {
-					float: right;
+					//float: right;
 					display: inline-block;
-					margin-left: -6px;
+					margin-right: -6px;
 					margin-top: 10px;
 					width: 0; 
 					height: 0; 
 					border-top: 0px solid transparent;
 					border-bottom: 15px solid transparent;
-					border-left: 15px solid #3990BF;
+					border-right: 15px solid white;
 				}
 
 				.fecha {
@@ -136,16 +143,19 @@
   			clear: both;
 				
 				img {
+					float: right;
 					display: inline-block;
 					vertical-align: top;
-					border-radius: 5px;
+					border-radius: 25px;
 					width: 50px;
 				}
 				
 				.contenido {
-					background-color: white;
+					float: right;
+					background-color: #398FAB;
+					color: white;
 					border-radius: 5px;
-					box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+					//box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
 					display: inline-block;
 					font-size: 13px;
 					padding: 10px;
@@ -154,6 +164,7 @@
 				}
 				
 				.fecha {
+					float: right;
 					color: #777;
 					font-style: italic;
 					font-size: 13px;
@@ -163,36 +174,41 @@
 				}
 				
 				.flecha-izquierda {
+					float: right;
 					display: inline-block;
-					margin-right: -6px;
+					margin-left: -6px;
 					margin-top: 10px;
 					width: 0; 
 					height: 0; 
 					border-top: 0px solid transparent;
 					border-bottom: 15px solid transparent;
-					border-right: 15px solid white;
+					border-left: 15px solid #398FAB;
 				}
 			}
 		}
 
 		#caja-mensaje{
-			background-color: #A8DCF7;
+			background-color: white;
 			margin: 0 auto;
-			padding: 5px 10px;
-			//width: 400px;
+			padding: 5px 10px 10px;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
 			input{
+				float: left;
 				border: solid 1px #4193BF;
 				outline: none;
 				padding: 10px;
-				//width: 200px;
+				width: calc(100% - 120px);
 			}
 			button{
+				float: right;
 				border: 0;
 				background-color: #4193BF;
 				color: white;
 				font-size: 16px;
-				padding: 8px;
-				width: 50px;
+				padding: 6px;
+				width: 100px;
 			}
 		}
 

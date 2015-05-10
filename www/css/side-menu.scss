@@ -13,7 +13,7 @@
 			background-image: url('../img/login_screen/dingo_logo@2x.png');
 			background-repeat: no-repeat;
 			background-size: 48px;
-  		background-position: 73px 0px;
+  			background-position: 73px 0px;
 			width: 200px;
 			margin-left: auto;
 			margin-right: auto;
@@ -28,5 +28,48 @@
 
 	}
 	
+
+	/////// SIDE MENU ////////
+
+	.bar.bar-header.bar-stable.side{
+		background-color: #3F445B;
+	}
+
+	.item.item-icon-left.item-complex{
+		border: 0px;
+		margin: -2px;
+	}
+
+	.item-complex.item-icon-left .item-content {
+  		padding-left: 20px;
+	}
+
+	.item-content{
+		height: 70px;
+		color: #D8D8D8;
+		font-weight: 300;
+		background-color: #3F445B;
+		padding-top: 26px;
+
+		.sidemenuicon{
+			float: left;
+		}
+
+		.sidemenutext{
+			float: left;
+			padding-left: 20px;
+		}
+
+		.sidemenuarrow{
+			float: right;
+		}
+	}
+
+	.sidemenufiller{
+		height: 500px;
+		background-color: #3F445B;
+		border: 0px;
+		margin: -3px;
+	}
 }
 

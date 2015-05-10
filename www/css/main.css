@@ -7869,6 +7869,31 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     color: #fff; }
   .d-side-menu .dingo-top-bar .button.back-button {
     color: #fff; }
+.d-side-menu .bar.bar-header.bar-stable.side {
+  background-color: #3F445B; }
+.d-side-menu .item.item-icon-left.item-complex {
+  border: 0px;
+  margin: -2px; }
+.d-side-menu .item-complex.item-icon-left .item-content {
+  padding-left: 20px; }
+.d-side-menu .item-content {
+  height: 70px;
+  color: #D8D8D8;
+  font-weight: 300;
+  background-color: #3F445B;
+  padding-top: 26px; }
+  .d-side-menu .item-content .sidemenuicon {
+    float: left; }
+  .d-side-menu .item-content .sidemenutext {
+    float: left;
+    padding-left: 20px; }
+  .d-side-menu .item-content .sidemenuarrow {
+    float: right; }
+.d-side-menu .sidemenufiller {
+  height: 500px;
+  background-color: #3F445B;
+  border: 0px;
+  margin: -3px; }
 
 /* Home Style */
 .d-home {
@@ -8249,33 +8274,40 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 .d-messages {
   background-color: #ECEBE8; }
   .d-messages #peers .peer {
-    padding: 0;
-    margin-bottom: 10px;
+    height: 90px;
+    padding: 15px;
+    margin-bottom: 0px;
     color: inherit;
     text-decoration: inherit;
     overflow: hidden;
     display: block;
     clear: both;
-    border-bottom: 1px solid black;
-    background-color: lightgreen; }
+    border-bottom: 1px solid #ECEBE8;
+    background-color: white; }
     .d-messages #peers .peer.ion-chevron-right:before {
-      margin-top: 30px;
+      color: grey;
+      font-weight: 100;
+      margin-top: 20px;
       position: absolute;
       right: 15px;
-      font-size: 16px; }
+      font-size: 12px; }
       .d-messages #peers .peer.ion-chevron-right:before > div {
-        height: 70px; }
+        height: 100px; }
     .d-messages #peers .peer .user-pic {
       float: left;
-      width: 70px;
-      height: 70px; }
+      width: 60px;
+      height: 60px;
+      border-radius: 30px; }
     .d-messages #peers .peer .user-name {
       float: left;
-      font-weight: bold;
-      font-size: 18px;
-      padding: 20px 15px; }
+      color: #444;
+      font-weight: 300;
+      font-size: 16px;
+      padding-left: 20px;
+      padding-top: 10px; }
   .d-messages #chat {
-    background-color: #eee; }
+    background-color: #eee;
+    height: 100%; }
     .d-messages #chat #header-chat {
       background-color: #555;
       color: white;
@@ -8284,7 +8316,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
       margin-bottom: 10px; }
     .d-messages #chat .chat-box {
-      height: 300px;
+      height: calc(100% - 110px);
       margin-bottom: 10px; }
     .d-messages #chat #mensajes {
       padding: 10px;
@@ -8294,31 +8326,28 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
         overflow: hidden;
         clear: both; }
         .d-messages #chat #mensajes .mensaje-amigo img {
-          float: right;
           display: inline-block;
           vertical-align: top;
-          border-radius: 5px;
+          border-radius: 25px;
           width: 50px; }
         .d-messages #chat #mensajes .mensaje-amigo .contenido {
-          float: right;
-          background-color: #3990BF;
+          background-color: white;
           border-radius: 5px;
-          color: white;
+          color: black;
           display: inline-block;
           font-size: 13px;
           padding: 10px;
           vertical-align: top;
           max-width: 210px; }
         .d-messages #chat #mensajes .mensaje-amigo .flecha-derecha {
-          float: right;
           display: inline-block;
-          margin-left: -6px;
+          margin-right: -6px;
           margin-top: 10px;
           width: 0;
           height: 0;
           border-top: 0px solid transparent;
           border-bottom: 15px solid transparent;
-          border-left: 15px solid #3990BF; }
+          border-right: 15px solid white; }
         .d-messages #chat #mensajes .mensaje-amigo .fecha {
           color: #777;
           font-style: italic;
@@ -8330,20 +8359,23 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
         overflow: hidden;
         clear: both; }
         .d-messages #chat #mensajes .mensaje-autor img {
+          float: right;
           display: inline-block;
           vertical-align: top;
-          border-radius: 5px;
+          border-radius: 25px;
           width: 50px; }
         .d-messages #chat #mensajes .mensaje-autor .contenido {
-          background-color: white;
+          float: right;
+          background-color: #398FAB;
+          color: white;
           border-radius: 5px;
-          box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
           display: inline-block;
           font-size: 13px;
           padding: 10px;
           vertical-align: top;
           max-width: 210px; }
         .d-messages #chat #mensajes .mensaje-autor .fecha {
+          float: right;
           color: #777;
           font-style: italic;
           font-size: 13px;
@@ -8351,29 +8383,36 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
           margin-right: 35px;
           margin-top: 10px; }
         .d-messages #chat #mensajes .mensaje-autor .flecha-izquierda {
+          float: right;
           display: inline-block;
-          margin-right: -6px;
+          margin-left: -6px;
           margin-top: 10px;
           width: 0;
           height: 0;
           border-top: 0px solid transparent;
           border-bottom: 15px solid transparent;
-          border-right: 15px solid white; }
+          border-left: 15px solid #398FAB; }
     .d-messages #chat #caja-mensaje {
-      background-color: #A8DCF7;
+      background-color: white;
       margin: 0 auto;
-      padding: 5px 10px; }
+      padding: 5px 10px 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%; }
       .d-messages #chat #caja-mensaje input {
+        float: left;
         border: solid 1px #4193BF;
         outline: none;
-        padding: 10px; }
+        padding: 10px;
+        width: calc(100% - 120px); }
       .d-messages #chat #caja-mensaje button {
+        float: right;
         border: 0;
         background-color: #4193BF;
         color: white;
         font-size: 16px;
-        padding: 8px;
-        width: 50px; }
+        padding: 6px;
+        width: 100px; }
 
 /* About Style */
 .d-about {
