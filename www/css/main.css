@@ -7886,7 +7886,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     float: left; }
   .d-side-menu .item-content .sidemenutext {
     float: left;
-    padding-left: 20px; }
+    padding-left: 20px;
+    padding-top: 1px; }
   .d-side-menu .item-content .sidemenuarrow {
     float: right; }
 .d-side-menu .sidemenufiller {
@@ -8404,7 +8405,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
         border: solid 1px #4193BF;
         outline: none;
         padding: 10px;
-        width: calc(100% - 120px); }
+        width: calc(100% - 110px); }
       .d-messages #chat #caja-mensaje button {
         float: right;
         border: 0;
@@ -8426,10 +8427,21 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       width: 70px; }
   .d-about .dlogo {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 150px;
     padding-bottom: 10px; }
+  .d-about .button.button-full.button-large.button-light {
+    top: 50px; }
+  .d-about .abouttext {
+    float: left;
+    font-weight: 300;
+    font-size: 18px;
+    padding-left: 30px; }
+  .d-about .aboutarrow {
+    float: right;
+    font-weight: 300;
+    font-size: 20px; }
   .d-about .text {
-    font-family: helvetica;
+    font-weight: 300;
     padding-top: 30x;
     font-size: 20px;
     text-align: center;
@@ -8459,13 +8471,6 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* FAQ Style */
 .d-faq {
   background-color: #ECEBE8; }
-  .d-faq .faqicon {
-    text-align: center;
-    padding-top: 35px;
-    padding-bottom: 35px; }
-    .d-faq .faqicon img {
-      height: 80px;
-      width: 80px; }
 
 /* tandcs Style */
 .d-tandcs {
@@ -8483,10 +8488,17 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   background-color: #ECEBE8; }
   .d-faqdetail .faqdetailicon {
     text-align: center;
-    padding-top: 35px; }
+    padding-top: 35px;
+    padding-bottom: 25px; }
     .d-faqdetail .faqdetailicon img {
-      height: 80px;
-      width: 80px; }
+      height: 65px;
+      width: 65px; }
+  .d-faqdetail .item-stable.item-text-wrap {
+    background-color: white;
+    font-weight: 300;
+    border-color: #ECEBE8; }
+  .d-faqdetail .item.item-text-wrap.ng-binding {
+    border: none; }
 
 /* privacypolicy Style */
 .d-privacypolicy {

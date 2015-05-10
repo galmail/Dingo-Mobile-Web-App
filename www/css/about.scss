@@ -15,13 +15,31 @@
 
 	.dlogo {
 		text-align: center;
-		padding-top: 50px;
+		padding-top: 150px;
 		padding-bottom: 10px;
 	}
 
 
+	.button.button-full.button-large.button-light{
+		top: 50px;
+	}
+
+	.abouttext{
+		float: left;
+		font-weight: 300;
+		font-size: 18px;
+		padding-left: 30px;
+	}
+
+     .aboutarrow{
+     	float: right;
+     	font-weight: 300;
+     	font-size: 20px;
+     }
+
+
 	.text {
-		font-family: helvetica;
+		font-weight: 300;
 		padding-top: 30x;
 		font-size: 20px;
 		text-align: center;
