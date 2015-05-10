@@ -8281,6 +8281,11 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* Messages Style */
 .d-messages {
   background-color: #ECEBE8; }
+  .d-messages .nomessages {
+    color: grey;
+    font-size: 18px;
+    padding-top: 100px;
+    text-align: center; }
   .d-messages #peers .peer {
     height: 90px;
     padding: 15px;
@@ -8505,6 +8510,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     margin-right: auto; }
   .d-settings .facebook-button {
     display: block;
+    top: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -8581,6 +8587,11 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* my tickets list Style */
 .d-mytickets-list {
   background-color: #ECEBE8; }
+  .d-mytickets-list .notickets {
+    color: grey;
+    font-size: 18px;
+    padding-top: 100px;
+    text-align: center; }
   .d-mytickets-list .item {
     margin: 0px; }
   .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right {
