@@ -8222,10 +8222,12 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     padding-left: 0px;
     color: #444;
     font-size: 16px;
-    font-weight: 300; }
+    font-weight: 300;
+    padding: 0; }
   .d-sell-ticket .item.item-input.item-stacked-label {
     background-color: white;
-    height: 110px; }
+    height: 110px;
+    border-top-width: 2px; }
     .d-sell-ticket .item.item-input.item-stacked-label textarea {
       height: 90px; }
     .d-sell-ticket .item.item-input.item-stacked-label .ng-pristine.ng-valid {
@@ -8458,8 +8460,44 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     padding-top: 35px;
     padding-bottom: 15px; }
     .d-settings .settingsicon img {
-      height: 70px;
-      width: 70px; }
+      height: 65px;
+      width: 65px; }
+  .d-settings .list .item-input .input-label {
+    color: #444;
+    font-size: 16px;
+    font-weight: 300;
+    width: 50%;
+    max-width: none; }
+  .d-settings .list .item-input .settingsinput {
+    color: #444;
+    font-size: 16px;
+    font-weight: 300; }
+  .d-settings .cityinput {
+    color: #444;
+    position: relative;
+    padding: 0; }
+  .d-settings .item.item-toggle {
+    top: 30px; }
+  .d-settings .paypal-button {
+    top: 60px;
+    color: white;
+    font-size: 18px;
+    background-color: #49639F;
+    max-width: 380px;
+    width: 80%;
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto; }
+  .d-settings .logout-button {
+    top: 90px;
+    color: red;
+    font-size: 18px;
+    background-color: #ECEBE8;
+    max-width: 380px;
+    width: 80%;
+    border-width: 0px;
+    margin-left: auto;
+    margin-right: auto; }
   .d-settings .facebook-button {
     display: block;
     text-align: center;
