@@ -7877,11 +7877,14 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 .d-side-menu .item-complex.item-icon-left .item-content {
   padding-left: 20px; }
 .d-side-menu .item-content {
-  height: 70px;
+  height: 90px;
   color: #D8D8D8;
   font-weight: 300;
   background-color: #3F445B;
-  padding-top: 26px; }
+  padding-top: 26px;
+  border-style: solid;
+  border-color: #3F445B;
+  border-width: 1px; }
   .d-side-menu .item-content .sidemenuicon {
     float: left; }
   .d-side-menu .item-content .sidemenutext {
@@ -8552,14 +8555,59 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* my tickets Style */
 .d-mytickets {
   background-color: #ECEBE8; }
-  .d-mytickets .myticketsicon {
+  .d-mytickets .button.button-full.button-large.button-light {
+    top: 50px; }
+  .d-mytickets .mytickettext {
+    float: left;
+    font-weight: 300;
+    font-size: 18px;
+    padding-left: 30px; }
+  .d-mytickets .myticketarrow {
+    float: right;
+    font-weight: 300;
+    font-size: 20px; }
+  .d-mytickets .text {
+    font-weight: 300;
+    padding-top: 30x;
+    font-size: 20px;
     text-align: center;
-    padding-top: 35px;
-    padding-bottom: 20px; }
+    margin-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #4A4A4A; }
 
 /* my tickets list Style */
 .d-mytickets-list {
   background-color: #ECEBE8; }
+  .d-mytickets-list .item {
+    margin: 0px; }
+  .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right {
+    height: 85px; }
+  .d-mytickets-list .tickets-list.ticket {
+    margin-bottom: 1px; }
+  .d-mytickets-list .tickets-list .ticket .ticket-photo {
+    height: 65px;
+    width: 65px; }
+  .d-mytickets-list .tickets-list .ticket.ion-chevron-right:before {
+    margin-top: 22px;
+    padding-right: 6px; }
+  .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right {
+    background-color: #ECEBE8;
+    border-style: none;
+    border-bottom: 1px solid grey; }
+    .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right .col {
+      font-size: 18px;
+      padding-top: 3px;
+      padding-left: 8px; }
+    .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right .ticket-price-per-ticket {
+      padding-top: 0px;
+      font-size: 15px; }
+    .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right .ticket-price-available-tickets {
+      font-size: 15px; }
+  .d-mytickets-list .ticket.item.row {
+    padding: 10px; }
+  .d-mytickets-list .padding.scroll-content.ionic-scroll.has-header.has-tabs {
+    margin: 0px; }
 
 /* my tickets detail edit Style */
 .d-mytickets-detail-edit {

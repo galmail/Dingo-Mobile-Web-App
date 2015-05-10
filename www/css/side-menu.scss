@@ -45,11 +45,14 @@
 	}
 
 	.item-content{
-		height: 70px;
+		height: 90px;
 		color: #D8D8D8;
 		font-weight: 300;
 		background-color: #3F445B;
 		padding-top: 26px;
+		border-style: solid;
+		border-color: #3F445B;
+		border-width: 1px;
 
 		.sidemenuicon{
 			float: left;
