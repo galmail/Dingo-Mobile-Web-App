@@ -7858,13 +7858,15 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   background-color: #398FAB; }
   .d-side-menu .dingo-top-bar .title {
     color: #fff;
-    background-image: url('../img/login_screen/dingo_logo@2x.png');
     background-repeat: no-repeat;
     background-size: 48px;
     background-position: 73px 0px;
     width: 200px;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    font-size: 18px; }
+  .d-side-menu .dingo-top-bar .titleicon {
+    height: 45px; }
   .d-side-menu .dingo-top-bar .icon.ion-navicon {
     color: #fff; }
   .d-side-menu .dingo-top-bar .button.back-button {
@@ -8098,7 +8100,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     .d-event-details .event-info .event-address {
       padding-left: 26px;
       padding-bottom: 4px;
-      font-size: 18px; }
+      font-size: 15px; }
     .d-event-details .event-info .timeicon {
       padding-top: 10px;
       width: 20px;
@@ -8106,7 +8108,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     .d-event-details .event-info .event-time {
       padding-top: 10px;
       padding-left: 26px;
-      font-size: 18px; }
+      font-size: 15px; }
   .d-event-details .event-photo img {
     height: 120px;
     border-radius: 60px; }
