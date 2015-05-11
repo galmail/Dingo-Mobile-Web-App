@@ -12,9 +12,9 @@ dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, Use
 		eventsKeyword: "",
 		selectedCategories: []
 	};
-	$scope.lastDate = null;
 
 	$scope.emptyEventsForThisDate = function(eventDate){
+		if($scope.onlyOneEvent) return true;
 		var d = new Date(eventDate).setHours(0,0,0,0);
 		if($scope.lastDate == null || $scope.lastDate != d){
 			$scope.lastDate = d;
@@ -24,6 +24,8 @@ dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, Use
 	};
 
 	$scope.search = function(){
+		$scope.lastDate = null;
+		$scope.onlyOneEvent = false;
 		var eventKeyword = $scope.filter.eventsKeyword;
 		var categoryIds = $scope.filter.selectedCategories;
 		console.log('searching for ' + eventKeyword + ' in ' + categoryIds.length + ' categories.');
@@ -32,6 +34,9 @@ dingo.controllers.controller('EventsCtrl', function($scope, Category, Event, Use
 			"name": eventKeyword,
 			"category_ids[]": categoryIds
 		},function(events){
+			if(events.length==1){
+				$scope.onlyOneEvent = true;
+			}
 			$scope.events = events;
 		});
 	};
