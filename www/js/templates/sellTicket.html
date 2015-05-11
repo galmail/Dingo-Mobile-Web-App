@@ -16,7 +16,7 @@
 			    <input type="search" ng-model="ticketDetails.event.name" ng-change="filterEvent()" />
 			  </label>
 			  <ul class="list events-list">
-			  	<li ng-show="showEvent(event)" ng-click="selectEvent(event)" ng-repeat="event in events" class="item">{{ event.name }}</li>
+			  	<li ng-show="showEvent(event)" ng-click="selectEvent(event)" ng-repeat="event in events" class="item">{{ event.name }} - {{ event.parsed_date}}</li>
 			  </ul>
 		  </div>
 
