@@ -8329,7 +8329,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
       margin-bottom: 10px; }
     .d-messages #chat .chat-box {
-      height: calc(100% - 110px);
+      height: calc(100% - 65px);
       margin-bottom: 10px; }
     .d-messages #chat #mensajes {
       padding: 10px;
