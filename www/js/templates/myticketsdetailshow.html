@@ -9,43 +9,54 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
 
-    <div class="row event-info">
-      <div class="event-photo">
-        <img ng-src="{{currentEvent.thumb}}" />
-      </div>
-      <div class="event-data col">
-        <div class="event-title">{{currentEvent.name}}</div>
-        <div class="event-address">{{currentEvent.address}}</div>
-        <div class="event-time">{{currentEvent.parsed_time}}</div>
-      </div>
+    <div class="ticketheader">
+        <img class="ticketicon" src="img/ticketdetails_screen/tickets.png"></img>
     </div>
-     
+
     <div class="list ticket-info">
       <label class="item item-input">
-        <span class="input-label">Price per Ticket:</span>
-        <input type="text" value="£{{currentTicket.price}}" disabled="true"/>
+        <span class="input-label">Number of Tickets:</span>
+        <div class="blah">
+        <input type="text" value="{{currentTicket.number_of_tickets}}" disabled="true"/>
+      </div>
       </label>
       <label class="item item-input">
-        <span class="input-label">Number of Tickets:</span>
-        <input type="text" value="{{currentTicket.number_of_tickets}}" disabled="true"/>
+        <span class="input-label">Price per Ticket:</span>
+        <input class="textdetail" type="text" value="£{{currentTicket.price}}" disabled="true"/>
       </label>
       <label class="item item-input">
         <span class="input-label">Face value per ticket:</span>
-        <input type="text" value="£{{currentTicket.face_value_per_ticket}}" disabled="true"/>
+        <input class="textdetail" type="text" value="£{{currentTicket.face_value_per_ticket}}" disabled="true"/>
       </label>
       <label class="item item-input">
         <span class="input-label">Ticket Type:</span>
-        <input type="text" value="{{currentTicket.ticket_type}}" disabled="true"/>
+        <input class="textdetail" type="text" value="{{currentTicket.ticket_type}}" disabled="true"/>
       </label>
       <label class="item item-input">
         <span class="input-label">Description:</span>
-        <input type="text" value="{{currentTicket.description}}" disabled="true"/>
+        <input class="textdetail" type="text" value="{{currentTicket.description}}" disabled="true"/>
       </label>
       <label class="item item-input">
         <span class="input-label">Delivery:</span>
-        <input type="text" value="{{currentTicket.delivery_options}}" disabled="true"/>
+        <input class="textdetail" type="text" value="{{currentTicket.delivery_options}}" disabled="true"/>
       </label>
     </div>
+
+    <div class="row ticket-actions">
+      <div class="col">
+        <img class="photo" ng-src="{{currentTicket.user_photo}}" />
+      </div>
+      <div class="col">
+        <button ng-click="buyTicket()" class="button button-outline button-positive button-block buy-button">Buy Now</button>
+        <button class="button button-outline button-positive button-block" ng-click="contactSeller()">Contact Seller</button>
+      </div>
+    </div>
+
+
+
+
+
+
 
   </ion-content>
 </ion-view>
