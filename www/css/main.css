@@ -7916,7 +7916,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     padding-left: 0px; }
   .d-home .tabs-positive > .tabs {
     background-color: #398FAB;
-    color: #fff; }
+    color: #fff;
+    background-image: none; }
     .d-home .tabs-positive > .tabs .tab-item {
       color: #fff; }
       .d-home .tabs-positive > .tabs .tab-item .badge.badge-assertive {
