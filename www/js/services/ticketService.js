@@ -96,6 +96,7 @@ dingo.services.factory('Ticket', function($http, Util, User) {
     },
 
     getMyTickets: function(ticketsType,callback){
+      var self = this;
       $http.get('/api/v1/tickets?mine=true').success(function(res){
         var tickets = res.tickets;
 
@@ -136,7 +137,7 @@ dingo.services.factory('Ticket', function($http, Util, User) {
         else {
           // show all tickets...
         }
-        callback(tickets);
+        callback(self.parseTickets(tickets));
       });
     },
 
@@ -183,6 +184,14 @@ dingo.services.factory('Ticket', function($http, Util, User) {
         ticket.delivery_methods[deliveryOption] = true;
       }
       return ticket;
+    },
+
+    parseTickets: function(tickets){
+      angular.forEach(tickets, function(ticket) {
+        var d = new Date(ticket.event_date);
+        ticket.event_date = moment(d).format('h:mm a, Do MMM');
+      });
+      return tickets;
     }
 
   };

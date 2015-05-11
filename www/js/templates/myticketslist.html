@@ -9,8 +9,12 @@
 
 	<ul class="list tickets-list">
   	<li class="ticket item row icon-right ion-chevron-right" ng-repeat="ticket in tickets" ng-click="gotoTicketDetails(ticket,'show')">
-      <img class="ticket-photo" ng-src="{{ticket.user_photo}}"/>
-  		<div class="col">{{ticket.user_name}}</div>
+      <img class="ticket-photo" ng-src="{{ticket.event_photo}}"/>
+  		<div class="col">
+        <div class="event-name">{{ticket.event_name}}</div>
+        <div class="event-location">{{ticket.event_address}}, {{ticket.event_city}}</div>
+        <div class="event-date">{{ticket.event_date}}</div>
+      </div>
   		<div class="ticket-price col col-25">
 				<div class="ticket-price">£{{ticket.price}}</div>
 				<div class="ticket-price-per-ticket">per ticket</div>
