@@ -6,41 +6,39 @@
 
     <div class="list">
 
-		  <div class="row event-info">
+    	  <div class="row event-info" style="background-image: url('{{event.category_image}}');">
 	      <div class="event-photo">
 	        <img ng-src="{{currentEvent.thumb}}" />
 	      </div>
 	      <div class="event-data col">
 	        <div class="event-title">{{currentEvent.name}}</div>
+	        <img class="locationicon" src="img/eventDetails_screen/location_icon.png"/>
 	        <div class="event-address">{{currentEvent.address}}</div>
+	        <img class="timeicon" src="img/eventDetails_screen/time_icon.png"/>
 	        <div class="event-time">{{currentEvent.parsed_time}}</div>
 	      </div>
 	    </div>
 
-		  <div class="item item-divider">
-		    Ticket Details
-		  </div>
-
 		  <label class="item item-input">
 		    <span class="input-label">Price per ticket:</span>
-		    <input type="number" ng-model="currentTicket.price" />
+		    <input class="sellinput" type="number" ng-model="currentTicket.price" />
 		  </label>
 
 		  <label class="item item-input">
 		    <span class="input-label">Face Value per ticket:</span>
-		    <input type="number" ng-model="currentTicket.face_value_per_ticket" />
+		    <input class="sellinput" type="number" ng-model="currentTicket.face_value_per_ticket" />
 		  </label>
 
 		  <label class="item item-input">
 		    <span class="input-label">Number of tickets:</span>
-		    <input type="number" ng-model="currentTicket.number_of_tickets" min="1" max="10" />
+		    <input class="sellinput" type="number" ng-model="currentTicket.number_of_tickets" min="1" max="10" />
 		  </label>
 
 		  <label class="item item-input item-select">
 		    <div class="input-label">
 		      Type of ticket:
 		    </div>
-		    <select ng-model="currentTicket.ticket_type">
+		    <select class="tickettypeinput" ng-model="currentTicket.ticket_type">
 		      <option>e-Ticket</option>
 		      <option>Paper</option>
 		    </select>
@@ -48,9 +46,11 @@
 
 		  <label class="item item-input item-stacked-label">
 		    <span class="input-label">Comments:</span>
-		    <textarea ng-model="currentTicket.description" rows="2" placeholder="Add any additional comments about the tickets or collection">
+		    <textarea ng-model="currentTicket.description" maxlength="200" rows="2" placeholder="Add any additional comments about the tickets or collection">
 		    </textarea>
 		  </label>
+
+		  <div class="pagespace"></div>
 
 		  <div class="item item-divider">
 		    Delivery method(s):

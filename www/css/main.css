@@ -7871,6 +7871,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     color: #fff; }
   .d-side-menu .dingo-top-bar .button.back-button {
     color: #fff; }
+.d-side-menu .ion-android-more-vertical {
+  color: white; }
 .d-side-menu .bar.bar-header.bar-stable.side {
   background-color: #3F445B; }
 .d-side-menu .item.item-icon-left.item-complex {
@@ -8626,7 +8628,112 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* my tickets detail edit Style */
 .d-mytickets-detail-edit {
   background-color: #ECEBE8; }
+  .d-mytickets-detail-edit .event-info {
+    height: 180px;
+    background-position: 0px -90px;
+    margin-bottom: 0px;
+    padding: 0px; }
+    .d-mytickets-detail-edit .event-info .event-photo {
+      padding-top: 30px;
+      padding-left: 15px; }
+    .d-mytickets-detail-edit .event-info .event-data .event-title {
+      padding-top: 30px;
+      font-size: 26px; }
+    .d-mytickets-detail-edit .event-info .locationicon {
+      width: 20px;
+      float: left; }
+    .d-mytickets-detail-edit .event-info .event-address {
+      padding-left: 26px;
+      padding-bottom: 4px;
+      font-size: 15px; }
+    .d-mytickets-detail-edit .event-info .timeicon {
+      padding-top: 10px;
+      width: 20px;
+      float: left; }
+    .d-mytickets-detail-edit .event-info .event-time {
+      padding-top: 10px;
+      padding-left: 26px;
+      font-size: 15px; }
+  .d-mytickets-detail-edit .event-photo img {
+    height: 120px;
+    border-radius: 60px; }
+  .d-mytickets-detail-edit .input-label {
+    width: 50%;
+    max-width: none;
+    font-weight: 300; }
+  .d-mytickets-detail-edit .sellinput {
+    color: #444;
+    font-size: 16px;
+    background-color: white;
+    font-weight: 300; }
+  .d-mytickets-detail-edit .tickettypeinput {
+    position: relative;
+    padding-left: 0px;
+    color: #444;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0; }
+  .d-mytickets-detail-edit .item.item-input.item-stacked-label {
+    background-color: white;
+    height: 110px;
+    border-top-width: 2px; }
+    .d-mytickets-detail-edit .item.item-input.item-stacked-label textarea {
+      height: 90px; }
+    .d-mytickets-detail-edit .item.item-input.item-stacked-label .ng-pristine.ng-valid {
+      font-size: 16px;
+      height: 110px; }
+  .d-mytickets-detail-edit .item.item-divider {
+    font-weight: 300;
+    color: #444444;
+    font-size: 17px;
+    background-color: white; }
+  .d-mytickets-detail-edit .item.item-toggle {
+    padding-left: 25px; }
+  .d-mytickets-detail-edit .pagespace {
+    height: 38px; }
 
 /* my tickets detail show Style */
 .d-mytickets-detail-show {
   background-color: #ECEBE8; }
+  .d-mytickets-detail-show .ticketheader {
+    height: 110px;
+    text-align: center; }
+    .d-mytickets-detail-show .ticketheader .ticketicon {
+      padding-top: 24px; }
+  .d-mytickets-detail-show .ticket-info .item-input {
+    border-right: 0;
+    border-left: 0;
+    padding-left: 0px; }
+    .d-mytickets-detail-show .ticket-info .item-input:first-child {
+      border-top: 0; }
+    .d-mytickets-detail-show .ticket-info .item-input .input-label {
+      font-weight: 300;
+      font-size: 16px;
+      padding-left: 20px;
+      max-width: none;
+      width: 51%; }
+    .d-mytickets-detail-show .ticket-info .item-input .blah {
+      width: 50%; }
+    .d-mytickets-detail-show .ticket-info .item-input input {
+      background-color: inherit; }
+    .d-mytickets-detail-show .ticket-info .item-input input[type="text"] {
+      color: grey;
+      font-weight: 300;
+      font-size: 16px; }
+  .d-mytickets-detail-show .ticket-actions {
+    text-align: center; }
+    .d-mytickets-detail-show .ticket-actions .photo {
+      height: 130px;
+      border-radius: 65px; }
+    .d-mytickets-detail-show .ticket-actions .button {
+      margin-top: 15px;
+      min-height: 0px;
+      height: 40px;
+      line-height: 30px;
+      width: 90%;
+      border-color: #398FAB;
+      color: #398FAB;
+      font-size: 18px; }
+      .d-mytickets-detail-show .ticket-actions .button.buy-button {
+        font-weight: bold;
+        border: 3px solid; }
