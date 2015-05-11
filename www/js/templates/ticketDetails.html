@@ -1,42 +1,36 @@
 <ion-view class="d-ticket-details" view-title="Ticket Details">
   <ion-content class="padding">
 
-  	<div class="row event-info" style="background-image: url('{{event.category_image}}');">
-  		<div class="event-photo">
-  			<img ng-src="{{event.thumb}}" />
-  		</div>
-  		<div class="event-data col">
-  			<div class="event-title">{{event.name}}</div>
-        <div class="event-address">{{event.address}}</div>
-        <div class="event-time">{{event.parsed_time}}</div>
-  		</div>
-  	</div>
+    <div class="ticketheader">
+        <img class="ticketicon" src="img/ticketdetails_screen/tickets.png"></img>
+    </div>
 
-     
     <div class="list ticket-info">
       <label class="item item-input">
-        <span class="input-label">Price per Ticket:</span>
-        <input type="text" value="£{{ticket.price}}" disabled="true"/>
+        <span class="input-label">Number of Tickets:</span>
+        <div class="blah">
+        <input type="text" value="{{ticket.number_of_tickets}}" disabled="true"/>
+      </div>
       </label>
       <label class="item item-input">
-        <span class="input-label">Number of Tickets:</span>
-        <input type="text" value="{{ticket.number_of_tickets}}" disabled="true"/>
+        <span class="input-label">Price per Ticket:</span>
+        <input class="textdetail" type="text" value="£{{ticket.price}}" disabled="true"/>
       </label>
       <label class="item item-input">
         <span class="input-label">Face value per ticket:</span>
-        <input type="text" value="£{{ticket.face_value_per_ticket}}" disabled="true"/>
+        <input class="textdetail" type="text" value="£{{ticket.face_value_per_ticket}}" disabled="true"/>
       </label>
       <label class="item item-input">
         <span class="input-label">Ticket Type:</span>
-        <input type="text" value="{{ticket.ticket_type}}" disabled="true"/>
+        <input class="textdetail" type="text" value="{{ticket.ticket_type}}" disabled="true"/>
       </label>
       <label class="item item-input">
         <span class="input-label">Description:</span>
-        <input type="text" value="{{ticket.description}}" disabled="true"/>
+        <input class="textdetail" type="text" value="{{ticket.description}}" disabled="true"/>
       </label>
       <label class="item item-input">
         <span class="input-label">Delivery:</span>
-        <input type="text" value="{{ticket.delivery_options}}" disabled="true"/>
+        <input class="textdetail" type="text" value="{{ticket.delivery_options}}" disabled="true"/>
       </label>
     </div>
 
@@ -45,7 +39,7 @@
         <img class="photo" ng-src="{{ticket.user_photo}}" />
       </div>
       <div class="col">
-        <button ng-click="buyTicket()" class="button button-outline button-positive button-block buy-button">Buy</button>
+        <button ng-click="buyTicket()" class="button button-outline button-positive button-block buy-button">Buy Now</button>
         <button class="button button-outline button-positive button-block" ng-click="contactSeller()">Contact Seller</button>
       </div>
     </div>

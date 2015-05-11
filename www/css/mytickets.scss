@@ -2,9 +2,36 @@
 
 .d-mytickets {
 	background-color: #ECEBE8;
-	.myticketsicon {
-		text-align: center;
-		padding-top: 35px;
-		padding-bottom: 20px;
+
+	.button.button-full.button-large.button-light{
+		top: 50px;
 	}
+
+	.mytickettext{
+		float: left;
+		font-weight: 300;
+		font-size: 18px;
+		padding-left: 30px;
+	}
+
+     .myticketarrow{
+     	float: right;
+     	font-weight: 300;
+     	font-size: 20px;
+     }
+
+
+	.text {
+		font-weight: 300;
+		padding-top: 30x;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 10px;
+		padding-right: 20px;
+		padding-left: 20px;
+		color: #4A4A4A;
+	}
+
+
+
 }

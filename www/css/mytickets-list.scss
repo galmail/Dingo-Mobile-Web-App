@@ -4,5 +4,64 @@
 	
 	background-color: #ECEBE8;
 
+.notickets{
+	color: grey;
+	font-size: 18px;
+	padding-top: 100px;
+	text-align: center;
+}
+
+.item {
+	margin: 0px;
+}
+
+.ticket.item.row.icon-right.ion-chevron-right {
+	height: 85px;
+}
+
+.tickets-list.ticket {
+	margin-bottom: 1px;
+}
+
+.tickets-list .ticket .ticket-photo {
+  height: 65px;
+  width: 65px;
+}
+
+.tickets-list .ticket.ion-chevron-right:before {
+  margin-top: 22px;
+  padding-right: 6px;
+}
+
+.ticket.item.row.icon-right.ion-chevron-right {
+	background-color: #ECEBE8;
+	border-style: none;
+    border-bottom: 1px solid grey;
+
+    .col{
+    	font-size: 18px;
+    	padding-top: 3px;
+    	padding-left: 8px;
+    }
+
+    .ticket-price-per-ticket{
+    	padding-top: 0px;
+    	font-size: 15px;
+    }
+
+    .ticket-price-available-tickets{
+    	font-size: 15px;
+    }
+}
+
+.ticket.item.row {
+	padding: 10px;
+}
+
+.padding.scroll-content.ionic-scroll.has-header.has-tabs{
+	margin: 0px;
+}
+
+
 
 }

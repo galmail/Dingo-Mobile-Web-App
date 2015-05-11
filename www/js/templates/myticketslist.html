@@ -1,11 +1,15 @@
 <ion-view class="d-mytickets-list" title="">
-  <!-- <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons> -->
+  <ion-nav-buttons side="left">
+    <!-- <button menu-toggle="left" class="button button-icon icon ion-navicon"></button> -->
+    <div class="title">{{ticketsType}}</div>
+  </ion-nav-buttons>
   <ion-content class="has-header">
     
-	<h3>My {{ticketsType}} Tickets</h3>
 
+<!--   display this when no tickets present
+	 <div class="notickets">
+      No tickets :-(
+    </div> -->
 
 	<ul class="list tickets-list">
   	<li class="ticket item row icon-right ion-chevron-right" ng-repeat="ticket in tickets" ng-click="gotoTicketDetails(ticket,'show')">

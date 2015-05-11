@@ -5,7 +5,101 @@
 	background-color: #ECEBE8;
 
 
+	.event-info {
+	  height: 180px;
+	  background-position: 0px -90px;
+	  margin-bottom: 0px;
+	  padding: 0px;
+
+		.event-photo {
+	    	padding-top: 30px;
+	    	padding-left: 15px;
+		}
+
+		.event-data .event-title {
+	    	padding-top: 30px;
+	    	font-size: 26px;
+		}
+
+		.locationicon{
+			width: 20px;
+			float: left;
+		}
+
+		.event-address{
+			padding-left: 26px;
+			padding-bottom: 4px;
+			font-size: 15px;
+		}
+
+		.timeicon{
+			padding-top: 10px;
+			width: 20px;
+			float: left;
+		}
+
+		.event-time{
+			padding-top: 10px;
+			padding-left: 26px;
+			font-size: 15px;
+		}
+	}
+
+	.event-photo img {
+    height: 120px;
+    border-radius: 60px;
+	}
 
 
+	.input-label {
+		width: 50%;
+		max-width: none;
+		font-weight: 300;
+	}
+
+	.sellinput {
+		color: #444;
+		font-size: 16px;
+		background-color: white;
+		font-weight: 300;
+	}
+
+	.tickettypeinput{
+		position: relative;
+		padding-left: 0px;
+		color: #444;
+  		font-size: 16px;
+  		font-weight: 300;
+  		padding: 0;
+	}
+
+	.item.item-input.item-stacked-label{
+		background-color: white;
+		height: 110px;
+		border-top-width: 2px;
+		textarea {
+  			height: 90px;
+  	}
+
+		.ng-pristine.ng-valid{
+			font-size: 16px;
+			height: 110px;
+		}
+	}
+
+	 .item.item-divider{
+  		font-weight: 300;
+  		color: #444444;
+	  	font-size: 17px;
+	  	background-color: white;
+  	}
+
+  	.item.item-toggle{
+  		padding-left: 25px;
+  	}
+
+  	.pagespace{
+  		height: 38px;
+  	}
 	
 }

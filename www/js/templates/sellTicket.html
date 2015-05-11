@@ -1,19 +1,20 @@
 <ion-view class="d-sell-ticket" view-title="Sell Tickets">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  <div class="title">Sell tickets</div>
   </ion-nav-buttons>
   <ion-content class="padding">
 
-  	<div class="list">
+  	<div class="topsection">
+  		<div class="topsectiontext">Hurray. No seller fess.</div>
+  	</div>
 
-		  <div class="item item-divider">
-		    Event Details
-		  </div>
+  	<div class="list">
 
 		  <div class="event-name">
 			  <label class="item item-input">
 			    <span class="input-label">Event Name:</span>
-			    <input type="search" ng-model="ticketDetails.event.name" ng-change="filterEvent()" />
+			    <input class="sellinput" type="search" ng-model="ticketDetails.event.name" ng-change="filterEvent()" placeholder="Event name" />
 			  </label>
 			  <ul class="list events-list">
 			  	<li ng-show="showEvent(event)" ng-click="selectEvent(event)" ng-repeat="event in events" class="item">{{ event.name }} - {{ event.parsed_date}}</li>
@@ -22,33 +23,29 @@
 
 		  <label class="item item-input">
 		    <span class="input-label">Start date:</span>
-		    <input type="datetime" ng-model="ticketDetails.event.date" ng-disabled="ticketDetails.event.selected" />
+		    <input class="sellinput" type="datetime" ng-model="ticketDetails.event.date" ng-disabled="ticketDetails.event.selected" placeholder="hh:mm - dd/mm/yy"/>
 		  </label>
-
-		  <div class="item item-divider">
-		    Ticket Details
-		  </div>
 
 		  <label class="item item-input">
 		    <span class="input-label">Price per ticket:</span>
-		    <input type="number" ng-model="ticketDetails.price_per_ticket" />
+		    <input class="sellinput" type="number" ng-model="ticketDetails.price_per_ticket" placeholder="Price"/>
 		  </label>
 
 		  <label class="item item-input">
 		    <span class="input-label">Face Value per ticket:</span>
-		    <input type="number" ng-model="ticketDetails.face_value_per_ticket" />
+		    <input class="sellinput" type="number" ng-model="ticketDetails.face_value_per_ticket" placeholder="Face value (inc fees)"/>
 		  </label>
 
 		  <label class="item item-input">
 		    <span class="input-label">Number of tickets:</span>
-		    <input type="number" ng-model="ticketDetails.num_tickets" min="1" max="10" />
+		    <input class="sellinput" type="number" ng-model="ticketDetails.num_tickets" min="1" max="10" placeholder="Number of tickets"/>
 		  </label>
 
 		  <label class="item item-input item-select">
 		    <div class="input-label">
 		      Type of ticket:
 		    </div>
-		    <select ng-model="ticketDetails.type_of_ticket">
+		    <select class="tickettypeinput" ng-model="ticketDetails.type_of_ticket">
 		      <option>e-Ticket</option>
 		      <option>Paper</option>
 		    </select>
@@ -56,9 +53,15 @@
 
 		  <label class="item item-input item-stacked-label">
 		    <span class="input-label">Comments:</span>
-		    <textarea ng-model="ticketDetails.comments" rows="2" placeholder="Add any additional comments about the tickets or collection">
+		    <textarea ng-model="ticketDetails.comments" maxlength="200" rows="2" placeholder="Add any additional comments about the tickets or collection.">
 		    </textarea>
 		  </label>
+
+		  <div class="moneysection">
+		  	<div class="moneysectionheader">Receiving your money</div>
+  			<div class="moneysectiontext"><p>You will receive 100% of the funds 48 hours after the event. Please see our FAQ's for more info.</p><br><p>If your ticket sells make sure you log into PayPal within Settings.</p></div>
+  	 	  </div>
+
 
 		  <!-- <div class="item item-divider">
 		    How do you want to be paid?
@@ -120,7 +123,7 @@
 
 	  </div>
 
-  	<button class="button button-full button-positive" ng-click="previewTicket()">Preview Ticket</button>
+  	<button class="button button-full button-positive" ng-click="previewTicket()">Preview</button>
 
   </ion-content>
 </ion-view>

@@ -7858,17 +7858,50 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   background-color: #398FAB; }
   .d-side-menu .dingo-top-bar .title {
     color: #fff;
-    background-image: url('../img/login_screen/dingo_logo@2x.png');
     background-repeat: no-repeat;
     background-size: 48px;
     background-position: 73px 0px;
     width: 200px;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    font-size: 18px; }
+  .d-side-menu .dingo-top-bar .titleicon {
+    height: 45px; }
   .d-side-menu .dingo-top-bar .icon.ion-navicon {
     color: #fff; }
   .d-side-menu .dingo-top-bar .button.back-button {
     color: #fff; }
+.d-side-menu .ion-android-more-vertical {
+  color: white; }
+.d-side-menu .bar.bar-header.bar-stable.side {
+  background-color: #3F445B; }
+.d-side-menu .item.item-icon-left.item-complex {
+  border: 0px;
+  margin: -2px; }
+.d-side-menu .item-complex.item-icon-left .item-content {
+  padding-left: 20px; }
+.d-side-menu .item-content {
+  height: 90px;
+  color: #D8D8D8;
+  font-weight: 300;
+  background-color: #3F445B;
+  padding-top: 26px;
+  border-style: solid;
+  border-color: #3F445B;
+  border-width: 1px; }
+  .d-side-menu .item-content .sidemenuicon {
+    float: left; }
+  .d-side-menu .item-content .sidemenutext {
+    float: left;
+    padding-left: 20px;
+    padding-top: 1px; }
+  .d-side-menu .item-content .sidemenuarrow {
+    float: right; }
+.d-side-menu .sidemenufiller {
+  height: 500px;
+  background-color: #3F445B;
+  border: 0px;
+  margin: -3px; }
 
 /* Home Style */
 .d-home {
@@ -7885,7 +7918,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     padding-left: 0px; }
   .d-home .tabs-positive > .tabs {
     background-color: #398FAB;
-    color: #fff; }
+    color: #fff;
+    background-image: none; }
     .d-home .tabs-positive > .tabs .tab-item {
       color: #fff; }
       .d-home .tabs-positive > .tabs .tab-item .badge.badge-assertive {
@@ -7966,7 +8000,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
         margin-right: 5px;
         float: left;
         width: 166px;
-        height: 100px;
+        height: 105px;
         border: 0; }
         .d-events #categories_container .categories .category:last-child {
           margin-right: 0; }
@@ -7999,53 +8033,64 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   .d-events #events_container .events-date {
     color: #fff;
     background-color: #398FAB;
-    margin-bottom: 5px;
     padding-left: 11px;
-    padding-bottom: 2px;
-    padding-top: 3px; }
-  .d-events #events_container .event .row {
-    padding: 0;
-    margin-bottom: 5px;
-    color: inherit;
-    text-decoration: inherit; }
-    .d-events #events_container .event .row.ion-chevron-right:before {
-      margin-top: 30px;
-      position: absolute;
-      padding-right: 10px;
-      right: 0;
-      color: gray; }
-    .d-events #events_container .event .row > div {
-      height: 70px; }
-    .d-events #events_container .event .row .event-pic {
-      width: 70px;
-      padding-left: 5px; }
-    .d-events #events_container .event .row .event-data .event-title {
-      font-weight: 400;
-      font-size: 18px;
-      padding: 0 5px; }
-    .d-events #events_container .event .row .event-data .event-address {
-      padding: 0 5px;
-      font-size: 14px;
-      font-weight: 300; }
-    .d-events #events_container .event .row .event-data .event-time {
-      padding: 0 5px;
-      font-size: 12px;
-      color: gray; }
-    .d-events #events_container .event .row .event-price .event-price-from {
-      font-size: 16px; }
-    .d-events #events_container .event .row .event-price .event-price-per-ticket {
-      font-size: 14px;
-      color: gray; }
-    .d-events #events_container .event .row .event-price .event-price-available-tickets {
-      font-size: 14px;
-      color: gray; }
+    padding-bottom: 1px;
+    padding-top: 1px; }
+  .d-events #events_container .event {
+    border-bottom: 1px solid grey; }
+    .d-events #events_container .event .row {
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+      color: inherit;
+      text-decoration: inherit; }
+      .d-events #events_container .event .row.ion-chevron-right:before {
+        margin-top: 30px;
+        position: absolute;
+        padding-right: 10px;
+        right: 0;
+        color: gray; }
+      .d-events #events_container .event .row > div {
+        height: 70px; }
+      .d-events #events_container .event .row .event-pic {
+        width: 70px;
+        padding-left: 5px;
+        padding-top: 5px; }
+      .d-events #events_container .event .row .event-data .event-title {
+        font-weight: 400;
+        font-size: 18px;
+        padding: 0 5px; }
+      .d-events #events_container .event .row .event-data .event-address {
+        padding: 0 5px;
+        font-size: 14px;
+        font-weight: 300; }
+      .d-events #events_container .event .row .event-data .event-time {
+        padding: 0 5px;
+        font-size: 12px;
+        color: gray; }
+      .d-events #events_container .event .row .event-price {
+        padding: 0px;
+        padding-top: 2px; }
+        .d-events #events_container .event .row .event-price .event-price-from {
+          font-size: 16px;
+          margin-bottom: 0px;
+          padding-bottom: 2px;
+          padding: 5px; }
+        .d-events #events_container .event .row .event-price .event-price-per-ticket {
+          font-size: 14px;
+          color: gray;
+          padding-bottom: 0px; }
+        .d-events #events_container .event .row .event-price .event-price-available-tickets {
+          font-size: 14px;
+          color: gray; }
 
 /* Event Details Style */
 .d-event-details {
   background-color: #ECEBE8; }
   .d-event-details .event-info {
     height: 180px;
-    background-position: 0px -90px; }
+    background-position: 0px -90px;
+    margin-bottom: 0px;
+    padding: 0px; }
     .d-event-details .event-info .event-photo {
       padding-top: 30px;
       padding-left: 15px; }
@@ -8058,7 +8103,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     .d-event-details .event-info .event-address {
       padding-left: 26px;
       padding-bottom: 4px;
-      font-size: 18px; }
+      font-size: 15px; }
     .d-event-details .event-info .timeicon {
       padding-top: 10px;
       width: 20px;
@@ -8066,80 +8111,219 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     .d-event-details .event-info .event-time {
       padding-top: 10px;
       padding-left: 26px;
-      font-size: 18px; }
+      font-size: 15px; }
   .d-event-details .event-photo img {
     height: 120px;
     border-radius: 60px; }
+  .d-event-details .sellerbar {
+    background-color: #FFFFFF;
+    height: 40px;
+    border-bottom: 1px solid grey; }
+  .d-event-details .personicon {
+    float: left;
+    padding-left: 10px;
+    padding-top: 9px; }
+  .d-event-details .sellertext {
+    font-size: 18px;
+    font-weight: 200;
+    padding-left: 37px;
+    padding-top: 10px; }
+  .d-event-details .item {
+    margin: 0px; }
+  .d-event-details .ticket.item.row.icon-right.ion-chevron-right {
+    height: 85px; }
+  .d-event-details .tickets-list.ticket {
+    margin-bottom: 1px; }
+  .d-event-details .tickets-list .ticket .ticket-photo {
+    height: 65px;
+    width: 65px; }
+  .d-event-details .tickets-list .ticket.ion-chevron-right:before {
+    margin-top: 22px;
+    padding-right: 6px; }
   .d-event-details .ticket.item.row.icon-right.ion-chevron-right {
     background-color: #ECEBE8;
-    border-style: solid;
-    border-width: 1px; }
+    border-style: none;
+    border-bottom: 1px solid grey; }
+    .d-event-details .ticket.item.row.icon-right.ion-chevron-right .col {
+      font-size: 18px;
+      padding-top: 3px;
+      padding-left: 8px; }
+    .d-event-details .ticket.item.row.icon-right.ion-chevron-right .ticket-price-per-ticket {
+      padding-top: 0px;
+      font-size: 15px; }
+    .d-event-details .ticket.item.row.icon-right.ion-chevron-right .ticket-price-available-tickets {
+      font-size: 15px; }
+  .d-event-details .ticket.item.row {
+    padding: 10px; }
   .d-event-details .padding.scroll-content.ionic-scroll.has-header.has-tabs {
     margin: 0px; }
 
 /* Ticket Details Style */
 .d-ticket-details {
   background-color: #ECEBE8; }
+  .d-ticket-details .ticketheader {
+    height: 110px;
+    text-align: center; }
+    .d-ticket-details .ticketheader .ticketicon {
+      padding-top: 24px; }
   .d-ticket-details .ticket-info .item-input {
     border-right: 0;
-    border-left: 0; }
+    border-left: 0;
+    padding-left: 0px; }
     .d-ticket-details .ticket-info .item-input:first-child {
       border-top: 0; }
     .d-ticket-details .ticket-info .item-input .input-label {
-      font-size: 14px;
-      width: 150px; }
+      font-weight: 300;
+      font-size: 16px;
+      padding-left: 20px;
+      max-width: none;
+      width: 51%; }
+    .d-ticket-details .ticket-info .item-input .blah {
+      width: 50%; }
     .d-ticket-details .ticket-info .item-input input {
       background-color: inherit; }
-  .d-ticket-details .ticket-actions .photo {
-    height: 120px;
-    border-radius: 60px; }
-  .d-ticket-details .ticket-actions .button {
-    margin-top: 0px;
-    min-height: 0px;
-    line-height: 30px; }
-    .d-ticket-details .ticket-actions .button.buy-button {
-      font-weight: bold;
-      border: 3px solid; }
+    .d-ticket-details .ticket-info .item-input input[type="text"] {
+      color: grey;
+      font-weight: 300;
+      font-size: 16px; }
+  .d-ticket-details .ticket-actions {
+    text-align: center; }
+    .d-ticket-details .ticket-actions .photo {
+      height: 130px;
+      border-radius: 65px; }
+    .d-ticket-details .ticket-actions .button {
+      margin-top: 15px;
+      min-height: 0px;
+      height: 40px;
+      line-height: 30px;
+      width: 90%;
+      border-color: #398FAB;
+      color: #398FAB;
+      font-size: 18px; }
+      .d-ticket-details .ticket-actions .button.buy-button {
+        font-weight: bold;
+        border: 3px solid; }
 
 /* Sell Ticket Style */
 .d-sell-ticket {
+  font-weight: 300;
   background-color: #ECEBE8; }
-  .d-sell-ticket .event-name .events-list .item {
-    font-weight: bold;
-    background-color: lightgray;
-    border-bottom: 2px solid white; }
+  .d-sell-ticket .topsection {
+    height: 80px;
+    text-align: center; }
+    .d-sell-ticket .topsection .topsectiontext {
+      font-size: 18px;
+      font-weight: 300;
+      padding-top: 30px;
+      color: grey; }
+  .d-sell-ticket .input-label {
+    width: 50%;
+    max-width: none;
+    font-weight: 300; }
+  .d-sell-ticket .sellinput {
+    color: #444;
+    font-size: 16px;
+    background-color: white;
+    font-weight: 300; }
+  .d-sell-ticket .tickettypeinput {
+    position: relative;
+    padding-left: 0px;
+    color: #444;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0; }
+  .d-sell-ticket .item.item-input.item-stacked-label {
+    background-color: white;
+    height: 110px;
+    border-top-width: 2px; }
+    .d-sell-ticket .item.item-input.item-stacked-label textarea {
+      height: 90px; }
+    .d-sell-ticket .item.item-input.item-stacked-label .ng-pristine.ng-valid {
+      font-size: 16px;
+      height: 110px; }
+  .d-sell-ticket .event-name .item-input {
+    margin-top: 1px; }
+  .d-sell-ticket .event-name .item.ng-binding {
+    background-color: #C2C2C2;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #398FAB; }
+  .d-sell-ticket .moneysection {
+    height: 190px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    padding-top: 20px;
+    color: grey; }
+    .d-sell-ticket .moneysection .moneysectionheader {
+      color: black;
+      font-size: 17px;
+      padding-bottom: 10px; }
+    .d-sell-ticket .moneysection .moneysectiontext {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto; }
+  .d-sell-ticket .item.item-divider {
+    font-weight: 300;
+    color: #444444;
+    font-size: 17px;
+    background-color: white; }
+  .d-sell-ticket .item.item-toggle {
+    padding-left: 25px; }
+  .d-sell-ticket .button.button-full.button-positive {
+    color: white;
+    font-size: 18px;
+    background-color: #398FAB;
+    max-width: 380px;
+    width: 80%;
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto; }
 
 /* Messages Style */
 .d-messages {
   background-color: #ECEBE8; }
+  .d-messages .nomessages {
+    color: grey;
+    font-size: 18px;
+    padding-top: 100px;
+    text-align: center; }
   .d-messages #peers .peer {
-    padding: 0;
-    margin-bottom: 10px;
+    height: 90px;
+    padding: 15px;
+    margin-bottom: 0px;
     color: inherit;
     text-decoration: inherit;
     overflow: hidden;
     display: block;
     clear: both;
-    border-bottom: 1px solid black;
-    background-color: lightgreen; }
+    border-bottom: 1px solid #ECEBE8;
+    background-color: white; }
     .d-messages #peers .peer.ion-chevron-right:before {
-      margin-top: 30px;
+      color: grey;
+      font-weight: 100;
+      margin-top: 20px;
       position: absolute;
       right: 15px;
-      font-size: 16px; }
+      font-size: 12px; }
       .d-messages #peers .peer.ion-chevron-right:before > div {
-        height: 70px; }
+        height: 100px; }
     .d-messages #peers .peer .user-pic {
       float: left;
-      width: 70px;
-      height: 70px; }
+      width: 60px;
+      height: 60px;
+      border-radius: 30px; }
     .d-messages #peers .peer .user-name {
       float: left;
-      font-weight: bold;
-      font-size: 18px;
-      padding: 20px 15px; }
+      color: #444;
+      font-weight: 300;
+      font-size: 16px;
+      padding-left: 20px;
+      padding-top: 10px; }
   .d-messages #chat {
-    background-color: #eee; }
+    background-color: #eee;
+    height: 100%; }
     .d-messages #chat #header-chat {
       background-color: #555;
       color: white;
@@ -8148,7 +8332,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
       margin-bottom: 10px; }
     .d-messages #chat .chat-box {
-      height: 300px;
+      height: calc(100% - 65px);
       margin-bottom: 10px; }
     .d-messages #chat #mensajes {
       padding: 10px;
@@ -8158,31 +8342,28 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
         overflow: hidden;
         clear: both; }
         .d-messages #chat #mensajes .mensaje-amigo img {
-          float: right;
           display: inline-block;
           vertical-align: top;
-          border-radius: 5px;
+          border-radius: 25px;
           width: 50px; }
         .d-messages #chat #mensajes .mensaje-amigo .contenido {
-          float: right;
-          background-color: #3990BF;
+          background-color: white;
           border-radius: 5px;
-          color: white;
+          color: black;
           display: inline-block;
           font-size: 13px;
           padding: 10px;
           vertical-align: top;
           max-width: 210px; }
         .d-messages #chat #mensajes .mensaje-amigo .flecha-derecha {
-          float: right;
           display: inline-block;
-          margin-left: -6px;
+          margin-right: -6px;
           margin-top: 10px;
           width: 0;
           height: 0;
           border-top: 0px solid transparent;
           border-bottom: 15px solid transparent;
-          border-left: 15px solid #3990BF; }
+          border-right: 15px solid white; }
         .d-messages #chat #mensajes .mensaje-amigo .fecha {
           color: #777;
           font-style: italic;
@@ -8194,20 +8375,23 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
         overflow: hidden;
         clear: both; }
         .d-messages #chat #mensajes .mensaje-autor img {
+          float: right;
           display: inline-block;
           vertical-align: top;
-          border-radius: 5px;
+          border-radius: 25px;
           width: 50px; }
         .d-messages #chat #mensajes .mensaje-autor .contenido {
-          background-color: white;
+          float: right;
+          background-color: #398FAB;
+          color: white;
           border-radius: 5px;
-          box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
           display: inline-block;
           font-size: 13px;
           padding: 10px;
           vertical-align: top;
           max-width: 210px; }
         .d-messages #chat #mensajes .mensaje-autor .fecha {
+          float: right;
           color: #777;
           font-style: italic;
           font-size: 13px;
@@ -8215,29 +8399,36 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
           margin-right: 35px;
           margin-top: 10px; }
         .d-messages #chat #mensajes .mensaje-autor .flecha-izquierda {
+          float: right;
           display: inline-block;
-          margin-right: -6px;
+          margin-left: -6px;
           margin-top: 10px;
           width: 0;
           height: 0;
           border-top: 0px solid transparent;
           border-bottom: 15px solid transparent;
-          border-right: 15px solid white; }
+          border-left: 15px solid #398FAB; }
     .d-messages #chat #caja-mensaje {
-      background-color: #A8DCF7;
+      background-color: white;
       margin: 0 auto;
-      padding: 5px 10px; }
+      padding: 5px 10px 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%; }
       .d-messages #chat #caja-mensaje input {
+        float: left;
         border: solid 1px #4193BF;
         outline: none;
-        padding: 10px; }
+        padding: 10px;
+        width: calc(100% - 110px); }
       .d-messages #chat #caja-mensaje button {
+        float: right;
         border: 0;
         background-color: #4193BF;
         color: white;
         font-size: 16px;
-        padding: 8px;
-        width: 50px; }
+        padding: 6px;
+        width: 100px; }
 
 /* About Style */
 .d-about {
@@ -8251,10 +8442,21 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       width: 70px; }
   .d-about .dlogo {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 150px;
     padding-bottom: 10px; }
+  .d-about .button.button-full.button-large.button-light {
+    top: 50px; }
+  .d-about .abouttext {
+    float: left;
+    font-weight: 300;
+    font-size: 18px;
+    padding-left: 30px; }
+  .d-about .aboutarrow {
+    float: right;
+    font-weight: 300;
+    font-size: 20px; }
   .d-about .text {
-    font-family: helvetica;
+    font-weight: 300;
     padding-top: 30x;
     font-size: 20px;
     text-align: center;
@@ -8271,10 +8473,47 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     padding-top: 35px;
     padding-bottom: 15px; }
     .d-settings .settingsicon img {
-      height: 70px;
-      width: 70px; }
+      height: 65px;
+      width: 65px; }
+  .d-settings .list .item-input .input-label {
+    color: #444;
+    font-size: 16px;
+    font-weight: 300;
+    width: 50%;
+    max-width: none; }
+  .d-settings .list .item-input .settingsinput {
+    color: #444;
+    font-size: 16px;
+    font-weight: 300; }
+  .d-settings .cityinput {
+    color: #444;
+    position: relative;
+    padding: 0; }
+  .d-settings .item.item-toggle {
+    top: 30px; }
+  .d-settings .paypal-button {
+    top: 60px;
+    color: white;
+    font-size: 18px;
+    background-color: #49639F;
+    max-width: 380px;
+    width: 80%;
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto; }
+  .d-settings .logout-button {
+    top: 90px;
+    color: red;
+    font-size: 18px;
+    background-color: #ECEBE8;
+    max-width: 380px;
+    width: 80%;
+    border-width: 0px;
+    margin-left: auto;
+    margin-right: auto; }
   .d-settings .facebook-button {
     display: block;
+    top: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -8284,13 +8523,6 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* FAQ Style */
 .d-faq {
   background-color: #ECEBE8; }
-  .d-faq .faqicon {
-    text-align: center;
-    padding-top: 35px;
-    padding-bottom: 35px; }
-    .d-faq .faqicon img {
-      height: 80px;
-      width: 80px; }
 
 /* tandcs Style */
 .d-tandcs {
@@ -8308,10 +8540,17 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   background-color: #ECEBE8; }
   .d-faqdetail .faqdetailicon {
     text-align: center;
-    padding-top: 35px; }
+    padding-top: 35px;
+    padding-bottom: 25px; }
     .d-faqdetail .faqdetailicon img {
-      height: 80px;
-      width: 80px; }
+      height: 65px;
+      width: 65px; }
+  .d-faqdetail .item-stable.item-text-wrap {
+    background-color: white;
+    font-weight: 300;
+    border-color: #ECEBE8; }
+  .d-faqdetail .item.item-text-wrap.ng-binding {
+    border: none; }
 
 /* privacypolicy Style */
 .d-privacypolicy {
@@ -8327,19 +8566,174 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 /* my tickets Style */
 .d-mytickets {
   background-color: #ECEBE8; }
-  .d-mytickets .myticketsicon {
+  .d-mytickets .button.button-full.button-large.button-light {
+    top: 50px; }
+  .d-mytickets .mytickettext {
+    float: left;
+    font-weight: 300;
+    font-size: 18px;
+    padding-left: 30px; }
+  .d-mytickets .myticketarrow {
+    float: right;
+    font-weight: 300;
+    font-size: 20px; }
+  .d-mytickets .text {
+    font-weight: 300;
+    padding-top: 30x;
+    font-size: 20px;
     text-align: center;
-    padding-top: 35px;
-    padding-bottom: 20px; }
+    margin-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #4A4A4A; }
 
 /* my tickets list Style */
 .d-mytickets-list {
   background-color: #ECEBE8; }
+  .d-mytickets-list .notickets {
+    color: grey;
+    font-size: 18px;
+    padding-top: 100px;
+    text-align: center; }
+  .d-mytickets-list .item {
+    margin: 0px; }
+  .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right {
+    height: 85px; }
+  .d-mytickets-list .tickets-list.ticket {
+    margin-bottom: 1px; }
+  .d-mytickets-list .tickets-list .ticket .ticket-photo {
+    height: 65px;
+    width: 65px; }
+  .d-mytickets-list .tickets-list .ticket.ion-chevron-right:before {
+    margin-top: 22px;
+    padding-right: 6px; }
+  .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right {
+    background-color: #ECEBE8;
+    border-style: none;
+    border-bottom: 1px solid grey; }
+    .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right .col {
+      font-size: 18px;
+      padding-top: 3px;
+      padding-left: 8px; }
+    .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right .ticket-price-per-ticket {
+      padding-top: 0px;
+      font-size: 15px; }
+    .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right .ticket-price-available-tickets {
+      font-size: 15px; }
+  .d-mytickets-list .ticket.item.row {
+    padding: 10px; }
+  .d-mytickets-list .padding.scroll-content.ionic-scroll.has-header.has-tabs {
+    margin: 0px; }
 
 /* my tickets detail edit Style */
 .d-mytickets-detail-edit {
   background-color: #ECEBE8; }
+  .d-mytickets-detail-edit .event-info {
+    height: 180px;
+    background-position: 0px -90px;
+    margin-bottom: 0px;
+    padding: 0px; }
+    .d-mytickets-detail-edit .event-info .event-photo {
+      padding-top: 30px;
+      padding-left: 15px; }
+    .d-mytickets-detail-edit .event-info .event-data .event-title {
+      padding-top: 30px;
+      font-size: 26px; }
+    .d-mytickets-detail-edit .event-info .locationicon {
+      width: 20px;
+      float: left; }
+    .d-mytickets-detail-edit .event-info .event-address {
+      padding-left: 26px;
+      padding-bottom: 4px;
+      font-size: 15px; }
+    .d-mytickets-detail-edit .event-info .timeicon {
+      padding-top: 10px;
+      width: 20px;
+      float: left; }
+    .d-mytickets-detail-edit .event-info .event-time {
+      padding-top: 10px;
+      padding-left: 26px;
+      font-size: 15px; }
+  .d-mytickets-detail-edit .event-photo img {
+    height: 120px;
+    border-radius: 60px; }
+  .d-mytickets-detail-edit .input-label {
+    width: 50%;
+    max-width: none;
+    font-weight: 300; }
+  .d-mytickets-detail-edit .sellinput {
+    color: #444;
+    font-size: 16px;
+    background-color: white;
+    font-weight: 300; }
+  .d-mytickets-detail-edit .tickettypeinput {
+    position: relative;
+    padding-left: 0px;
+    color: #444;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0; }
+  .d-mytickets-detail-edit .item.item-input.item-stacked-label {
+    background-color: white;
+    height: 110px;
+    border-top-width: 2px; }
+    .d-mytickets-detail-edit .item.item-input.item-stacked-label textarea {
+      height: 90px; }
+    .d-mytickets-detail-edit .item.item-input.item-stacked-label .ng-pristine.ng-valid {
+      font-size: 16px;
+      height: 110px; }
+  .d-mytickets-detail-edit .item.item-divider {
+    font-weight: 300;
+    color: #444444;
+    font-size: 17px;
+    background-color: white; }
+  .d-mytickets-detail-edit .item.item-toggle {
+    padding-left: 25px; }
+  .d-mytickets-detail-edit .pagespace {
+    height: 38px; }
 
 /* my tickets detail show Style */
 .d-mytickets-detail-show {
   background-color: #ECEBE8; }
+  .d-mytickets-detail-show .ticketheader {
+    height: 110px;
+    text-align: center; }
+    .d-mytickets-detail-show .ticketheader .ticketicon {
+      padding-top: 24px; }
+  .d-mytickets-detail-show .ticket-info .item-input {
+    border-right: 0;
+    border-left: 0;
+    padding-left: 0px; }
+    .d-mytickets-detail-show .ticket-info .item-input:first-child {
+      border-top: 0; }
+    .d-mytickets-detail-show .ticket-info .item-input .input-label {
+      font-weight: 300;
+      font-size: 16px;
+      padding-left: 20px;
+      max-width: none;
+      width: 51%; }
+    .d-mytickets-detail-show .ticket-info .item-input .blah {
+      width: 50%; }
+    .d-mytickets-detail-show .ticket-info .item-input input {
+      background-color: inherit; }
+    .d-mytickets-detail-show .ticket-info .item-input input[type="text"] {
+      color: grey;
+      font-weight: 300;
+      font-size: 16px; }
+  .d-mytickets-detail-show .ticket-actions {
+    text-align: center; }
+    .d-mytickets-detail-show .ticket-actions .photo {
+      height: 130px;
+      border-radius: 65px; }
+    .d-mytickets-detail-show .ticket-actions .button {
+      margin-top: 15px;
+      min-height: 0px;
+      height: 40px;
+      line-height: 30px;
+      width: 90%;
+      border-color: #398FAB;
+      color: #398FAB;
+      font-size: 18px; }
+      .d-mytickets-detail-show .ticket-actions .button.buy-button {
+        font-weight: bold;
+        border: 3px solid; }

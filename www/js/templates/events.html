@@ -1,6 +1,7 @@
 <ion-view class="d-events" view-title="Events">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    <div class="title"><img class="titleicon" src="img/login_screen/dingo_logo@2x.png"/></div>
   </ion-nav-buttons>
   <ion-content class="padding" start-y="40">
 
@@ -49,7 +50,7 @@
 					<div class="event-price col col-25">
 						<div class="event-price-from row">from £{{ event.min_price }}</div>
 						<div class="event-price-per-ticket row">per ticket</div>
-						<div class="event-price-available-tickets row">{{ event.available_tickets }}</div>
+						<div class="event-price-available-tickets row">x{{ event.available_tickets }}</div>
 					</div>
 				</a>
 			</div>

@@ -4,19 +4,72 @@
 	background-color: #ECEBE8;
 
 
-
 	.settingsicon {
 		text-align: center;
 		padding-top: 35px;
 		padding-bottom: 15px;
 		img {
-			height: 70px;
-			width: 70px;
+			height: 65px;
+			width: 65px;
 		}
 	}
 
+
+	.list{
+		.item-input{
+			.input-label{
+				color: #444;
+				font-size: 16px;
+				font-weight: 300;
+				width: 50%;
+  				max-width: none;
+			}
+			.settingsinput{
+				color: #444;
+				font-size: 16px;
+				font-weight: 300;
+			}
+		}	
+	}
+
+	.cityinput{
+		color: #444;
+		position: relative;
+		padding: 0;
+	}
+
+	.item.item-toggle{
+		top: 30px;
+	}
+
+
+	.paypal-button{
+		top: 60px;
+		color: white;
+  		font-size: 18px;
+  		background-color: #49639F;
+  		max-width: 380px;
+  		width: 80%;
+  		border-style: none;
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+
+	.logout-button{
+		top: 90px;
+		color: red;
+  		font-size: 18px;
+  		background-color: #ECEBE8;
+  		max-width: 380px;
+  		width: 80%;
+  		border-width: 0px;
+  		margin-left: auto;
+  		margin-right: auto;
+	}
+
 	.facebook-button {
-		display: block;
+	  display: block;
+	  top: 30px;
 	  text-align: center;
 	  margin-left: auto;
 	  margin-right: auto;

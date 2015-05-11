@@ -7,16 +7,24 @@
 	.faqdetailicon {
 		text-align: center;
 		padding-top: 35px;
+		padding-bottom: 25px;
 		img {
-			height: 80px;
-			width: 80px;
+			height: 65px;
+			width: 65px;
 		}
 	}
 
+	.item-stable.item-text-wrap{
+		background-color: white;
+		font-weight: 300;
+		border-color: #ECEBE8;
+	}
 
 
-
-
+	.item.item-text-wrap.ng-binding{
+		border: none;
+		//padding: 3px;
+	}
 
 
 

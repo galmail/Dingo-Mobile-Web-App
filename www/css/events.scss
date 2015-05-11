@@ -25,7 +25,7 @@
 				margin-right: 5px;
 				float: left;
 				width: 166px;
-				height: 100px;
+				height: 105px;
 				border: 0;
 				&:last-child {
 					margin-right: 0;
@@ -71,18 +71,19 @@
 	}
 
 	#events_container {
+
 		.events-date {
 			color: #fff;
 			background-color: #398FAB;
-			margin-bottom: 5px;
 			padding-left: 11px;
-			padding-bottom: 2px;
-			padding-top: 3px;
+			padding-bottom: 1px;
+			padding-top: 1px;
 		}
 
 		.event {
+			border-bottom: 1px solid grey;
 			.row {
-				padding: 0;
+				padding-bottom: 10px;
 				margin-bottom: 5px;
 				color: inherit;
 				text-decoration: inherit;
@@ -99,6 +100,7 @@
 				.event-pic {
 					width: 70px;
 					padding-left: 5px;
+					padding-top: 5px;
 
 				}
 				.event-data {
@@ -120,12 +122,19 @@
 				}
 				.event-price {
 
+					padding: 0px;
+					padding-top: 2px;
+
 					.event-price-from {
 						font-size: 16px;
+						margin-bottom: 0px;
+						padding-bottom: 2px;
+						padding: 5px;
 					}
 					.event-price-per-ticket {
 						font-size: 14px;
 						color: gray;
+						padding-bottom: 0px;
 					}
 					.event-price-available-tickets {
 						font-size: 14px;
