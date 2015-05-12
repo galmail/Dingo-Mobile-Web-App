@@ -8597,6 +8597,18 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     text-align: center; }
   .d-mytickets-list .item {
     margin: 0px; }
+  .d-mytickets-list .event-name.ng-binding {
+    font-weight: 400;
+    font-size: 18px;
+    padding: 0 5px; }
+  .d-mytickets-list .event-location.ng-binding {
+    padding: 0 5px;
+    font-size: 14px;
+    font-weight: 300; }
+  .d-mytickets-list .event-date.ng-binding {
+    padding: 0 5px;
+    font-size: 14px;
+    font-weight: 300; }
   .d-mytickets-list .ticket.item.row.icon-right.ion-chevron-right {
     height: 85px; }
   .d-mytickets-list .tickets-list.ticket {
