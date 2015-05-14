@@ -19,7 +19,6 @@ dingo.services.factory('Ticket', function($http, Util, User) {
       post: true,
       electronic: true
     }
-    //getPaymentMethods: function(){ return this.payment_methods; },
     //getDeliveryMethods: function(){ return this.delivery_methods; }
   };
 
@@ -48,6 +47,9 @@ dingo.services.factory('Ticket', function($http, Util, User) {
     },
 
     getPaymentMethods: function(payment_methods){
+      if(payment_methods==null){
+        payment_methods = this.ticketForSale.payment_methods;
+      }
       var res = '';
       if(payment_methods.paypal){
         if(res.length>0) res+=', ';
@@ -90,8 +92,8 @@ dingo.services.factory('Ticket', function($http, Util, User) {
         face_value_per_ticket: this.ticketForSale.face_value_per_ticket,
         ticket_type: this.ticketForSale.type_of_ticket,
         description: this.ticketForSale.comments,
-        delivery_options: this.ticketForSale.getDeliveryMethods(),
-        payment_options: this.ticketForSale.getPaymentMethods()
+        delivery_options: this.getDeliveryMethods(),
+        payment_options: this.getPaymentMethods()
       }).success(function(res){
         this.ticketForSale = angular.copy(defaultTicket);
         callback(true);
