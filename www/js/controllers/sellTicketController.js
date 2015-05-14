@@ -57,7 +57,45 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, $ioni
 		this.ticketDetails.event.selected = true;
 	};
 
+	$scope.isValidSellTicketForm = function(){
+		var ticket = $scope.ticketDetails;
+		var incompleteForm = function(){
+			alert('Please complete compulsory fields.');
+			return false;
+		};
+		if(ticket.event.name == null || ticket.event.name==""){
+			return incompleteForm();
+		}
+		if(ticket.event.date == null || ticket.event.date==""){
+			return incompleteForm();
+		}
+		if(ticket.price_per_ticket == null || ticket.price_per_ticket==""){
+			return incompleteForm();
+		}
+		if(ticket.face_value_per_ticket == null || ticket.face_value_per_ticket==""){
+			return incompleteForm();
+		}
+		if(ticket.face_value_per_ticket < ticket.price_per_ticket){
+			alert('Tickets on Dingo can only be sold at face value or below. The Dingo Team monitor all listings. Tickets being sold above face value will be removed.');
+			return false;
+		}
+		if(ticket.num_tickets == null || ticket.num_tickets=="" || ticket.num_tickets < 1){
+			return incompleteForm();
+		}
+		if(ticket.type_of_ticket == null || ticket.type_of_ticket==""){
+			return incompleteForm();
+		}
+		if(Ticket.getDeliveryMethods(ticket.delivery_methods) == null || Ticket.getDeliveryMethods(ticket.delivery_methods)==""){
+			return incompleteForm();
+		}
+		return true;
+	};
+
 	$scope.previewTicket = function(){
+		if(!$scope.isValidSellTicketForm()){
+			return false;
+		}
+
 		var run = function(){
 			Ticket.ticketForSale = $scope.ticketDetails;
 			$location.path("/home/sell-ticket-preview");
