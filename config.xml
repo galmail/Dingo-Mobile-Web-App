@@ -8,10 +8,27 @@
       Ionic Framework Team
   </author>
   <platform name="android">
-    <!-- <icon src="res/android/ldpi.png" density="ldpi" /> -->
-    <icon src="img/icons/iconmdpi.png" density="mdpi" />
-    <icon src="img/icons/iconhdpi.png" density="hdpi" />
-    <icon src="img/icons/iconxhdpi.png" density="xhdpi" />
+    
+    <!-- ICONS -->
+
+    <!-- <icon NOTE TO PHIL HANGE PATH HERE src="res/android/ldpi.png" density="ldpi" /> -->
+
+
+    <icon src="assets/www/img/icons/iconmdpi.png" density="mdpi" />
+    <icon src="assets/www/img/icons/iconhdpi.png" density="hdpi" />
+    <icon src="assets/www/img/icons/iconxhdpi.png" density="xhdpi" />
+
+    <!-- SPLASH SCREEN -->
+    <splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/>
+    <splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi"/>
+    <splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/>
+    <splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/>
+
+    <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
+    <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
+    <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
+    <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
+
   </platform>
   <content src="index.html"/>
   <access origin="*"/>
