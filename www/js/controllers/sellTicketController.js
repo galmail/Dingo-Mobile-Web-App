@@ -59,14 +59,16 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, $ioni
 
 	$scope.previewTicket = function(){
 		var run = function(){
-			Ticket.ticketForSale = this.ticketDetails;
+			Ticket.ticketForSale = $scope.ticketDetails;
 			$location.path("/home/sell-ticket-preview");
 		};
+
 		if(User.isGuest()){
 			this.showLoginWithFB(run);
 		} else {
 			run();
 		}
+
 	};
 
 	$scope.sellTicket = function(){
@@ -80,6 +82,7 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, $ioni
 	var init = function(){
 		console.log('init() - Sell Ticket Controller...');
 		$scope.ticketDetails = Ticket.ticketForSale;
+		$scope.ticketDetails.deliveryMethods = Ticket.getDeliveryMethods();
 		Util.hideLoading();
 	};
 

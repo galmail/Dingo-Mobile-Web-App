@@ -7,8 +7,8 @@ dingo.services.factory('Ticket', function($http, Util, User) {
   
   var defaultTicket = {
     event: {},
-    num_tickets: 1,
-    type_of_ticket: 'e-Ticket',
+    //num_tickets: 1,
+    //type_of_ticket: 'e-Ticket',
     comments: '',
     payment_methods: {
       paypal: true,
@@ -18,9 +18,9 @@ dingo.services.factory('Ticket', function($http, Util, User) {
       in_person: true,
       post: true,
       electronic: true
-    },
-    getPaymentMethods: function(){ return Ticket.getPaymentMethods(this.payment_methods); },
-    getDeliveryMethods: function(){ return Ticket.getDeliveryMethods(this.delivery_methods); }
+    }
+    //getPaymentMethods: function(){ return this.payment_methods; },
+    //getDeliveryMethods: function(){ return this.delivery_methods; }
   };
 
   return {
@@ -28,6 +28,9 @@ dingo.services.factory('Ticket', function($http, Util, User) {
     ticketForSale: angular.copy(defaultTicket),
 
     getDeliveryMethods: function(delivery_methods){
+      if(delivery_methods==null){
+        delivery_methods = this.ticketForSale.delivery_methods;
+      }
       var res = '';
       if(delivery_methods.in_person){
         if(res.length>0) res+=', ';
