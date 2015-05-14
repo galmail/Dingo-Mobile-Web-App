@@ -52,6 +52,10 @@ dingo.services.factory('Util', function($ionicLoading){
 				return false;
 			}
 			return true;
+		},
+
+		capitalizeFirstLetter: function(x) {
+		    return x.charAt(0).toUpperCase() + x.slice(1);
 		}
 		
 	};

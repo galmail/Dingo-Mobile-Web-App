@@ -101,7 +101,7 @@ dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$statePa
     }
     if(ticketsType){
       allLoaded.mytickets = false;
-      $scope.ticketsType = ticketsType;
+      $scope.ticketsType = Util.capitalizeFirstLetter(ticketsType);
       Ticket.getMyTickets($scope.ticketsType,function(tickets){
         $scope.tickets = tickets;
         loaded('mytickets');
