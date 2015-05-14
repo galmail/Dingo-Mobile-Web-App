@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$stateParams,$ionicActionSheet,$ionicPopup,Ticket,Event,User,Util) {
+dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$stateParams,$ionicActionSheet,$ionicPopup,Ticket,Event,Category,User,Util) {
 
 	$scope.tickets = [];
   $scope.currentTicket = null;
@@ -89,6 +89,7 @@ dingo.controllers.controller('MyTicketsCtrl', function($scope,$location,$statePa
       allLoaded.event = false;
       Event.getById(eventId,function(event){
         $scope.currentEvent = event;
+        $scope.currentEvent.category_image = Category.getImage($scope.currentEvent.category_id);
         loaded('event');
       });
     }
