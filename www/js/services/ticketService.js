@@ -100,36 +100,41 @@ dingo.services.factory('Ticket', function($http, Util, User) {
       $http.get('/api/v1/tickets?mine=true').success(function(res){
         var tickets = res.tickets;
 
-        if(ticketsType=='purchased'){
+        if(ticketsType=='Purchased'){
           // filter tickets
           for (var i=0;i<tickets.length;i++){
             if(tickets[i].user_id == User.getInfo().id){
               tickets.splice(i, 1);
+              i--;
             }
           }
         }
-        else if(ticketsType=='selling'){
+        else if(ticketsType=='Selling'){
           // filter tickets
           for (var i=0;i<tickets.length;i++){
             if(tickets[i].user_id != User.getInfo().id){
               tickets.splice(i, 1);
+              i--;
             }
             else {
               if(tickets[i].available == false || tickets[i].number_of_tickets == 0){
                 tickets.splice(i, 1);
+                i--;
               }
             }
           }
         }
-        else if(ticketsType=='sold'){
+        else if(ticketsType=='Sold'){
           // filter tickets
           for (var i=0;i<tickets.length;i++){
             if(tickets[i].user_id != User.getInfo().id){
               tickets.splice(i, 1);
+              i--;
             }
             else {
               if(tickets[i].number_of_tickets_sold == 0){
                 tickets.splice(i, 1);
+                i--;
               }
             }
           }
