@@ -8267,6 +8267,12 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     border-style: solid;
     border-width: 3px;
     border-color: #398FAB; }
+  .d-sell-ticket .ng-valid.ng-dirty {
+    color: #444;
+    font-weight: 300; }
+  .d-sell-ticket .ng-pristine.ng-valid {
+    color: #444;
+    font-weight: 300; }
   .d-sell-ticket .moneysection {
     height: 190px;
     padding: 10px;
@@ -8313,6 +8319,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     width: 50%;
     max-width: none;
     font-weight: 300; }
+  .d-selling-preview .item-input:first-child {
+    border-top: 0; }
   .d-selling-preview .textdetail {
     background-color: white;
     color: grey;

@@ -76,6 +76,15 @@
 		}
 	}
 
+	.ng-valid.ng-dirty{
+		color: #444;
+  		font-weight: 300;
+	}
+
+	.ng-pristine.ng-valid{
+		color: #444;
+  		font-weight: 300;	
+	}
 
   	.moneysection{
   		height: 190px;
