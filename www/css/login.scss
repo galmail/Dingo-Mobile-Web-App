@@ -31,6 +31,21 @@
 		color: #FFFFFF;
 	}
 
+	.text-bottom {
+		width: 100%;
+		font-family: helvetica;
+		font-size: 14px;
+		text-align: center;
+		color: #FFFFFF;
+		position:absolute;
+		bottom:0;
+		padding: 20px;
+		a {
+    		color: white;
+		}
+	}
+
+
 	.or-icon {
 		text-align: center;
 		margin-top: 20px;
