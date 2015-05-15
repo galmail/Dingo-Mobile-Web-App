@@ -4,36 +4,48 @@
   </ion-nav-buttons> -->
   <ion-content class="padding">
 
-  	<div>Please review the info and click sell</div>
+  	<div class="ticketheader">
+        <img class="ticketicon" src="img/ticketdetails_screen/tickets.png"></img>
+    </div>
 
   	<div class="list">
-	    <label class="item item-input">
+<!-- 	      <label class="item item-input">
 		    <span class="input-label">Event:</span>
-		    <input type="text" ng-model="ticketDetails.event.name" ng-disabled="true" />
+		    <input class="textdetail" type="text" ng-model="ticketDetails.event.name" ng-disabled="true" />
 		  </label>
 		  <label class="item item-input">
 		    <span class="input-label">Date:</span>
-		    <input type="text" ng-model="ticketDetails.event.date" ng-disabled="true" />
-		  </label>
+		    <input class="textdetail" type="text" ng-model="ticketDetails.event.date" ng-disabled="true" />
+		  </label> -->
+
 		  <label class="item item-input">
-		    <span class="input-label">Location:</span>
-		    <input type="text" ng-model="ticketDetails.event.address" ng-disabled="true" />
-		  </label>
-	    <label class="item item-input">
-		    <span class="input-label">Face Value per Ticket:</span>
-		    <input type="text" ng-model="ticketDetails.face_value_per_ticket" ng-disabled="true" />
-		  </label>
-	    <label class="item item-input">
 		    <span class="input-label">Number of Tickets:</span>
-		    <input type="text" ng-model="ticketDetails.num_tickets" ng-disabled="true" />
+		    <input class="textdetail" type="text" ng-model="ticketDetails.num_tickets" ng-disabled="true" />
 		  </label>
+
 		  <label class="item item-input">
 		    <span class="input-label">Price per Ticket:</span>
-		    <input type="text" ng-model="ticketDetails.price_per_ticket" ng-disabled="true" />
+		    <input class="textdetail" type="text" ng-model="ticketDetails.price_per_ticket" ng-disabled="true" />
 		  </label>
+
+	    <label class="item item-input">
+		    <span class="input-label">Face Value per Ticket:</span>
+		    <input class="textdetail" type="text" ng-model="ticketDetails.face_value_per_ticket" ng-disabled="true" />
+		  </label>
+
+		  <label class="item item-input">
+		    <span class="input-label">Ticket Type:</span>
+		    <input class="textdetail" type="text" ng-model="ticketDetails.type_of_ticket" ng-disabled="true" />
+		  </label>
+
+		  <label class="item item-input">
+		    <span class="input-label">Comments:</span>
+		    <input class="textdetail" type="text" ng-model="ticketDetails.comments" ng-disabled="true" />
+		  </label>
+
 		  <label class="item item-input">
 		    <span class="input-label">Delivery Methods:</span>
-		    <input type="text" ng-value="ticketDetails.deliveryMethods" ng-disabled="true" />
+		    <input class="textdetail" type="text" ng-value="ticketDetails.deliveryMethods" ng-disabled="true" />
 		  </label>
 	  </div>
 

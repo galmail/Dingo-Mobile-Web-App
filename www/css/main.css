@@ -8225,6 +8225,14 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     font-size: 16px;
     background-color: white;
     font-weight: 300; }
+  .d-sell-ticket .poundsym {
+    color: #444;
+    height: 34px;
+    font-size: 16px;
+    background-color: white;
+    font-weight: 200;
+    padding-right: 5px;
+    padding-top: 7px; }
   .d-sell-ticket .tickettypeinput {
     position: relative;
     padding-left: 0px;
@@ -8272,6 +8280,34 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   .d-sell-ticket .item.item-toggle {
     padding-left: 25px; }
   .d-sell-ticket .button.button-full.button-positive {
+    color: white;
+    font-size: 18px;
+    background-color: #398FAB;
+    max-width: 380px;
+    width: 80%;
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto; }
+
+/* Sell Ticket Preview x Style */
+.d-selling-preview {
+  font-weight: 300;
+  background-color: #ECEBE8; }
+  .d-selling-preview .ticketheader {
+    height: 110px;
+    text-align: center; }
+    .d-selling-preview .ticketheader .ticketicon {
+      padding-top: 24px; }
+  .d-selling-preview .input-label {
+    width: 50%;
+    max-width: none;
+    font-weight: 300; }
+  .d-selling-preview .textdetail {
+    background-color: white;
+    color: grey;
+    font-weight: 300;
+    font-size: 16px; }
+  .d-selling-preview .button.button-full.button-positive {
     color: white;
     font-size: 18px;
     background-color: #398FAB;
