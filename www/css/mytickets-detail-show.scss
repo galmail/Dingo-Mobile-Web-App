@@ -44,6 +44,33 @@
 				font-size: 16px;
 			}
 		}
+
+		.item-input-des{
+			padding: 0px;
+			border-right: 0;
+			border-left: 0;
+			padding-left: 0px;
+			&:first-child {
+				border-top: 0;
+			}
+			.input-label {
+				font-weight: 300;
+				padding-bottom: 0px;
+				font-size: 16px;
+				padding-left: 20px;
+				max-width: none;
+			}
+
+			input {
+				background-color: inherit;
+			}
+			input[type="text"]{
+				color: grey;
+				font-weight: 300;
+				font-size: 16px;
+				padding-left: 20px;
+			}
+		}
 	}
 
 

@@ -8197,6 +8197,26 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       color: grey;
       font-weight: 300;
       font-size: 16px; }
+  .d-ticket-details .ticket-info .item-input-des {
+    padding: 0px;
+    border-right: 0;
+    border-left: 0;
+    padding-left: 0px; }
+    .d-ticket-details .ticket-info .item-input-des:first-child {
+      border-top: 0; }
+    .d-ticket-details .ticket-info .item-input-des .input-label {
+      font-weight: 300;
+      padding-bottom: 0px;
+      font-size: 16px;
+      padding-left: 20px;
+      max-width: none; }
+    .d-ticket-details .ticket-info .item-input-des input {
+      background-color: inherit; }
+    .d-ticket-details .ticket-info .item-input-des input[type="text"] {
+      color: grey;
+      font-weight: 300;
+      font-size: 16px;
+      padding-left: 20px; }
   .d-ticket-details .ticket-actions {
     text-align: center; }
     .d-ticket-details .ticket-actions .photo {
@@ -8787,6 +8807,26 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
       color: grey;
       font-weight: 300;
       font-size: 16px; }
+  .d-mytickets-detail-show .ticket-info .item-input-des {
+    padding: 0px;
+    border-right: 0;
+    border-left: 0;
+    padding-left: 0px; }
+    .d-mytickets-detail-show .ticket-info .item-input-des:first-child {
+      border-top: 0; }
+    .d-mytickets-detail-show .ticket-info .item-input-des .input-label {
+      font-weight: 300;
+      padding-bottom: 0px;
+      font-size: 16px;
+      padding-left: 20px;
+      max-width: none; }
+    .d-mytickets-detail-show .ticket-info .item-input-des input {
+      background-color: inherit; }
+    .d-mytickets-detail-show .ticket-info .item-input-des input[type="text"] {
+      color: grey;
+      font-weight: 300;
+      font-size: 16px;
+      padding-left: 20px; }
   .d-mytickets-detail-show .ticket-actions {
     text-align: center; }
     .d-mytickets-detail-show .ticket-actions .photo {
