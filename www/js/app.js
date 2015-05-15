@@ -248,7 +248,7 @@ dingo.run(function($ionicPlatform,$cordovaAppVersion,$cordovaKeyboard,$cordovaSt
     url: "/messages",
     views: {
       'messages-tab': {
-        templateUrl: "js/templates/messages.html", //MessagesCtrl
+        templateUrl: "js/templates/messages.html",
         controller: 'MessagesCtrl'
       }
     }
