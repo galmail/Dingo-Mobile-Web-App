@@ -8276,7 +8276,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     height: 110px;
     border-top-width: 2px; }
     .d-sell-ticket .item.item-input.item-stacked-label textarea {
-      height: 90px; }
+      height: 90px;
+      font-size: 16px; }
     .d-sell-ticket .item.item-input.item-stacked-label .ng-pristine.ng-valid {
       font-size: 16px;
       height: 110px; }
@@ -8791,7 +8792,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     border-top-width: 2px; }
     .d-mytickets-detail-edit .item.item-input.item-stacked-label textarea {
       height: 90px;
-      color: grey; }
+      color: grey;
+      font-size: 16px; }
     .d-mytickets-detail-edit .item.item-input.item-stacked-label .ng-pristine.ng-valid {
       font-size: 16px;
       height: 110px; }
