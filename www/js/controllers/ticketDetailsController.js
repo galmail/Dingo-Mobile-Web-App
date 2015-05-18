@@ -75,7 +75,8 @@ dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,$
 				user_name: $scope.ticket.user_name,
 				event_name: $scope.event.name
 			};
-			$location.path("/home/messages/" + conversationId);
+			//console.log("redirecting to: /home/messages?redirect=" + conversationId);
+			window.location.href = "#/home/messages?redirect=" + conversationId;
 		};
 
 		if(User.isGuest()){

@@ -3,10 +3,57 @@
  *
  */
 
-dingo.controllers.controller('SellTicketCtrl', function($scope, $location, $ionicPopup, Event, Ticket, User, Util) {
+dingo.controllers.controller('SellTicketCtrl', function($scope, $cordovaDatePicker, $filter, $location, $ionicPopup, Event, Ticket, User, Util) {
 
 	$scope.ticketDetails = null;
 	$scope.events = [];
+
+	$scope.showDatePicker = function(disabled){
+		if(disabled) return false;
+
+		var defaultOptions = {
+			date: new Date(),
+	    mode: 'date', // or 'time'
+	    minDate: new Date() - 10000,
+	    allowOldDates: true,
+	    allowFutureDates: false,
+	    doneButtonLabel: 'DONE',
+	    doneButtonColor: '#F2F3F4',
+	    cancelButtonLabel: 'CANCEL',
+	    cancelButtonColor: '#000000'
+		};
+		
+		var dateOptions = {
+			date: new Date(),
+	    mode: 'date',
+	    minDate: new Date() - 10000,
+	    allowOldDates: true,
+	    allowFutureDates: false
+		};
+
+		var timeOptions = {
+			date: new Date(),
+	    mode: 'time',
+	    minuteInterval: 15
+		};
+
+		$cordovaDatePicker.show(dateOptions).then(function(date){
+      if(!date) return false;
+      $cordovaDatePicker.show(timeOptions).then(function(time){
+      	if(!time) return false;
+      	var yyyy = date.getUTCFullYear();
+      	var mm = date.getUTCMonth()+1;
+      	var dd = date.getUTCDate()+1;
+      	var h = time.getHours();
+				var m = time.getMinutes();
+				var datetime = yyyy+'-'+mm+'-'+dd+' '+h+':'+m;
+      	$scope.ticketDetails.event.date = new Date(datetime);
+      	$scope.ticketDetails.event.formattedDate = $filter('date')(new Date(datetime), 'HH:mm - dd/MM/yyyy');
+				$scope.ticketDetails.event.id = null;
+      	$scope.ticketDetails.event.selected = true;
+      });
+    });
+	};
 
 	$scope.showLoginWithFB = function(callback){
 		// show a dialog
@@ -29,32 +76,39 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, $ioni
 		return false;
 	};
 
+	$scope.startFiltering = function(){
+		$scope.ticketDetails.event.name = "";
+		$scope.filterEvent();
+	};
+
 	$scope.filterEvent = function(){
-		var self = this;
-		if(self.ticketDetails.event.name.length>0) {
-			console.log('filtering event: ' + self.ticketDetails.event.name);
-			self.ticketDetails.event.selected = false;
-			Event.searchByName({ name: self.ticketDetails.event.name, any: true }, function(listOfEvents){
-				self.events = listOfEvents;
-			});
+		console.log('filtering event: ' + $scope.ticketDetails.event.name);
+		$scope.ticketDetails.event.selected = false;
+		var searchParams = { any: true };
+		if($scope.ticketDetails.event.name.length>0){
+			searchParams.name = $scope.ticketDetails.event.name;
 		}
+		Event.searchByName(searchParams, function(listOfEvents){
+			$scope.events = listOfEvents;
+		});
 	};
 
 	$scope.showEvent = function(event){
 		var thisEvent = event.name.toLowerCase();
-		var selectedEvent = this.ticketDetails.event.name.toLowerCase();
+		var selectedEvent = $scope.ticketDetails.event.name.toLowerCase();
+		if(selectedEvent=="") return true;
 		return (thisEvent.indexOf(selectedEvent)>=0 && thisEvent != selectedEvent && selectedEvent.length>0);
 	};
 
 	$scope.selectEvent = function(event,events){
-		var self = this;
 		console.log('selecting event: ' + event.name);
-		this.ticketDetails.event.id = event.id;
-		this.ticketDetails.event.name = event.name;
-		this.ticketDetails.event.address = event.address;
-		this.ticketDetails.event.date = new Date(event.date);
-		this.ticketDetails.event.end_date = new Date(event.end_date);
-		this.ticketDetails.event.selected = true;
+		$scope.ticketDetails.event.id = event.id;
+		$scope.ticketDetails.event.name = event.name;
+		$scope.ticketDetails.event.address = event.address;
+		$scope.ticketDetails.event.date = new Date(event.date);
+		$scope.ticketDetails.event.formattedDate = $filter('date')(new Date(event.date), 'HH:mm - dd/MM/yyyy');
+		$scope.ticketDetails.event.end_date = new Date(event.end_date);
+		$scope.ticketDetails.event.selected = true;
 	};
 
 	$scope.isValidSellTicketForm = function(){
@@ -102,7 +156,7 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, $ioni
 		};
 
 		if(User.isGuest()){
-			this.showLoginWithFB(run);
+			$scope.showLoginWithFB(run);
 		} else {
 			run();
 		}
@@ -112,7 +166,12 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $location, $ioni
 	$scope.sellTicket = function(){
 		Ticket.saveTicket(function(ok){
 			if(ok){
-				alert('Ticket Created Successfully!');
+				alert('Ticket Created Successfully! Your ticket will be listed shortly.');
+				Ticket.resetTicket();
+				$location.path('/');
+			}
+			else {
+				alert('Something went wrong while creating the ticket, please try again later.');
 			}
 		});
 	};
