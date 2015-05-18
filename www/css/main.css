@@ -8341,11 +8341,36 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     font-weight: 300; }
   .d-selling-preview .item-input:first-child {
     border-top: 0; }
+  .d-selling-preview .item-input-des {
+    padding: 0px;
+    border-right: 0;
+    border-left: 0;
+    padding-left: 0px; }
+    .d-selling-preview .item-input-des:first-child {
+      border-top: 0; }
+    .d-selling-preview .item-input-des .input-label {
+      font-weight: 300;
+      padding-bottom: 0px;
+      font-size: 16px;
+      padding-left: 16px;
+      max-width: none; }
+    .d-selling-preview .item-input-des input[type="text"] {
+      color: grey;
+      font-weight: 300;
+      font-size: 16px;
+      padding-left: 16px; }
   .d-selling-preview .textdetail {
     background-color: white;
     color: grey;
     font-weight: 300;
     font-size: 16px; }
+  .d-selling-preview .poundsym {
+    color: grey;
+    font-weight: 300;
+    font-size: 16px;
+    padding-top: 2px; }
+  .d-selling-preview .linebreak {
+    height: 2px; }
   .d-selling-preview .button.button-full.button-positive {
     color: white;
     font-size: 18px;
@@ -8765,7 +8790,8 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     height: 110px;
     border-top-width: 2px; }
     .d-mytickets-detail-edit .item.item-input.item-stacked-label textarea {
-      height: 90px; }
+      height: 90px;
+      color: grey; }
     .d-mytickets-detail-edit .item.item-input.item-stacked-label .ng-pristine.ng-valid {
       font-size: 16px;
       height: 110px; }
