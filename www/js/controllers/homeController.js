@@ -11,6 +11,10 @@ dingo.controllers.controller('HomeCtrl', function($scope, $http, $location, User
     }
 	});
 
+	$scope.onTabSelected = function(tab){
+		$location.path(tab.href);
+	};
+
 
 	// run on init
 	(function(){

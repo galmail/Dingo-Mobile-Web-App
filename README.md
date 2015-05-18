@@ -32,6 +32,7 @@ cordova plugin add https://github.com/driftyco/ionic-plugins-keyboard.git
 cordova plugin add https://github.com/whiteoctober/cordova-plugin-app-version.git
 cordova plugin add https://github.com/phonegap-build/PushPlugin.git
 cordova -d plugin add https://github.com/Wizcorp/phonegap-facebook-plugin.git --variable APP_ID="667287336672842" --variable APP_NAME="Dingo"
+cordova plugin add https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git
 
 Test on the Browser
 ====================

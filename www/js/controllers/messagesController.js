@@ -3,7 +3,7 @@
  *
  */
 
-dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionicScrollDelegate,Message,User,Util) {
+dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionicScrollDelegate,$location,Message,User,Util) {
 
 	$scope.messages = [];
 	$scope.peers = [];
@@ -61,6 +61,10 @@ dingo.controllers.controller('MessagesCtrl', function($scope,$stateParams,$ionic
 	// run on init for every controller
 	(function(){
 		console.log('Running Messages Controller...');
+		if($location.search().redirect){
+			window.location.href = '#/home/messages/' + $location.search().redirect;
+			return;
+		}
 		Util.showLoading();
 		if(User.isLogged()){
 			init();

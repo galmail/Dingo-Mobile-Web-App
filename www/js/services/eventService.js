@@ -56,7 +56,18 @@ dingo.services.factory('Event', function($http, Util) {
         var events = self.parseEvents(res.events);
         callback(events);
       });
-  	}
+  	},
+
+    createNewEvent: function(event,callback){
+      $http.post('/api/v1/events',{
+        name: event.name,
+        date: event.date
+      }).success(function(res){
+        callback(res.id);
+      }).error(function(){
+        callback();
+      });
+    }
 
   };
 
