@@ -3,7 +3,7 @@
  *
  */
 
-dingo.services.factory('Ticket', function($http, Util, User) {
+dingo.services.factory('Ticket', function($http, Util, User, Event) {
   
   var defaultTicket = {
     event: {},
@@ -25,6 +25,10 @@ dingo.services.factory('Ticket', function($http, Util, User) {
   return {
 
     ticketForSale: angular.copy(defaultTicket),
+
+    resetTicket: function(){
+      this.ticketForSale = angular.copy(defaultTicket);
+    },
 
     getDeliveryMethods: function(delivery_methods){
       if(delivery_methods==null){
@@ -85,19 +89,33 @@ dingo.services.factory('Ticket', function($http, Util, User) {
     },
 
     saveTicket: function(callback){
-      $http.post('/api/v1/tickets',{
-        event_id: this.ticketForSale.event.id,
-        price: this.ticketForSale.price_per_ticket,
-        number_of_tickets: this.ticketForSale.num_tickets,
-        face_value_per_ticket: this.ticketForSale.face_value_per_ticket,
-        ticket_type: this.ticketForSale.type_of_ticket,
-        description: this.ticketForSale.comments,
-        delivery_options: this.getDeliveryMethods(),
-        payment_options: this.getPaymentMethods()
-      }).success(function(res){
-        this.ticketForSale = angular.copy(defaultTicket);
-        callback(true);
-      });
+      var self = this;
+      var run = function(){
+        $http.post('/api/v1/tickets',{
+          event_id: self.ticketForSale.event.id,
+          price: self.ticketForSale.price_per_ticket,
+          number_of_tickets: self.ticketForSale.num_tickets,
+          face_value_per_ticket: self.ticketForSale.face_value_per_ticket,
+          ticket_type: self.ticketForSale.type_of_ticket,
+          description: self.ticketForSale.comments,
+          delivery_options: self.getDeliveryMethods(),
+          payment_options: self.getPaymentMethods()
+        }).success(function(res){
+          self.ticketForSale = angular.copy(defaultTicket);
+          callback(true);
+        }).error(function(){
+          callback(false);
+        });
+      };
+      if(self.ticketForSale.event.id){
+        run();
+      }
+      else {
+        Event.createNewEvent(self.ticketForSale.event,function(id){
+          self.ticketForSale.event.id = id;
+          run();
+        });
+      }
     },
 
     getMyTickets: function(ticketsType,callback){

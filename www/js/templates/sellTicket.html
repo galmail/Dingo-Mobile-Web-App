@@ -14,7 +14,7 @@
 		  <div class="event-name">
 			  <label class="item item-input">
 			    <span class="input-label">Event Name:</span>
-			    <input class="sellinput" type="search" ng-model="ticketDetails.event.name" ng-change="filterEvent()" placeholder="Event name" />
+			    <input class="sellinput" type="search" ng-model="ticketDetails.event.name" ng-click="startFiltering()" ng-change="filterEvent()" placeholder="Event name" />
 			  </label>
 			  <ul class="list events-list">
 			  	<li ng-show="showEvent(event)" ng-click="selectEvent(event)" ng-repeat="event in events" class="item">{{ event.name }} - {{ event.parsed_date}}</li>
@@ -23,7 +23,7 @@
 
 		  <label class="item item-input">
 		    <span class="input-label">Start date:</span>
-		    <input class="sellinput" type="datetime" ng-model="ticketDetails.event.date" ng-disabled="ticketDetails.event.selected" placeholder="hh:mm - dd/mm/yy"/>
+		    <input class="sellinput" type="datetime" ng-model="ticketDetails.event.formattedDate" ng-click="showDatePicker(ticketDetails.event.selected)" ng-disabled="ticketDetails.event.selected" placeholder="hh:mm - dd/mm/yyyy"/>
 		  </label>
 
 		  <label class="item item-input">
