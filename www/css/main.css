@@ -7956,7 +7956,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   background-size: cover; }
   .d-login .logo {
     text-align: center;
-    padding-top: 55px; }
+    padding-top: 40px; }
     .d-login .logo img {
       height: 240px; }
   .d-login .fb-login {
@@ -7992,7 +7992,7 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     text-align: center;
     margin-top: 20px; }
     .d-login .guest img {
-      height: 35px; }
+      height: 40px; }
 
 /* Events Style */
 .d-events {
