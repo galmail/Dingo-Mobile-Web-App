@@ -13,17 +13,20 @@
     <icon src="www/img/icons/iconmdpi.png" density="mdpi" />
     <icon src="www/img/icons/iconhdpi.png" density="hdpi" />
     <icon src="www/img/icons/iconxhdpi.png" density="xhdpi" />
+    <icon src="www/img/icons/iconxxhdpi.png" density="xxhdpi" />
+    <icon src="www/img/icons/iconxxxhdpi.png" density="xxxhdpi" />
+    
 
     <!-- SPLASH SCREEN -->
     <splash src="www/img/splash/splash-land-ldpi.png" density="land-ldpi"/>
-    <splash src="www/img/splash/android/splash-land-mdpi.png" density="land-mdpi"/>
-    <splash src="www/img/splash/android/splash-land-hdpi.png" density="land-hdpi"/>
-    <splash src="www/img/splash/android/splash-land-xhdpi.png" density="land-xhdpi"/>
+    <splash src="www/img/splash/splash-land-mdpi.png" density="land-mdpi"/>
+    <splash src="www/img/splash/splash-land-hdpi.png" density="land-hdpi"/>
+    <splash src="www/img/splash/splash-land-xhdpi.png" density="land-xhdpi"/>
 
-    <splash src="www/img/splash/android/splash-port-ldpi.png" density="port-ldpi"/>
-    <splash src="www/img/splash/android/splash-port-mdpi.png" density="port-mdpi"/>
-    <splash src="www/img/splash/android/splash-port-hdpi.png" density="port-hdpi"/>
-    <splash src="www/img/splash/android/splash-port-xhdpi.png" density="port-xhdpi"/>
+    <splash src="www/img/splash/splash-port-ldpi.png" density="port-ldpi"/>
+    <splash src="www/img/splash/splash-port-mdpi.png" density="port-mdpi"/>
+    <splash src="www/img/splash/splash-port-hdpi.png" density="port-hdpi"/>
+    <splash src="www/img/splash/splash-port-xhdpi.png" density="port-xhdpi"/>
 
   </platform>
   <content src="index.html"/>
@@ -32,6 +35,7 @@
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage" value="none"/>
+  <preference name="Orientation" value="portrait" />
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
