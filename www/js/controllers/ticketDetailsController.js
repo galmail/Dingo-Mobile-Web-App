@@ -29,6 +29,9 @@ dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,$
 		return false;
 	};
 
+	$scope.userIsNotSellingThisTicket = function(){
+		return (User.getInfo().id != $scope.ticket.user_id);
+	};
 
 	$scope.buyTicket = function(){
 		var self = this;
@@ -44,11 +47,16 @@ dingo.controllers.controller('TicketDetailsCtrl', function($scope,$stateParams,$
 					amount: Ticket.getTotalToPay(self.ticket),
 					description: description
 				},function(payment){
+					Util.showLoading();
 					Order.approveOrder(payment,function(){
+						Util.hideLoading();
 						alert("Payment Success! Redirecting now to a chat screen with the seller...");
+						self.contactSeller();
 					});
 				},function(result){
+					Util.showLoading();
 					Order.rejectOrder(function(){
+						Util.hideLoading();
 						alert('Payment has been canceled.');
 					});
 				});

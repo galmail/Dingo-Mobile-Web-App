@@ -7,19 +7,23 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
 
   // Login with facebook
   $scope.fbLogin = function(){
+    Util.showLoading();
     User.fbLogin(function(logged){
+      Util.hideLoading();
       if(logged){
         window.history.back();
       }
       else {
-        alert('User is not logged in.');
+        console.log('Something went wrong, user is not logged in.');
       }
     });
   };
 
   // Login as Guest
   $scope.guestLogin = function(){
+    Util.showLoading();
     if (User.isLogged()){
+      Util.hideLoading();
       alert('User is already logged!');
       return;
     }
@@ -32,12 +36,12 @@ dingo.controllers.controller('AuthCtrl', function($scope, Facebook, $ionicModal,
     }
     User.setInfo({ email: uuid+'@guest.dingoapp.co.uk', password: '123456789', name: 'Guest' });
     User.connect(function(ok){
+      Util.hideLoading();
       if(ok){
-        alert('user is logged in!');
         window.history.back();
       }
       else {
-        alert('user is not logged in!');
+        console.log('something went wrong, user is not logged in!');
       }
     });
   };

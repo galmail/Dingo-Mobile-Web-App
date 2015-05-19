@@ -39,8 +39,8 @@
         <img class="photo" ng-src="{{ticket.user_photo}}" />
       </div>
       <div class="col">
-        <button ng-click="buyTicket()" class="button button-outline button-positive button-block buy-button">Buy Now</button>
-        <button class="button button-outline button-positive button-block" ng-click="contactSeller()">Contact Seller</button>
+        <button ng-show="userIsNotSellingThisTicket()" ng-click="buyTicket()" class="button button-outline button-positive button-block buy-button">Buy Now</button>
+        <button ng-show="userIsNotSellingThisTicket()" class="button button-outline button-positive button-block" ng-click="contactSeller()">Contact Seller</button>
       </div>
     </div>
 

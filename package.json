@@ -27,6 +27,7 @@
     "https://github.com/driftyco/ionic-plugins-keyboard.git",
     "org.apache.cordova.statusbar",
     "/Users/gal/Desktop/dingo/phonegap-facebook-plugin",
-    "https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git"
+    "https://github.com/VitaliiBlagodir/cordova-plugin-datepicker.git",
+    "com.paypal.cordova.mobilesdk"
   ]
 }
