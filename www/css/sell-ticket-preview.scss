@@ -26,6 +26,31 @@
 			}
 		}
 
+		.item-input-des {
+			&:first-child {
+				border-top: 0;
+			}
+			padding: 0px;
+  			border-right: 0;
+  			border-left: 0;
+  			padding-left: 0px;
+
+  			.input-label {
+				font-weight: 300;
+				padding-bottom: 0px;
+				font-size: 16px;
+				padding-left: 16px;
+				max-width: none;
+			}
+			input[type="text"]{
+				color: grey;
+				font-weight: 300;
+				font-size: 16px;
+				padding-left: 16px;
+			}
+		}
+
+
 	.textdetail{
 		background-color: white;
 		color: grey;
@@ -33,6 +58,16 @@
 		font-size: 16px;
 	}
 
+	.poundsym{
+		color: grey;
+		font-weight: 300;
+		font-size: 16px;
+		padding-top: 2px;
+	}
+
+	.linebreak{
+		height: 2px;
+	}
 
 
 
