@@ -38,10 +38,20 @@ dingo.services.factory('Message', function($http, $state, User) {
       }
     },
 
+    getTicketId: function(){
+      var conversationId = this.active_chat.conversation_id;
+      var x = conversationId.split('-');
+      x.pop();
+      x.pop();
+      return x.join('-');
+    },
+
     sendMessage: function(msg,callback){
+      console.log('sending message of conversation_id',this.active_chat.conversation_id);
       var self = this;
       $http.post('/api/v1/messages',{
         receiver_id: self.active_chat.peer.user_id,
+        ticket_id: self.getTicketId(),
         content: msg
       }).success(callback);
     },

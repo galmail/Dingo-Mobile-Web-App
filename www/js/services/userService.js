@@ -126,6 +126,9 @@ dingo.services.factory('User', function($http, Facebook, Util) {
       else if(userData.gender == 'female'){
         userData.gender = 'F';
       }
+      // name and surname
+      userData.name = params.first_name;
+      userData.surname = params.last_name;
       // email
       if(userData.email==null || userData.email==''){
         var firstName = userData.name.split(' ')[0];
