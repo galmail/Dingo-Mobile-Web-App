@@ -8584,12 +8584,15 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
     max-width: none; }
   .d-settings .list .item-input .settingsinput {
     color: #444;
+    background-color: white;
     font-size: 16px;
     font-weight: 300; }
   .d-settings .cityinput {
     color: #444;
     position: relative;
-    padding: 0; }
+    padding: 0;
+    font-weight: 300;
+    font-size: 16px; }
   .d-settings .item.item-toggle {
     top: 30px; }
   .d-settings .paypal-button {
