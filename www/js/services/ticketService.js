@@ -90,6 +90,7 @@ dingo.services.factory('Ticket', function($http, Util, User, Event) {
 
     saveTicket: function(callback){
       var self = this;
+      var newEvent = false;
       var run = function(){
         $http.post('/api/v1/tickets',{
           event_id: self.ticketForSale.event.id,
@@ -102,7 +103,7 @@ dingo.services.factory('Ticket', function($http, Util, User, Event) {
           payment_options: self.getPaymentMethods()
         }).success(function(res){
           self.ticketForSale = angular.copy(defaultTicket);
-          callback(true);
+          callback(true,newEvent);
         }).error(function(){
           callback(false);
         });
@@ -111,6 +112,7 @@ dingo.services.factory('Ticket', function($http, Util, User, Event) {
         run();
       }
       else {
+        newEvent = true;
         Event.createNewEvent(self.ticketForSale.event,function(id){
           self.ticketForSale.event.id = id;
           run();

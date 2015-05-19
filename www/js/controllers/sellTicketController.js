@@ -164,9 +164,17 @@ dingo.controllers.controller('SellTicketCtrl', function($scope, $cordovaDatePick
 	};
 
 	$scope.sellTicket = function(){
-		Ticket.saveTicket(function(ok){
+		Ticket.saveTicket(function(ok,newEvent){
 			if(ok){
-				alert('Ticket Created Successfully! Your ticket will be listed shortly.');
+				var msg_part1 = "";
+				var msg_part2 = "please make sure your email address is up-to-date within settings.";
+				if(newEvent){
+					msg_part1 = "Thanks! We'll just take a quick look and list your tickets shortly :-) ";
+				}
+				else {
+					msg_part1 = "Tickets Listed! :-) ";
+				}
+				alert(msg_part1 + msg_part2);
 				Ticket.resetTicket();
 				$location.path('/');
 			}
