@@ -47,3 +47,36 @@ Launch on Device
 gulp
 cordova build android
 cordova run android
+
+Deployment Steps
+=================
+
+1. Make sure all config file is set to "production" and the app version is correct.
+
+2. Generate Private Key:
+
+keytool -genkey -v -keystore dingo.keystore -alias Dingo -keyalg RSA -keysize 2048 -validity 10000
+
+3. Compile the app in release mode to obtain an unsigned APK:
+
+cordova build android --release
+
+4. Sign the app with the private key:
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore dingo.keystore Dingo.apk Dingo
+
+5. Verify
+
+jarsigner -verify -verbose -certs Dingo.apk
+
+6. Align the APK
+
+zipalign -v 4 your_project_name-unaligned.apk your_project_name.apk
+
+
+
+
+
+
+
+

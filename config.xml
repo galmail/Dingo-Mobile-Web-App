@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.dingowebapp651937" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="uk.co.dingoapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Dingo</name>
   <description>
-        An Ionic Framework and Cordova project.
+      Dingo is a Ticketing App.
     </description>
-  <author email="info@dingoapp.co.uk" href="http://dingoapp.co.uk">
-      Ionic Framework Team
+  <author email="dingo@dingoapp.co.uk" href="http://dingoapp.co.uk">
+      Dingo Team
   </author>
   <platform name="android">
     

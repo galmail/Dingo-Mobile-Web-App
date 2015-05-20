@@ -5,13 +5,6 @@ dingo.controllers = angular.module('dingo.controllers', []);
 dingo.services = angular.module('dingo.services', []);
 dingo.directives = angular.module('dingo.directives', []);
 
-///////////// Config Vars /////////////
-dingo.constant('CONFIG', {
-  FacebookAppId: '667287336672842',
-  FacebookAppIdTest: '820677384667169',
-  GCM_SENDER_ID: '734407104892'
-});
-
 dingo.run(function($ionicPlatform,$cordovaAppVersion,$cordovaKeyboard,$cordovaStatusbar,Payment,Message) {
   
   $ionicPlatform.ready(function(){
@@ -29,8 +22,6 @@ dingo.run(function($ionicPlatform,$cordovaAppVersion,$cordovaKeyboard,$cordovaSt
     // start to initialize PayPalMobile library
     Payment.init();
 
-    window.simulateIncomingMessage = Message.incomingMsg;
-
   });
 })
 
@@ -40,8 +31,7 @@ dingo.run(function($ionicPlatform,$cordovaAppVersion,$cordovaKeyboard,$cordovaSt
        'request': function(config){
           if (window.cordova){
             if(((config.url.indexOf('/api')>=0) || (config.url.indexOf('/users/')>=0)) && (config.url.indexOf('paypal.com')<0)){
-              config.url = 'http://dingoapp-staging.herokuapp.com' + config.url;
-              //alert('calling: ' + config.url);
+              config.url = window.DINGOCONFIG.Endpoint + config.url;
             }
           }
           return config || $q.when(config);
@@ -65,12 +55,12 @@ dingo.run(function($ionicPlatform,$cordovaAppVersion,$cordovaKeyboard,$cordovaSt
   ]);
 })
 
-.config(['CONFIG','FacebookProvider',function(CONFIG, FacebookProvider) {
+.config(['FacebookProvider',function(FacebookProvider) {
    if(window.location.href.indexOf('localhost')>0){
-    FacebookProvider.init(CONFIG.FacebookAppIdTest);
+    FacebookProvider.init(window.DINGOCONFIG.FacebookAppIdLocalhost);
    }
    else {
-    FacebookProvider.init(CONFIG.FacebookAppId);
+    FacebookProvider.init(window.DINGOCONFIG.FacebookAppId);
    }
 }])
 
@@ -160,7 +150,8 @@ dingo.run(function($ionicPlatform,$cordovaAppVersion,$cordovaKeyboard,$cordovaSt
     url: "/about",
     views: {
       'menuContent' :{
-        templateUrl: "js/templates/about.html"
+        templateUrl: "js/templates/about.html",
+        controller: 'AboutCtrl'
       }
     }
   })

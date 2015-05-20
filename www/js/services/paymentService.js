@@ -10,30 +10,8 @@ dingo.services.factory('Payment', function($http) {
     init: function(){
       // Initiating Paypal SDK
       if(window.PayPalMobile){
-        var clientIDs = {
-          "PayPalEnvironmentProduction": "AYMqghD3IhKeJXOLh3siE-ImJftpSQLRRWebOHlDUCN7x_i5nWDB7V3zHnC5",
-          "PayPalEnvironmentSandbox": "AYuyqBCZYRwnOGI6k7DPlkgltTCEoX8m4b8XHZFqqQb0SAJLsx__gPpfnsyy"
-        };
-        PayPalMobile.init(clientIDs, this.onPayPalMobileInit);
+        PayPalMobile.init(window.DINGOCONFIG.PaypalIds, this.onPayPalMobileInit);
       }
-    },
-
-    paypalConfig: function(){
-      client_id = "AYuyqBCZYRwnOGI6k7DPlkgltTCEoX8m4b8XHZFqqQb0SAJLsx__gPpfnsyy";
-      secret = "EBT5hxDVku8zaY_5KJpPO9R8eFKtrNei-CY0dxYMQJrfB5Bc3oerkWhqg9C8";
-      code = "EGkUQWcpAh_yji2oYpvoRiJ03q2p6S4HKVHt0ZK8Fx29hpYUQMNDpaQpi67c6oJ1y3nT6uneWnJZfY4kKtPvQo92BY1u4w_R6MYNtlR9FZACQAkLuCH_dbxvnM23tJqJBcMMMEzTTj6LNeaoYKs3RS4";
-      
-      // curl -v  \
-      // -u "AYuyqBCZYRwnOGI6k7DPlkgltTCEoX8m4b8XHZFqqQb0SAJLsx__gPpfnsyy:EBT5hxDVku8zaY_5KJpPO9R8eFKtrNei-CY0dxYMQJrfB5Bc3oerkWhqg9C8" \
-      // -d "grant_type=authorization_code&code=EGkUQWcpAh_yji2oYpvoRiJ03q2p6S4HKVHt0ZK8Fx29hpYUQMNDpaQpi67c6oJ1y3nT6uneWnJZfY4kKtPvQo92BY1u4w_R6MYNtlR9FZACQAkLuCH_dbxvnM23tJqJBcMMMEzTTj6LNeaoYKs3RS4&redirect_uri=http://example.com/myapp/return.php"
-
-
-      // app_id: "APP-80W284485P519543T",
-      // client_id: "AWdYAhAitDP7Y1AFRQ6h68YlNcBiMcBgg1Grc-rfMrAqAIG_gHWSupG6E9A_",
-      // endpoint: "api.sandbox.paypal.com",
-      // secret: "EJJFbhA6igUr5gUL5BHuXIks0lBCIZBlvx9NiLQ0QGmV7t2HILnehGmV_0v5",
-      // signature: "ASD0y8Fzvt3Gmspmqmq2CJmwwoIfA56HtZ-HEYSq12aMXnhatYMp4ngi",
-      // username: "phil-facilitator_api1.dingoapp.co.uk"
     },
 
     onPayPalMobileInit: function(){
@@ -44,10 +22,9 @@ dingo.services.factory('Payment', function($http) {
         merchantUserAgreementURL: "http://dingoapp.bitnamiapp.com/web/terms-conditions/",
         acceptCreditCards: false
       });
-      //config.acceptCreditCards(false);
 
       // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
-      PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", config, function(){
+      PayPalMobile.prepareToRender("PayPalEnvironment", config, function(){
         console.log('Paypal Library Loaded!');
       });
     },

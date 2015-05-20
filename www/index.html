@@ -31,6 +31,40 @@
     <!-- paypal mobile integration -->
     <script src="js/paypal-mobile-js-helper.js"></script>
 
+    <script>
+        var RunInProduction = false;
+
+        ////////////////////// STAGING CONFIG //////////////////////
+
+        var DingoStagingConfig = {
+            Endpoint: 'http://dingoapp-staging.herokuapp.com',
+            FacebookAppId: '667287336672842',
+            FacebookAppIdLocalhost: '820677384667169',
+            GcmSenderId: '734407104892',
+            PaypalIds: {
+              "PayPalEnvironment": "AYuyqBCZYRwnOGI6k7DPlkgltTCEoX8m4b8XHZFqqQb0SAJLsx__gPpfnsyy"
+            }
+        };
+
+        ////////////////////// PRODUCTION CONFIG //////////////////////
+        
+        var DingoProductionConfig = {
+            Endpoint: 'http://dingoapp.herokuapp.com',
+            FacebookAppId: '667287336672842',
+            GcmSenderId: '734407104892',
+            PaypalIds: {
+              "PayPalEnvironment": "AYMqghD3IhKeJXOLh3siE-ImJftpSQLRRWebOHlDUCN7x_i5nWDB7V3zHnC5"
+            }
+        };
+
+        if(RunInProduction){
+            window.DINGOCONFIG = DingoProductionConfig;
+        }
+        else {
+            window.DINGOCONFIG = DingoStagingConfig;
+        }
+    </script>
+
     <!-- app js files -->
     <script src="js/app.js"></script>
 
@@ -45,6 +79,7 @@
     <script src="js/controllers/settingsController.js"></script>
     <script src="js/controllers/myTicketsController.js"></script>
     <script src="js/controllers/faqsController.js"></script>
+    <script src="js/controllers/aboutController.js"></script>
 
     <!-- services -->
     <script src="js/services/pushService.js"></script>

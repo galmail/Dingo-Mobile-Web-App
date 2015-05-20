@@ -3,7 +3,7 @@
  *
  */
 
-dingo.services.factory('Push', ['CONFIG','$http','User','Message',function(CONFIG,$http,User,Message) {
+dingo.services.factory('Push', function($http,User,Message) {
 	
 	return {
 
@@ -30,7 +30,7 @@ dingo.services.factory('Push', ['CONFIG','$http','User','Message',function(CONFI
 			    self.successHandler,
 			    self.errorHandler,
 			    {
-			        senderID: CONFIG.GCM_SENDER_ID,
+			        senderID: window.DINGOCONFIG.GcmSenderId,
 			        ecb: "onNotification"
 			    });
 			} else if ( device.platform == 'blackberry10'){
@@ -129,4 +129,4 @@ dingo.services.factory('Push', ['CONFIG','$http','User','Message',function(CONFI
 
 		
 	};
-}]);
+});
